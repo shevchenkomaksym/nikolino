@@ -28,7 +28,9 @@
             </div>
         </div>
 
-        <img src="<%= require('./img/loader.svg') %>" alt="loader" title="loader">
+        <picture>
+            <img src="<%= require('./img/loader.svg') %>" data-src="<%= require('./img/loader.svg') %>" alt="loader" title="loader">
+        </picture>
 
         <svg>
             <use xlink:href="img/spritemap.svg#sprite-loader"></use>
