@@ -5,13 +5,15 @@ import 'bootstrap';
 import 'popper.js';
 
 $(window).on('load', function () {
+    let b = $('body');
+
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        $('body').addClass('ios');
+        b.addClass('ios');
     } else {
-        $('body').addClass('web');
+        b.addClass('web');
     }
 
-    $('body').removeClass('loaded');
+    b.removeClass('loaded');
 });
 
 $(function () {
