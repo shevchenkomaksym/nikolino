@@ -3,6 +3,7 @@ import 'intersection-observer';
 import $ from 'jquery';
 import 'bootstrap';
 import 'popper.js';
+import Swiper from 'swiper';
 
 $(window).on('load', function () {
     let b = $('body');
@@ -34,4 +35,26 @@ $(function () {
             imgObserve.observe(image);
         });
     }
+
+    let slider = new Swiper('.swiper-container', {
+        observer: true,
+        observerParents: true,
+        effect: 'slide',
+        direction: 'horizontal',
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        dynamicBullets: true,
+    });
 });
