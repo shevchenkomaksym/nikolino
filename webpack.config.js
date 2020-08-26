@@ -31,7 +31,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|svg|gif|ico|webp)$/,
-                exclude: /icons/,
+                exclude: /icons|favicon/,
                 use: {
                     loader: "file-loader",
                     options: {
@@ -68,7 +68,7 @@ module.exports = {
             assetNameRegExp: /\.optimize\.css$/g,
             cssProcessor: require('cssnano'),
             cssProcessorPluginOptions: {
-                preset: ['default', { discardComments: { removeAll: true } }],
+                preset: ['default', {discardComments: {removeAll: true}}],
             },
             canPrint: true
         }),
