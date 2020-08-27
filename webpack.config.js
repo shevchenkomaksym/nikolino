@@ -31,7 +31,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|svg|gif|ico|webp)$/,
-                exclude: /icons|favicon/,
+                exclude: /(icons)/,
                 use: {
                     loader: "file-loader",
                     options: {
@@ -80,6 +80,11 @@ module.exports = {
         new SVGSpritemapPlugin("src/img/icons/*.svg", {
             output: {
                 filename: "img/spritemap.svg"
+            },
+            sprite: {
+                generate: {
+                    use: true
+                }
             }
         }),
     ]

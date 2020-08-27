@@ -3,10 +3,10 @@
 <title></title>
 <g id="icomoon-ignore">
 </g>
-<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="22.7556" stroke="#000" d="M59.535 1000.187l928.745-928.745"></path>
-<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="22.7556" stroke="#000" d="M11.907 785.861l809.675-785.861"></path>
-<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="22.7556" stroke="#000" d="M297.674 1024l714.42-714.42"></path>
-<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="22.7556" stroke="#000" d="M11.907 523.907l547.722-523.907"></path>
-<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="22.7556" stroke="#000" d="M559.628 1000.187l452.466-452.466"></path>
-<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="113.7778" stroke="#000" d="M47.628 35.721h952.559v952.559h-952.559v-952.559z"></path>
+<path d="M947.689 82.978l-887.467 887.467 16.089 16.089 887.467-887.467z"></path>
+<path d="M811.289 14.578l-773.689 750.933 15.822 16.356 773.689-750.933z"></path>
+<path d="M970.444 310.533l-682.667 682.667 16.089 16.089 682.667-682.667z"></path>
+<path d="M538.267 14.533l-523.378 500.622 15.733 16.444 523.378-500.622z"></path>
+<path d="M970.444 538.089l-432.356 432.356 16.089 16.089 432.356-432.356z"></path>
+<path d="M0 0v1024h1024v-1024zM113.778 113.778h796.444v796.444h-796.444z"></path>
 </svg>

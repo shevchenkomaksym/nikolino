@@ -13,16 +13,17 @@ footer.footer {
 }
 
 .footer-logo {
-  svg {
+  img {
+    display: block;
     width: 100%;
-    fill: #7b7b7b;
+    max-width: 140px;
+    margin: 0 auto;
   }
 }
 
 .footer-info {
-  &.border-top {
-    border-top: 1px solid rgba(255, 255, 255, 0.222984) !important;
-  }
+  border-top: 1px solid rgba(255, 255, 255, 0.222984);
+  padding: 14px 0 0;
 
   &__nav-link {
     display: inline-block;
@@ -50,7 +51,7 @@ footer.footer {
   }
 
   &__text {
-    //width: 50%;
+    width: 50%;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
@@ -65,19 +66,69 @@ footer.footer {
       text-shadow: 0 0 20px $main-second-color;
     }
   }
+
+  &__contacts-link {
+    display: inline-block;
+    margin: 0 0 14px;
+    border: 1px solid rgba(174, 202, 186, 0.3);
+    border-radius: 100px;
+    padding: 9px 24px;
+    color: #fff;
+    text-decoration: none !important;
+    @extend %gradient-text;
+
+    &:hover {
+      -webkit-text-fill-color: #232323;
+      box-shadow: 0px 15px 64px #5DB33E;
+      @extend %gradient;
+    }
+  }
+
+  &__privacy {
+    display: inline-block;
+    color: #d8d8d8;
+    font-size: 0.889rem;
+    text-decoration: none !important;
+  }
 }
 
 .footer-callback {
+  text-align: center;
+
   &__number {
     display: inline-block;
+    margin-bottom: 13px;
     color: #ffffff;
-    font-size: 1.722rem;
+    font-size: 1.6rem;
     text-decoration: none !important;
   }
 
   &__modal-btn {
     display: inline-block;
     color: #ffffff;
+    text-decoration: none !important;
+  }
+}
+
+.footer-social {
+  border-top: 1px solid rgba(255, 255, 255, 0.222984);
+  padding: 28px 0;
+
+  &__link {
+    display: inline-block;
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+      opacity: .3;
+      @include transition();
+    }
   }
 }
 

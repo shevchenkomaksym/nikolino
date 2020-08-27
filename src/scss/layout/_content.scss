@@ -237,10 +237,27 @@
 }
 
 .decoration-icon-list {
+  padding-left: 120px;
+
   li {
+    position: relative;
+    padding-left: 20px;
     font-size: 1.444rem;
     font-weight: 500;
-    line-height: 55px;
+    line-height: 32px;
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 45px;
+      height: 45px;
+      fill: #fff;
+      transform: translateY(-50%);
+    }
   }
 }
 
@@ -365,6 +382,16 @@
   .title {
     margin-bottom: 65px;
     color: #ffffff;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 45px);
+      width: 64px;
+      height: 64px;
+      fill: #fff;
+      transform: translateY(-50%);
+    }
   }
 
   .button {
@@ -425,6 +452,16 @@
 
   .title {
     margin-bottom: 66px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 110%;
+      width: 48px;
+      height: 48px;
+      fill: $main-second-color;
+      transform: translateY(-50%);
+    }
   }
 }
 
@@ -490,13 +527,145 @@
   }
 }
 
-.land-section
 .decoration-icon-list {
   margin-bottom: 120px;
 }
 
 .decoration-list {
   margin-bottom: 81px;
+}
+
+.map-section {}
+
+.map-switcher {
+  li {
+    margin-bottom: 10px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 48px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 1.111em;
+    font-weight: 500;
+    text-decoration: none !important;
+    box-shadow: inset 1px -1px 0px #FFFFFF, inset -1px 2px 10px rgba(0, 0, 0, 0.4);
+
+    &.active {
+      box-shadow: inset 1px -1px 0px #FFFFFF, inset -1px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    &:hover {
+      color: #ffffff;
+      background: $main-first-color;
+      box-shadow: none;
+    }
+  }
+}
+
+.callback-section {
+  padding: 50px 0;
+}
+
+.callback {
+  img {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    box-shadow: 0 63px 92px rgba(201, 189, 171, .7);
+  }
+
+  &__title {
+    display: inline-block;
+    width: 75%;
+    margin: 0;
+    padding: 0 0 0 70px;
+    color: $main-first-color;
+    font-size: 3.611rem;
+  }
+
+  &__text {
+    display: inline-block;
+    width: 15%;
+    margin: 0;
+    padding: 22px 0 0;
+    font-size: 1.556rem;
+    font-weight: 500;
+    text-align: center;
+
+    span {
+      position: relative;
+      display: inline-block;
+      margin-top: 24px;
+      font-family: $font-family-unique;
+      font-size: 1rem;
+      font-weight: 400;
+      white-space: pre-line;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -11px;
+        left: 50%;
+        width: 60px;
+        height: 2px;
+        border-radius: 10px;
+        background: $main-first-color;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__form {
+    display: inline-block;
+    margin-top: -90px;
+    padding: 0 1em;
+
+    &-switch {
+      position: relative;
+      border: none;
+      border-bottom: 2px dashed #aaaaaa;
+      padding: 0;
+      overflow: visible;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 4px);
+        display: inline-block;
+        margin-top: 2px;
+        border-top: 14px solid #939393;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        transform: translateY(-50%);
+        @include transition();
+      }
+
+      &.on {
+        &:after {
+          transform: translateY(-50%) rotate3d(1, 0, 0, 180deg);
+        }
+      }
+    }
+
+    &-hide {
+      height: 70px;
+      overflow: hidden;
+      @include transition();
+
+      &.hide {
+        height: 0;
+      }
+    }
+
+    &-visible {
+
+    }
+  }
 }
 
 .contacts-block {
@@ -509,9 +678,46 @@
     text-decoration: none !important;
   }
 
-  &__text {
-    color: $main-first-color;
-    font-size: 3.056rem;
-    white-space: pre-line;
+  &__social {
+    &-text {
+      display: inline-block;
+      margin: 0;
+      color: $main-first-color;
+      font-size: 3.056rem;
+      font-weight: 600;
+      white-space: pre-line;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 135px;
+        height: 5px;
+        margin: 0 25px;
+        vertical-align: middle;
+        background: #f9c50f;
+      }
+    }
+
+    &-list {
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+
+    &-link {
+      display: inline-block;
+      text-decoration: none !important;
+      &:not(:last-child) {
+        margin-right: 33px;
+      }
+
+      svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      &:hover {
+
+      }
+    }
   }
 }

@@ -49,8 +49,13 @@ $(function () {
         arrows: false,
         dots: true,
         infinite: false,
-        // autoplay: true,
-        // autoplaySpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+
+    $('.callback__form-switch').on('click', function () {
+        $(this).toggleClass('on');
+        $(this).next().toggleClass('hide', 'show');
     });
 
     // button scroll to top
