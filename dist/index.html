@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>Главная</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.aa6e789bb1302c3b9854.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.a2be8efda62c67ff6425.min.css" rel="stylesheet"></head>
 
 <body class="loaded">
 
@@ -25,12 +25,12 @@
 
                 <div class="col-lg-7">
                     <nav class="site-menu d-flex flex-wrap">
-                        <a href="#about-us" class="site-menu__link active">О поселке</a>
+                        <a href="about-us.html" class="site-menu__link active">О поселке</a>
                         <a href="#plan" class="site-menu__link">Генплан</a>
                         <a href="#houses" class="site-menu__link">Дома</a>
                         <a href="#region" class="site-menu__link">Участки</a>
                         <a href="#infrastructure" class="site-menu__link">Инфраструктура</a>
-                        <a href="#contacts" class="site-menu__link">Контакты</a>
+                        <a href="contacts.html" class="site-menu__link">Контакты</a>
                     </nav>
                     <button class="burger-button">
                         <span class="burger-button__line"></span>
@@ -52,7 +52,7 @@
     <main class="content">
         <div class="section main-section pb-lg-5">
             <div class="container pt-lg-3">
-                <h2 class="title">Николино Парк — <span>экопоселок в Краснодаре</span></h2>
+                <h1 class="title">Николино Парк — <span>экопоселок в Краснодаре</span></h1>
 
                 <div class="main-slider">
                     <div class="main-slider__box">
@@ -93,6 +93,12 @@
 
         <div class="section land-section pt-lg-5 pb-lg-3">
             <div class="container">
+                <div class="row">
+                    <div class="col-10 offset-2">
+                        <h2 class="title">Земельные участки</h2>
+                    </div>
+                </div>
+
                 <h2 class="title">Земельные участки</h2>
 
                 <div class="row">
@@ -330,9 +336,10 @@
         <div class="section map-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 pt-2">
                         <span>На карте:</span>
                     </div>
+
                     <div class="col-lg-10">
                         <ul class="map-switcher d-flex flex-wrap p-0 mb-4">
                             <li><a href="#" class="map-switcher__button active">Магазины и ТЦ</a></li>
@@ -351,7 +358,7 @@
 
         <div class="section callback-section">
             <div class="container">
-                <div class="callback d-flex flex-wrap px-lg-4">
+                <div class="callback d-flex flex-wrap">
                     <picture>
                         <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
                     </picture>
@@ -368,25 +375,25 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="date">
+                                <input type="date" class="input">
                             </label>
 
                             <label>
-                                <input type="time">
+                                <input type="time" class="input mask-time">
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone">
-                                    <option value="1">+1</option>
-                                    <option value="2">+2</option>
-                                    <option value="3">+3</option>
+                                <select name="timezone" id="timezone" class="input">
+                                    <option value="3">(GMT+3:00) Краснодар</option>
+                                    <option value="2">(GMT+2:00) Краснодар</option>
+                                    <option value="4">(GMT+4:00) Краснодар</option>
                                 </select>
                             </label>
                         </fieldset>
 
-                        <fieldset class="callback__form-visible">
+                        <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone">
+                                <input type="text" class="callback__form-phone input mask-phone" placeholder="+7">
                             </label>
 
                             <label>
@@ -396,7 +403,7 @@
                             </label>
                         </fieldset>
 
-                        <button type="submit" class="button button-primary">Перезвоните мне</button>
+                        <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
                     </form>
                 </div>
             </div>
@@ -586,5 +593,5 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.aa6e789bb1302c3b9854.min.js"></script></body>
+<script type="text/javascript" src="bundle.a2be8efda62c67ff6425.min.js"></script></body>
 </html>
