@@ -36,7 +36,7 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   @include transition($transition-base);
   &:hover {
-    //text-decoration: underline;
+    text-decoration: none;
   }
   &:active,
   &:focus,

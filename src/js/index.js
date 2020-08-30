@@ -53,6 +53,50 @@ $(function () {
         autoplaySpeed: 3000,
     });
 
+    // about slider
+    $('.about-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+
+    // about reviews
+    $('.about-review').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 5000
+    });
+
+    // about news
+    $('.about-news__slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 5000
+    });
+
+    // service slider
+    $('.service-village__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        // autoplay: true,
+        // autoplaySpeed: 5000
+    });
+
     // form switch
     $('.callback__form-switch').on('click', function () {
         $(this).toggleClass('on');

@@ -53,7 +53,7 @@
         <div class="section head-section">
             <div class="container head-block">
                 <div class="row">
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 align-self-center">
                         <nav class="breadcrumb">
                             <a href="index.html" class="breadcrumb__item"><span class="breadcrumb__text">на главную</span></a>
                             <a href="#2" class="breadcrumb__item"><span class="breadcrumb__text">Второй</span></a>
@@ -79,7 +79,9 @@
                 <div class="row about__block">
                     <div class="col-lg-3">
                         <p class="about__video-text pt-lg-4 px-lg-3">
-                            <svg><use xlink:href="img/spritemap.svg#sprite-youtube"></use></svg>
+                            <svg>
+                                <use xlink:href="img/spritemap.svg#sprite-youtube"></use>
+                            </svg>
 
                             Посмотрите наше ознакомительное видео, чтобы составить впечатление о чем-то. Этот текст для композиции, можно убрать.
                         </p>
@@ -87,7 +89,8 @@
 
                     <div class="col-lg-9">
                         <div class="about__video">
-                            <iframe width="100%" height="391" src="https://www.youtube.com/embed/rnVxkktkzAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="391" src="https://www.youtube.com/embed/rnVxkktkzAI" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
 
                         <a href="#more-photo" class="about__button button button-square">больше фото</a>
@@ -108,25 +111,25 @@
                     <div class="col-10 offset-2">
                         <h2 class="title">Эко-стиль</h2>
                     </div>
+                </div>
 
-                    <div class="about-slider">
-                        <div class="about-slider__item">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
-                            </picture>
-                        </div>
+                <div class="about-slider">
+                    <div class="about-slider__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
+                        </picture>
+                    </div>
 
-                        <div class="about-slider__item">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
-                            </picture>
-                        </div>
+                    <div class="about-slider__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
+                        </picture>
+                    </div>
 
-                        <div class="about-slider__item">
-                            <picture>
-                                <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
-                            </picture>
-                        </div>
+                    <div class="about-slider__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -194,49 +197,68 @@
                 </div>
 
                 <div class="row utilities">
-                    <div class="col-12">
+                    <div class="utilities__item-wrap col-12">
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-01.png') %>" alt="">
                             </picture>
 
-                            <p class="utilities__description"><span class="utilities__text"></span></p>
+                            <div class="utilities__description">
+                                <span class="utilities__name">Водобснабжение</span>
+                                <span class="utilities__text">Артезианская скважина – воду из-под крана можно пить!</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="utilities__item-wrap col-12">
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-02.png') %>" alt="">
                             </picture>
 
-                            <p class="utilities__description"><span class="utilities__text"></span></p>
+                            <div class="utilities__description">
+                                <span class="utilities__name">Водоотведение</span>
+                                <span class="utilities__text">Центральная канализация</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="utilities__item-wrap col-12">
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-03.png') %>" alt="">
                             </picture>
 
-                            <p class="utilities__description"><span class="utilities__text"></span></p>
+                            <div class="utilities__description">
+                                <span class="utilities__name">Газ</span>
+                                <span class="utilities__text">Поселок газифицирован в марте 2020 года</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="utilities__item-wrap col-12">
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-04.png') %>" alt="">
                             </picture>
 
-                            <p class="utilities__description"><span class="utilities__text"></span></p>
+                            <div class="utilities__description">
+                                <span class="utilities__name">Электричество</span>
+                                <span class="utilities__text">10 КВт на каждое домовладение</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="utilities__item-wrap col-12">
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-05.png') %>" alt="">
                             </picture>
 
-                            <p class="utilities__description"><span class="utilities__text"></span></p>
+                            <div class="utilities__description">
+                                <span class="utilities__name">Интернет</span>
+                                <span class="utilities__text">Скорость 300 Мбит/с</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -249,30 +271,272 @@
                     <h2 class="title">Отзывы</h2>
                 </div>
 
-                <div class="row">
-                    <div class="about-review">
-                        <div class="about-review__item">Слава</div>
-                        <div class="about-review__item">Людвиг</div>
-                        <div class="about-review__item">Сергей</div>
-                        <div class="about-review__item">Слава</div>
-                        <div class="about-review__item">Людвиг</div>
+                <div class="about-review">
+                    <div class="about-review__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-01.png') %>" class="about-review__img" alt="">
+                        </picture>
+
+                        <p class="about-review__date">24 апреля 2020</p>
+
+                        <p class="about-review__author">Слава <span class="about-review__author-age">32 года</span></p>
+
+                        <p class="about-review__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в
+                            ближайшие минуты.</p>
+
+                        <a href="#reviews" class="about-review__link">Далее</a>
+                    </div>
+
+                    <div class="about-review__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-02.png') %>" class="about-review__img" alt="">
+                        </picture>
+
+                        <p class="about-review__date">24 апреля 2020</p>
+
+                        <p class="about-review__author">Людвиг <span class="about-review__author-age">32 года</span></p>
+
+                        <p class="about-review__text">Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет
+                            удо...</p>
+
+                        <a href="#reviews" class="about-review__link">Далее</a>
+                    </div>
+
+                    <div class="about-review__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-01.png') %>" class="about-review__img" alt="">
+                        </picture>
+
+                        <p class="about-review__date">24 апреля 2020</p>
+
+                        <p class="about-review__author">Сергей <span class="about-review__author-age">32 года</span></p>
+
+                        <p class="about-review__text">Наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое.</p>
+
+                        <a href="#reviews" class="about-review__link">Далее</a>
+                    </div>
+
+                    <div class="about-review__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-01.png') %>" class="about-review__img" alt="">
+                        </picture>
+
+                        <p class="about-review__date">24 апреля 2020</p>
+
+                        <p class="about-review__author">Слава <span class="about-review__author-age">32 года</span></p>
+
+                        <p class="about-review__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в
+                            ближайшие минуты.</p>
+
+                        <a href="#reviews" class="about-review__link">Далее</a>
+                    </div>
+
+                    <div class="about-review__item">
+                        <picture>
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-02.png') %>" class="about-review__img" alt="">
+                        </picture>
+
+                        <p class="about-review__date">24 апреля 2020</p>
+
+                        <p class="about-review__author">Людвиг <span class="about-review__author-age">32 года</span></p>
+
+                        <p class="about-review__text">Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет
+                            удо...</p>
+
+                        <a href="#reviews" class="about-review__link">Далее</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section about-news">
+        <div class="section about-news-section">
             <div class="container">
                 <div class="row">
+                    <div class="col-lg-10 offset-lg-2">
+                        <h2 class="title">Новости
+                            <span>и ход строительства</span></h2>
+                    </div>
+                </div>
 
+                <div class="about-news">
+                    <picture>
+                        <img src="<%= require('./img/news-bg.jpg') %>" class="about-news__background" alt="">
+                    </picture>
+
+                    <div class="about-news__slider">
+                        <div class="about-news__item">
+                            <picture>
+                                <img src="<%= require('./img/news01.jpg') %>" class="about-news__img" alt="news">
+                            </picture>
+
+                            <div class="about-news__description">
+                                <p class="about-news__date">24 апреля 2020</p>
+                                <p class="about-news__title">Заголовок новости может быть длинным</p>
+                                <p class="about-news__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит
+                                    вам в ближайшие минуты. Максим текста ну вот и...</p>
+                                <a href="#" class="about-news__link">ДАЛЕЕ</a>
+                            </div>
+                        </div>
+
+                        <div class="about-news__item">
+                            <picture>
+                                <img src="<%= require('./img/news02.jpg') %>" class="about-news__img" alt="news">
+                            </picture>
+
+                            <div class="about-news__description">
+                                <p class="about-news__date">24 апреля 2020</p>
+                                <p class="about-news__title">Заголовок новости может быть длинным</p>
+                                <p class="about-news__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит
+                                    вам в ближайшие минуты. Максим текста ну вот и...</p>
+                                <a href="#" class="about-news__link">ДАЛЕЕ</a>
+                            </div>
+                        </div>
+
+                        <div class="about-news__item">
+                            <picture>
+                                <img src="<%= require('./img/news03.jpg') %>" class="about-news__img" alt="news">
+                            </picture>
+
+                            <div class="about-news__description">
+                                <p class="about-news__date">24 апреля 2020</p>
+                                <p class="about-news__title">Заголовок новости может быть длинным</p>
+                                <p class="about-news__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит
+                                    вам в ближайшие минуты. Максим текста ну вот и...</p>
+                                <a href="#" class="about-news__link">ДАЛЕЕ</a>
+                            </div>
+                        </div>
+
+                        <div class="about-news__item">
+                            <picture>
+                                <img src="<%= require('./img/news01.jpg') %>" class="about-news__img" alt="news">
+                            </picture>
+
+                            <div class="about-news__description">
+                                <p class="about-news__date">24 апреля 2020</p>
+                                <p class="about-news__title">Заголовок новости может быть длинным</p>
+                                <p class="about-news__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит
+                                    вам в ближайшие минуты. Максим текста ну вот и...</p>
+                                <a href="#" class="about-news__link">ДАЛЕЕ</a>
+                            </div>
+                        </div>
+
+                        <div class="about-news__item">
+                            <picture>
+                                <img src="<%= require('./img/news02.jpg') %>" class="about-news__img" alt="news">
+                            </picture>
+
+                            <div class="about-news__description">
+                                <p class="about-news__date">24 апреля 2020</p>
+                                <p class="about-news__title">Заголовок новости может быть длинным</p>
+                                <p class="about-news__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит
+                                    вам в ближайшие минуты. Максим текста ну вот и...</p>
+                                <a href="#" class="about-news__link">ДАЛЕЕ</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section support-section">
+        <div class="section service-section">
             <div class="container">
                 <div class="row">
+                    <div class="col-12">
+                        <h2 class="title">Обслуживание поселка</h2>
+                    </div>
+                </div>
 
+                <div class="service-village">
+                    <div class="service-village__indicators">
+                        <div class="service-village__indicators-item">
+                            <p class="service-village__indicators-value">24 / 7</p>
+                            <p class="service-village__indicators-signature">охрана поселка</p>
+                        </div>
+
+                        <div class="service-village__indicators-item">
+                            <p class="service-village__indicators-value">500+</p>
+                            <p class="service-village__indicators-signature">объектов озеленения в год</p>
+                        </div>
+
+                        <div class="service-village__indicators-item">
+                            <p class="service-village__indicators-value">2480</p>
+                            <p class="service-village__indicators-signature">рублей/месяц стоимость обслуживания</p>
+                        </div>
+                    </div>
+
+                    <div class="service-village__text-block">
+                        <p class="service-village__signature">На территории коттеджного поселка «Николино Парк» функционирует обслуживающая организация ООО «Торговый Дом
+                            Горизонт».</p>
+
+                        <div class="service-village__goal">
+                            <p class="service-village__goal-title">Основные задачи</p>
+
+                            <ul class="service-village__goal-list">
+                                <li>круглосуточная охрана, видеонаблюдение, контрольно-пропускной режим</li>
+                                <li>обеспечение работы инженерных систем и коммуникаций</li>
+                                <li>санитарная уборка территорий общего пользования, вывоз мусора</li>
+                                <li>содержание дорог, благоустройство и озеленение территории</li>
+                                <li>помощь жителям в решении бытовых и хозяйственных вопросов</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-village__slider">
+                        <div class="service-village__slider-item">
+                            <picture>
+                                <img src="<%= require('./img/service01.png') %>" alt="service">
+                            </picture>
+
+                            <div class="service-village__slide-signature">
+                                <p class="service-village__slide-title">Дом семьи Иванов</p>
+                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
+                            </div>
+                        </div>
+
+                        <div class="service-village__slider-item">
+                            <picture>
+                                <img src="<%= require('./img/service01.png') %>" alt="service">
+                            </picture>
+
+                            <div class="service-village__slide-signature">
+                                <p class="service-village__slide-title">Дом семьи Иванов</p>
+                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
+                            </div>
+                        </div>
+
+                        <div class="service-village__slider-item">
+                            <picture>
+                                <img src="<%= require('./img/service01.png') %>" alt="service">
+                            </picture>
+
+                            <div class="service-village__slide-signature">
+                                <p class="service-village__slide-title">Дом семьи Иванов</p>
+                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
+                            </div>
+                        </div>
+
+                        <div class="service-village__slider-item">
+                            <picture>
+                                <img src="<%= require('./img/service01.png') %>" alt="service">
+                            </picture>
+
+                            <div class="service-village__slide-signature">
+                                <p class="service-village__slide-title">Дом семьи Иванов</p>
+                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
+                            </div>
+                        </div>
+
+                        <div class="service-village__slider-item">
+                            <picture>
+                                <img src="<%= require('./img/service01.png') %>" alt="service">
+                            </picture>
+
+                            <div class="service-village__slide-signature">
+                                <p class="service-village__slide-title">Дом семьи Иванов</p>
+                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
