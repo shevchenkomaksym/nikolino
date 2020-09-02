@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
-    <title>Отзывы</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.a759a3f20546ff0c370c.min.css" rel="stylesheet"></head>
+    <title>New post</title>
+</head>
 
 <body class="loaded">
 
@@ -18,7 +18,7 @@
                 <div class="col-lg-2">
                     <a href="index.html" class="logo">
                         <picture>
-                            <img src="img/default.svg" data-src="img/logo.svg" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="loader" title="loader">
                         </picture>
                     </a>
                 </div>
@@ -51,55 +51,86 @@
     <!-- CONTENT -->
     <main class="content">
         <div class="section head-section">
-            <div class="container head-block">
+            <div class="container head-block mt-5">
                 <div class="row">
                     <div class="col-lg-2 align-self-center">
                         <nav class="breadcrumb">
-                            <a href="index.html" class="breadcrumb__item"><span class="breadcrumb__text">на главную</span></a>
+                            <a href="news.html" class="breadcrumb__item"><span class="breadcrumb__text">все новости</span></a>
                             <a href="#2" class="breadcrumb__item"><span class="breadcrumb__text">Второй</span></a>
                             <a href="#3" class="breadcrumb__item"><span class="breadcrumb__text">Трертий</span></a>
                         </nav>
                     </div>
 
-                    <div class="col-lg-10">
-                        <h1 class="main-title">отзывы</h1>
+                    <div class="col-lg-5">
+                        <p class="news-inner-date">12 апреля 2020</p>
+                        <h1 class="news-inner-title">Заложены фундаменты, завезен щебень и другие новости на две строки</h1>
+                    </div>
+                    <div class="offset-lg-2 col-lg-10 mt-4 mb-4">
+                        <p>Для нас «Николино Премьер» - это место, где соседи не просто знают друг друга по имени, а гармонично живут вместе: дружат семьями, ходят в гости, а дети играют на одной площадке. Именно для этого мы спроектировали улицы с открытыми фасадами домов.</p>
+                        <p>Иными словами, индивидуальный забор располагается не по всему периметру земельного участка, а огораживает внутренний двор, фасад же дома остается открытым. Такое решение преображает улицу, делая ее прекрасным общим пространством для прогулок, общения и иного приятного времяпрепровождения.</p>
+                    </div>
+                    <div class="col-lg-12 mb-4">
+                        <div class="about-slider">
+                            <div class="about-slider__item">
+                                <picture>
+                                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
+                                </picture>
+                            </div>
+
+                            <div class="about-slider__item">
+                                <picture>
+                                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
+                                </picture>
+                            </div>
+
+                            <div class="about-slider__item">
+                                <picture>
+                                    <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/about-us01.jpg') %>" alt="eco-style">
+                                </picture>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section reviews-section">
+        <div class="section other-news">
             <div class="container">
-                <div class="row reviews">
-                    <div class="col-10 offset-2">
-                        <div class="reviews__box">
-                            <picture>
-                                <img src="img/review-01.png" alt="author">
-                            </picture>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="other-news-title">К другим новостям</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="news__box other-news-box">
+                            <p class="news__date">12 апреля 2020</p>
 
-                            <div class="reviews__description">
-                                <p class="reviews__date">18 апреля 2020</p>
-                                <p class="reviews__author">Слава<span class="reviews__author-age">32 года</span></p>
-                                <div class="reviews__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет удобно принять
+                            <picture><img src="<%= require('./img/news-01.jpg') %>" alt=""></picture>
 
-                                    Наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет удобно принять наш звонок. Дату и время в которое вам будет удобно принять наш звонок. </div>
-                            </div>
+                            <p class="news__title">Заложены фундаменты, завезен щебень и другие новости на три строки</p>
+
+                            <a href="#more" class="news__link">подробнее</a>
                         </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="news__box other-news-box">
+                            <p class="news__date">12 апреля 2020</p>
 
-                        <div class="reviews__box">
-                            <picture>
-                                <img src="img/review-02.png" alt="author">
-                            </picture>
+                            <picture><img src="<%= require('./img/news-02.jpg') %>" alt=""></picture>
 
-                            <div class="reviews__description">
-                                <p class="reviews__date">18 апреля 2020</p>
-                                <p class="reviews__author">Слава<span class="reviews__author-age">32 года</span></p>
-                                <div class="reviews__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. И время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет удобно принять
+                            <p class="news__title">Заложены фундаменты, завезен щебень и другие новости на три строки</p>
 
-                                    Наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет удобно принять наш звонок. Дату и время в которое вам будет удобно принять наш звонок. Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. И время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет удобно принять
+                            <a href="#more" class="news__link">подробнее</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="news__box other-news-box">
+                            <p class="news__date">12 апреля 2020</p>
 
-                                    Наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет удобно принять наш звонок. Дату и время в которое вам будет удобно принять наш звонок. </div>
-                            </div>
+                            <picture><img src="<%= require('./img/news-03.jpg') %>" alt=""></picture>
+
+                            <p class="news__title">Заложены фундаменты, завезен щебень и другие новости на три строки</p>
+
+                            <a href="#more" class="news__link">подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +141,7 @@
             <div class="container">
                 <div class="callback d-flex flex-wrap">
                     <picture>
-                        <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
+                        <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/manager-img.png') %>" alt="manager">
                     </picture>
 
                     <p class="callback__title w-75">На связи!</p>
@@ -197,8 +228,19 @@
                 </div>
             </div>
         </div>
+
     </main>
     <!-- CONTENT END -->
+
+    <div class="background-site">
+        <div class="container position-relative">
+            <div class="elem elem-1">
+                <picture>
+                    <img src="<%= require('./img/bg-ico-1.svg') %>" alt="bg">
+                </picture>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -207,7 +249,7 @@
                 <div class="col-lg-2 pt-lg-2">
                     <a href="index.html" class="footer-logo">
                         <picture>
-                            <img src="img/default.svg" data-src="img/logo-colorless.svg" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-colorless.svg') %>" alt="loader" title="loader">
                         </picture>
                     </a>
                 </div>
@@ -302,5 +344,5 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.a759a3f20546ff0c370c.min.js"></script></body>
+</body>
 </html>

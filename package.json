@@ -38,6 +38,7 @@
     "imask": "^6.0.5",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
     "nouislider": "^14.6.1",
     "popper.js": "^1.15.0",
     "slick-carousel": "^1.8.1",
