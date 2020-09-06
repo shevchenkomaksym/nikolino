@@ -35,6 +35,7 @@ footer.footer {
     color: #fff;
     font-size: 0.833rem;
     line-height: 15px;
+    text-align: center;
     text-decoration: none !important;
     vertical-align: middle;
     @include transition();
@@ -69,10 +70,11 @@ footer.footer {
 
   &__contacts-link {
     display: inline-block;
+    width: max-content;
     margin: 0 0 14px;
     border: 1px solid rgba(174, 202, 186, 0.3);
     border-radius: 100px;
-    padding: 9px 24px;
+    padding: 9px 10px;
     color: #fff;
     text-decoration: none !important;
     @extend %gradient-text;
@@ -97,14 +99,16 @@ footer.footer {
 
   &__number {
     display: inline-block;
+    width: max-content;
     margin-bottom: 13px;
     color: #ffffff;
-    font-size: 1.6rem;
+    font-size: 1.5em;
     text-decoration: none !important;
   }
 
   &__modal-btn {
     display: inline-block;
+    width: max-content;
     color: #ffffff;
     text-decoration: none !important;
   }
@@ -135,6 +139,7 @@ footer.footer {
 .copyright {
   color: #D8D8D8;
   opacity: 0.5;
+  text-align: center;
 
   &__designer {
     a {

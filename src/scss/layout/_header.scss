@@ -17,20 +17,13 @@ header.header {
     -moz-box-shadow: 0 25px 24px rgba(207, 207, 207, 0.25);
     box-shadow: 0 25px 24px rgba(207, 207, 207, 0.25);
 
-    /*.logo {
-      img {
-        width: 150px;
-        height: 44px;
-      }
-    }*/
-    .callback-header {
-      &__number {
-        border-bottom: 4px dashed #FFC401;
-        padding-bottom: 4px;
-        font-size: 1.111rem;
-        font-weight: 600;
-      }
+    .site-menu__link {
+      background: #f8f9fa padding-box;
     }
+  }
+
+  &.menu-open {
+    z-index: 110;
   }
 }
 
@@ -58,6 +51,8 @@ header.header {
   outline: none !important;
   padding: 0;
   background: none;
+  @include transition();
+  z-index: 120;
 
   &__line {
     display: block;
@@ -66,6 +61,7 @@ header.header {
     margin: 0 auto;
     opacity: .4;
     background: #000;
+    @include transition();
   }
 
   &:before,
@@ -77,6 +73,27 @@ header.header {
     margin: 4px auto;
     opacity: .4;
     background: #000;
+    @include transition();
+  }
+
+  &.active {
+    &:before, &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .burger-button__line {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 
@@ -159,15 +176,27 @@ header.header {
       }
     }
   }
+
+  .button {
+    display: none;
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    width: max-content;
+    transform: translateX(-50%);
+  }
 }
 
 .callback-header {
   &__number {
+    display: inline-block;
+    margin-bottom: 18px;
     font-size: 1.556em;
     text-decoration: none !important;
   }
 
   &__modal-btn {
+    display: inline-block;
     text-decoration: none !important;
 
     &:after {

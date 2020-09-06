@@ -32,15 +32,15 @@ $primary: $main-first-color;
 
 $grid-breakpoints: (
         xs: 0,
-        sm: 576px,
-        md: 768px,
+        sm: 768px,
+        md: 991px,
         lg: 1080px,
-        xl: 1260px
+        xl: 1230px
 );
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
+        sm: 720px,
+        md: 960px,
+        lg: 1080px,
         xl: 1230px
 );

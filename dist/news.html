@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>Новости</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.a759a3f20546ff0c370c.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.46eb5d1e14bb374572c6.min.css" rel="stylesheet"></head>
 
 <body class="loaded">
 
@@ -14,8 +14,8 @@
     <!-- HEADER -->
     <header class="header position-fixed">
         <div class="container">
-            <div class="header-content row align-items-lg-end py-lg-4">
-                <div class="col-lg-2">
+            <div class="header-content row align-items-lg-end align-items-center py-lg-4">
+                <div class="col-2 col-lg-2 order-1 order-lg-1">
                     <a href="index.html" class="logo">
                         <picture>
                             <img src="img/default.svg" data-src="img/logo.svg" alt="loader" title="loader">
@@ -23,7 +23,7 @@
                     </a>
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-2 col-sm-1 col-lg-7 order-3 order-lg-2">
                     <nav class="site-menu d-flex flex-wrap">
                         <a href="about-us.html" class="site-menu__link active">О поселке</a>
                         <a href="#plan" class="site-menu__link">Генплан</a>
@@ -31,16 +31,18 @@
                         <a href="#region" class="site-menu__link">Участки</a>
                         <a href="#infrastructure" class="site-menu__link">Инфраструктура</a>
                         <a href="contacts.html" class="site-menu__link">Контакты</a>
+
+                        <!--<a href="contacts.html" class="site-menu__link button button-primary">Обратный звонок</a>-->
                     </nav>
                     <button class="burger-button">
                         <span class="burger-button__line"></span>
                     </button>
                 </div>
 
-                <div class="col-lg-3 pb-lg-2">
+                <div class="col-8 col-sm-9 col-lg-3 pb-lg-2 order-2 order-lg-3">
                     <div class="callback-header text-right">
-                        <a href="tel:88001001343" class="callback-header__number d-inline-block mb-lg-3">8-800-100-13-43</a>
-                        <a href="#callback" class="callback-header__modal-btn d-inline-block">Обратный звонок</a>
+                        <a href="tel:88001001343" class="callback-header__number">8-800-100-13-43</a>
+                        <a href="#callback" class="callback-header__modal-btn">Обратный звонок</a>
                     </div>
                 </div>
             </div>
@@ -159,7 +161,7 @@
                         <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
                     </picture>
 
-                    <p class="callback__title w-75">На связи!</p>
+                    <p class="callback__title">На связи!</p>
 
                     <p class="callback__text">Ирина
                         <span>Менеджер
@@ -171,7 +173,10 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="date" class="input">
+                                <input type="text" class="input datepicker" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-date"></use>
+                                </svg>
                             </label>
 
                             <label>
@@ -179,7 +184,7 @@
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone" class="input">
+                                <select name="timezone" id="timezone" class="input-select">
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -260,7 +265,7 @@
 
                 <div class="col-lg-10 pt-lg-2">
                     <div class="row">
-                        <div class="col-lg-9">
+                        <div class="col-lg-9 order-lg-1 order-3">
                             <nav class="footer-info pb-lg-4 border-0">
                                 <a href="about-us.html" class="footer-info__nav-link">О поселке</a>
                                 <a href="#plan" class="footer-info__nav-link">Генплан</a>
@@ -274,7 +279,7 @@
                                 <a href="contacts.html" class="footer-info__nav-link">Контакты</a>
                             </nav>
 
-                            <div class="footer-info d-flex flex-wrap">
+                            <div class="footer-info d-flex flex-wrap flex-column flex-sm-row">
                                 <p class="footer-info__title w-100 mb-3 font-weight-bold text-uppercase">Офисы продаж</p>
 
                                 <p class="footer-info__text">Краснодар ул. Сталинградская д.5
@@ -284,7 +289,7 @@
                                     <a href="tel:88001001343" class="footer-info__link d-inline-block font-weight-bold">8-800-100-13-43</a></p>
                             </div>
 
-                            <div class="footer-info d-flex flex-wrap">
+                            <div class="footer-info d-flex flex-wrap flex-column flex-sm-row">
                                 <p class="footer-info__title w-100 mb-3 font-weight-bold text-uppercase">Режим работы</p>
 
                                 <p class="footer-info__text">Понедельник — Пятница
@@ -295,18 +300,18 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3">
-                            <div class="footer-callback pb-lg-2">
+                        <div class="col-lg-3 order-lg-2 order-2">
+                            <div class="footer-callback d-flex flex-column flex-lg-row flex-wrap align-items-center align-items-lg-end pb-lg-2">
                                 <a href="tel:88001001343" class="footer-callback__number">8-800-100-13-43</a>
                                 <a href="#modal" class="footer-callback__modal-btn">Заказать обратный звонок</a>
                             </div>
 
-                            <div class="footer-info pb-lg-2 text-right">
+                            <div class="footer-info d-flex flex-column flex-wrap align-items-lg-end align-items-center pb-lg-2 text-right">
                                 <a href="mailto:info@nikolino-park.ru" class="footer-info__contacts-link">info@nikolino-park.ru</a>
                                 <a href="#privacy" class="footer-info__privacy">ФЗ о перcональных данных</a>
                             </div>
 
-                            <div class="footer-social d-flex flex-wrap justify-content-xl-around justify-content-between">
+                            <div class="footer-social d-flex flex-wrap justify-content-xl-around justify-content-lg-between justify-content-around">
                                 <a href="#1" class="footer-social__link" target="_blank">
                                     <svg>
                                         <use xlink:href="img/spritemap.svg#sprite-vk"></use>
@@ -332,9 +337,11 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
 
-                    <p class="copyright">2020 © ООО «Николино Парк» <span class="copyright__designer float-right">Дизайн — <a href="#" target="_blank">Карачинский</a></span></p>
+                        <div class="col-12 order-lg-3 order-1">
+                            <p class="copyright">2020 © ООО «Николино Парк» <span class="copyright__designer float-lg-right">Дизайн — <a href="#" target="_blank">Карачинский</a></span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -348,5 +355,5 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.a759a3f20546ff0c370c.min.js"></script></body>
+<script type="text/javascript" src="bundle.46eb5d1e14bb374572c6.min.js"></script></body>
 </html>
