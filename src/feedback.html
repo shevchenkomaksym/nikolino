@@ -42,7 +42,7 @@
                 <div class="col-8 col-sm-9 col-lg-3 pb-lg-2 order-2 order-lg-3">
                     <div class="callback-header text-right">
                         <a href="tel:88001001343" class="callback-header__number">8-800-100-13-43</a>
-                        <a href="#callback" class="callback-header__modal-btn">Обратный звонок</a>
+                        <button type="button" class="callback-header__modal-btn" data-toggle="modal" data-target="#callback">Обратный звонок</button>
                     </div>
                 </div>
             </div>
@@ -257,7 +257,7 @@
                         <div class="col-lg-3 order-lg-2 order-2">
                             <div class="footer-callback d-flex flex-column flex-lg-row flex-wrap align-items-center align-items-lg-end pb-lg-2">
                                 <a href="tel:88001001343" class="footer-callback__number">8-800-100-13-43</a>
-                                <a href="#modal" class="footer-callback__modal-btn">Заказать обратный звонок</a>
+                                <button type="button" class="footer-callback__modal-btn" data-toggle="modal" data-target="#callback">Заказать обратный звонок</button>
                             </div>
 
                             <div class="footer-info d-flex flex-column flex-wrap align-items-lg-end align-items-center pb-lg-2 text-right">
@@ -301,6 +301,67 @@
         </div>
     </footer>
     <!-- FOOTER END -->
+</div>
+
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="callback d-flex flex-wrap">
+                    <picture>
+                        <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/manager-img.png') %>" alt="manager">
+                    </picture>
+
+                    <p class="callback__title">На связи!</p>
+
+                    <p class="callback__text">Ирина
+                        <span>Менеджер
+                            по продажам</span>
+                    </p>
+
+                    <form action="" method="" class="callback__form">
+                        <button type="button" class="callback__form-switch">Выбрать время звонка</button>
+
+                        <fieldset class="callback__form-hide hide">
+                            <label>
+                                <input type="text" class="input datepicker" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-date"></use>
+                                </svg>
+                            </label>
+
+                            <label>
+                                <input type="time" class="input mask-time">
+                            </label>
+
+                            <label>
+                                <select name="timezone" id="timezone" class="input-select">
+                                    <option value="3">(GMT+3:00) Краснодар</option>
+                                    <option value="2">(GMT+2:00) Краснодар</option>
+                                    <option value="4">(GMT+4:00) Краснодар</option>
+                                </select>
+                            </label>
+                        </fieldset>
+
+                        <fieldset class="callback__form-visible d-inline-flex">
+                            <label>
+                                <input type="text" class="callback__form-phone input mask-phone" placeholder="+7">
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                <span class="callback__form-checkbox"></span>
+                                <span>Согласие на обработку ПД</span>
+                            </label>
+                        </fieldset>
+
+                        <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="icon-load"></div>

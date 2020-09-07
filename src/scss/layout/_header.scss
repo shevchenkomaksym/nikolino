@@ -197,7 +197,10 @@ header.header {
 
   &__modal-btn {
     display: inline-block;
+    border: none;
+    padding: 0;
     text-decoration: none !important;
+    background: none;
 
     &:after {
       content: '';

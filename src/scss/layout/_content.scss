@@ -453,7 +453,7 @@
     width: 25%;
 
     &:not(:last-child) {
-      .location__description:before {
+      .location__description:after {
         content: '';
         position: absolute;
         top: 50%;
@@ -608,13 +608,13 @@
 
     label {
       position: relative;
-      margin: 0 !important;
+      margin: 0;
       vertical-align: top;
 
       svg {
         position: absolute;
         top: 50%;
-        right: 57px;
+        right: 30px;
         width: 27px;
         height: 27px;
         fill: rgba(0, 0, 0, .33);
@@ -623,13 +623,12 @@
       }
 
       &:not(:last-child) {
-        input {
-          margin-right: 18px;
-        }
+        margin-right: 18px;
       }
 
       .datepicker {
         max-width: 330px;
+        padding-right: 80px !important;
       }
 
       .mask-time {
@@ -645,6 +644,7 @@
       border-bottom: 2px dashed #aaaaaa;
       padding: 0;
       overflow: visible;
+      background: none !important;
       &:after {
         content: '';
         position: absolute;
@@ -1856,6 +1856,7 @@ a.text-link-1 {
         height: 16px;
         transform: translateY(-50%);
         @include transition();
+        pointer-events: none;
       }
     }
 

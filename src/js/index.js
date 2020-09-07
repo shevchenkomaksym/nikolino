@@ -152,7 +152,7 @@ $(function () {
 
     $(window).on('load resize', function () {
         if ($(window).width() < 1080) {
-            $('.mobile-slider').slick({
+            if ($('.mobile-slider.slick-slider').length === 0) $('.mobile-slider').slick({
                 slidesToShow: 2,
                 slidesToScroll: 2,
                 infinite: true,
@@ -160,8 +160,8 @@ $(function () {
                 dots: true
             });
         }
-        else {
-            $('.mobile-slider').slick('unslick');
+        else if ($(window).width() >= 1080) {
+            if ($('.mobile-slider.slick-slider').length) $('.mobile-slider').slick('unslick');
         }
     });
 });

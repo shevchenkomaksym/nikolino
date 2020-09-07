@@ -426,6 +426,7 @@ input.input {
       background: #f5f4f3;
     }
     &-prev, &-next {
+      background: none !important;
       cursor: pointer;
       span {
         display: inline-block;
@@ -578,6 +579,45 @@ input.input {
 
 .font-weight-sbold {
   font-weight: 600 !important;
+}
+
+.modal {
+  padding: 0 !important;
+  z-index: 105;
+
+  &-backdrop {
+    z-index: 104;
+  }
+
+  &-content {
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      border: none;
+      padding: 0;
+      color: rgba(0, 0, 0, .3);
+      font-size: 40px;
+      line-height: 0.5;
+      background: none;
+    }
+  }
+
+  .callback {
+    &__text {
+      width: 20%;
+    }
+
+    &__form {
+      width: 80%;
+
+      &-hide {
+        height: auto;
+      }
+    }
+  }
 }
 
 %gradient {

@@ -109,8 +109,11 @@ footer.footer {
   &__modal-btn {
     display: inline-block;
     width: max-content;
+    border: none;
+    padding: 0;
     color: #ffffff;
     text-decoration: none !important;
+    background: none;
   }
 }
 
