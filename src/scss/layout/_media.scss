@@ -2,9 +2,15 @@
 ****************** MEDIA STYLES ******************
 *************************************************/
 // min-width
-@media screen and (min-width: 320px) {}
-@include media-breakpoint-up(sm) {}
-@include media-breakpoint-up(md) {}
+@media screen and (min-width: 320px) {
+}
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
+}
+
 @include media-breakpoint-up(lg) {
   header.header {
     &.bg-light {
@@ -28,7 +34,9 @@
     text-align: left;
   }
 }
-@include media-breakpoint-up(xl) {}
+
+@include media-breakpoint-up(xl) {
+}
 
 // max-width
 @include media-breakpoint-down(lg) {
@@ -82,6 +90,7 @@
     }
   }
 }
+
 @include media-breakpoint-down(md) {
   .slick-slider {
     .slick-dots {
@@ -92,6 +101,38 @@
   .ui-selectmenu-button {
     &.ui-button {
       max-width: none;
+    }
+  }
+
+  .breadcrumb {
+    margin: 25px 0;
+    text-align: left;
+
+    &__item {
+      &:first-child:before {
+        display: none;
+      }
+      &:not(:first-child) {
+        display: inline;
+      }
+    }
+
+    &__text {
+
+    }
+  }
+
+  .main-title {
+    font-size: 58px;
+    font-weight: 500;
+
+    &.smaller-main-title {
+      font-size: 58px;
+    }
+
+    .subtitle-2 {
+      font-size: 18px;
+      line-height: 1;
     }
   }
 
@@ -188,7 +229,7 @@
       text-align: left !important;
       text-transform: none !important;
       letter-spacing: normal !important;
-      
+
       span {
         text-align: left;
       }
@@ -383,9 +424,93 @@
       }
     }
   }
-
+  /*contact block*/
   .contact-section {
     display: none;
+  }
+
+  .news-subtitle {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .news {
+    &__box {
+      max-width: none;
+      margin: 0 auto 13px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  /*contacts page*/
+  .contacts {
+    &__title {
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    &__box {
+      display: inline-block;
+      width: 49%;
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      margin: 0;
+      font-size: 16px;
+      &-link {
+        display: block;
+        margin-top: 10px;
+        font-size: 24px;
+        font-weight: $font-weight-bold;
+      }
+
+      &-inside {
+        display: block;
+      }
+    }
+
+    &__mail {
+      display: inline-block;
+      margin: 0 auto 30px;
+      padding: 0;
+      color: $main-third-color !important;
+      font-weight: 600;
+      background: none !important;
+    }
+  }
+
+  .contacts-employees {
+    padding: 0;
+    background: none;
+
+    &__box {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .text-page-content {
+    padding: 18px 22px;
+
+    .paragraph {
+      &:before {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .not-found {
+    &__text {
+      font-size: 18px;
+    }
   }
 
   //footer
@@ -463,6 +588,7 @@
     }
   }
 }
+
 @include media-breakpoint-down(sm) {
   //content
   .section {
@@ -543,6 +669,57 @@
     }
   }
 
+  .contacts-employees {
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+
+      picture {
+        padding: 40px 30px;
+      }
+    }
+
+    &__info {
+      padding: 30px 25px;
+      background: #fff;
+    }
+  }
+
+  .reviews {
+    &__box {
+      flex-direction: column;
+      margin-top: 100px;
+      padding: 0 20px 35px;
+
+      &:not(:last-child) {
+        margin-bottom: 155px;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+        margin: -100px 0 26px;
+      }
+    }
+
+    &__date {
+      margin-bottom: 18px;
+    }
+
+    &__author {
+      margin-bottom: 16px;
+      &-age {
+        font-size: 18px;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -558,6 +735,7 @@
     }
   }
 }
+
 @include media-breakpoint-down(xs) {
   input.input {
     max-width: 100% !important;
@@ -578,10 +756,16 @@
     font-size: 18px;
   }
 
+  .main-title {
+    &.smaller-main-title {
+      font-size: 25px;
+    }
+  }
+
   //content
   .button {
     height: 51px;
-    padding: 15px 30px;
+    padding: 15px 20px;
     font-size: 15px;
   }
 
@@ -679,6 +863,51 @@
     }
   }
 
+  .contacts {
+    &__box {
+      width: 100%;
+    }
+
+    .button {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+    }
+  }
+
+  .text-page-content {
+    .heading-2 {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .news {
+    &__date {
+      font-size: 9px;
+    }
+
+    &__title {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &__link {
+      font-weight: bold;
+    }
+  }
+
+  .not-found {
+    padding: 25px 20px 30px;
+    background: #fff;
+    box-shadow: 0px 14px 34px rgba(156, 143, 124, 0.36);
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -692,7 +921,22 @@
     }
   }
 }
+
 @media screen and (max-width: 540px) {
+  .breadcrumb {
+    &__item {
+      font-size: 12px;
+    }
+  }
+
+  .main-title {
+    font-size: 25px;
+
+    .subtitle-2 {
+      font-size: 16px;
+    }
+  }
+
   //header
   .logo {
     img {
@@ -759,6 +1003,40 @@
     }
   }
 
+  .contacts-employees {
+    &__name {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+
+    &__phone {
+      font-size: 12px;
+    }
+  }
+
+  .reviews {
+    &__box {
+      margin-top: 50px;
+      &:not(:last-child) {
+        margin-bottom: 75px;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+      }
+    }
+  }
+
+  .news-subtitle {
+    font-size: 16px;
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -770,6 +1048,7 @@
     }
   }
 }
+
 @media screen and (max-width: 460px) {
   //content
   .main-section {
@@ -806,6 +1085,23 @@
     }
   }
 
+  .contacts-employees {
+    &__box {
+      picture {
+        padding: 20px 10px 20px 0;
+
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+    }
+
+    &__info {
+      padding: 20px 10px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -813,7 +1109,15 @@
     }
   }
 }
+
 @media screen and (max-width: 395px) {
+  //content
+  .not-found {
+    &__text {
+      font-size: 12px;
+    }
+  }
+
   //footer
   .footer-info {
     text-align: left;
