@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
-    <title>Text page</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.3e404db3adbe0529db83.min.css" rel="stylesheet"></head>
+    <title>Баухаус</title>
+</head>
 
 <body class="loaded">
 
@@ -18,7 +18,7 @@
                 <div class="col-2 col-lg-2 order-1 order-lg-1">
                     <a href="index.html" class="logo">
                         <picture>
-                            <img src="img/default.svg" data-src="img/logo.svg" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="loader" title="loader">
                         </picture>
                     </a>
                 </div>
@@ -57,133 +57,116 @@
                 <div class="row align-items-baseline">
                     <div class="col-lg-2">
                         <nav class="breadcrumb">
-                            <a href="index.html" class="breadcrumb__item"><span class="breadcrumb__text">на главную</span></a>
+                            <a href="houses.html" class="breadcrumb__item"><span class="breadcrumb__text">к списку домов</span></a>
                             <a href="#2" class="breadcrumb__item"><span class="breadcrumb__text">Второй</span></a>
                             <a href="#3" class="breadcrumb__item"><span class="breadcrumb__text">Трертий</span></a>
                         </nav>
                     </div>
 
                     <div class="col-lg-10">
-                        <h1 class="main-title smaller-main-title">политика конфиденциальности</h1>
+                        <h1 class="main-title">баухаус</h1>
+
+                        <p class="head-block__subtitle house-price m-0"><span>классика</span><span>от 4 999 108 ₽</span></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section text-page">
-            <div class="container text-page-content">
-                <div class="row">
-                    <div class="offset-lg-2 col-lg-10">
-                        <p>Для нас «Николино Премьер» - это место, где соседи не просто знают друг друга по имени, а гармонично живут вместе: дружат семьями, ходят в гости, а дети играют на одной площадке. Именно для этого мы спроектировали улицы с открытыми фасадами домов.</p>
-                        <p>Иными словами, индивидуальный забор располагается не по всему периметру земельного участка, а огораживает внутренний двор, фасад же дома остается открытым. Такое решение преображает улицу, делая ее прекрасным общим пространством для прогулок, общения и иного приятного времяпрепровождения.</p>
-                        <h3 class="heading-2 paragraph">Политика конфиденциальности</h3>
-                        <p>Для нас «Николино Премьер» - это место, где соседи не просто знают друг друга по имени, а гармонично живут вместе: дружат семьями, ходят в гости, а дети играют на одной площадке. Именно для этого мы спроектировали улицы с открытыми фасадами домов.</p>
-                        <p>Иными словами, индивидуальный забор располагается не по всему периметру земельного участка, а огораживает внутренний двор, фасад же дома остается открытым. Такое решение преображает улицу, делая ее прекрасным общим пространством для прогулок, общения и иного приятного времяпрепровождения.</p>
-                        <p><a href="" class="text-link-1">Фасад же дома остается открытым.</a></p>
-                        <h2 class="heading-2 paragraph">Политика конфиденциальности</h2>
-                        <p>Для нас «Николино Премьер» - это место, где соседи не просто знают друг друга по имени, а гармонично живут вместе: дружат семьями, ходят в гости, а дети играют на одной площадке. Именно для этого мы спроектировали улицы с открытыми фасадами домов.</p>
-                        <p>Иными словами, индивидуальный забор располагается не по всему периметру земельного участка, а огораживает внутренний двор, фасад же дома остается открытым. Такое решение преображает улицу, делая ее прекрасным общим пространством для прогулок, общения и иного приятного времяпрепровождения.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="section about-house-section">
+            <div class="container about-house">
+                <div class="about-house-sliders">
+                    <div class="about-house__facade">
+                        <div class="about-house__facade-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
 
-        <div class="section callback-section">
-            <div class="container">
-                <div class="callback d-flex flex-wrap">
-                    <picture>
-                        <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
-                    </picture>
+                        <div class="about-house__facade-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
 
-                    <p class="callback__title">На связи!</p>
+                        <div class="about-house__facade-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
 
-                    <p class="callback__text">Ирина
-                        <span>Менеджер
-                            по продажам</span>
-                    </p>
+                        <div class="about-house__facade-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
 
-                    <form action="" method="" class="callback__form">
-                        <button type="button" class="callback__form-switch">Выбрать время звонка</button>
-
-                        <fieldset class="callback__form-hide hide">
-                            <label>
-                                <input type="text" class="input datepicker" placeholder="ДД.ММ.ГГГГ" readonly>
-                                <svg>
-                                    <use xlink:href="img/spritemap.svg#sprite-date"></use>
-                                </svg>
-                            </label>
-
-                            <label>
-                                <input type="time" class="input mask-time">
-                            </label>
-
-                            <label>
-                                <select name="timezone" id="timezone" class="input-select">
-                                    <option value="3">(GMT+3:00) Краснодар</option>
-                                    <option value="2">(GMT+2:00) Краснодар</option>
-                                    <option value="4">(GMT+4:00) Краснодар</option>
-                                </select>
-                            </label>
-                        </fieldset>
-
-                        <fieldset class="callback__form-visible d-inline-flex">
-                            <label>
-                                <input type="text" class="callback__form-phone input mask-phone" placeholder="+7">
-                            </label>
-
-                            <label>
-                                <input type="checkbox">
-                                <span class="callback__form-checkbox"></span>
-                                <span>Согласие на обработку ПД</span>
-                            </label>
-                        </fieldset>
-
-                        <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="section contact-section">
-            <div class="container">
-                <div class="contacts-block text-center">
-                    <a href="tel:88001001343" class="contacts-block__number">8-800-100-13-43</a>
-
-                    <div class="contacts-block__social">
-                        <p class="contacts-block__social-text text-left">Много интересного
-                            в наших соцсетях</p>
-
-                        <div class="contacts-block__social-list">
-                            <a href="#1" class="contacts-block__social-link" target="_blank">
-                                <svg>
-                                    <use xlink:href="img/spritemap.svg#sprite-vk"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#2" class="contacts-block__social-link" target="_blank">
-                                <svg>
-                                    <use xlink:href="img/spritemap.svg#sprite-fb"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#3" class="contacts-block__social-link" target="_blank">
-                                <svg>
-                                    <use xlink:href="img/spritemap.svg#sprite-ok"></use>
-                                </svg>
-                            </a>
-
-                            <a href="#4" class="contacts-block__social-link" target="_blank">
-                                <svg>
-                                    <use xlink:href="img/spritemap.svg#sprite-inst"></use>
-                                </svg>
-                            </a>
+                        <div class="about-house__facade-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
                         </div>
                     </div>
+
+                    <div class="about-house__layout">
+                        <div class="about-house__layout-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
+
+                        <div class="about-house__layout-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
+
+                        <div class="about-house__layout-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
+
+                        <div class="about-house__layout-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
+
+                        <div class="about-house__layout-slide">
+                            <picture>
+                                <img src="<%= require('./img/house-01.png') %>" alt="">
+                            </picture>
+                        </div>
+                    </div>
+
+                    <div class="about-house__switch">
+                        <button type="button" class="about-house__switch-button">фасад</button>
+                        <button type="button" class="about-house__switch-button">планировка</button>
+                    </div>
+                </div>
+
+                <div class="about-house__info">
+                    <div class="about-house__info-item"><span></span></div>
+                    <div class="about-house__info-item"><span></span></div>
+                    <div class="about-house__info-item"><span></span></div>
+                    <div class="about-house__info-item"></div>
+                    <div class="about-house__info-item"></div>
+                    <div class="about-house__info-item"></div>
                 </div>
             </div>
         </div>
     </main>
     <!-- CONTENT END -->
+
+    <div class="background-site">
+        <div class="container position-relative">
+            <div class="elem elem-1">
+                <picture>
+                    <img src="<%= require('./img/bg-ico-1.svg') %>" alt="bg">
+                </picture>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -192,7 +175,7 @@
                 <div class="col-lg-2 pt-lg-2">
                     <a href="index.html" class="footer-logo">
                         <picture>
-                            <img src="img/default.svg" data-src="img/logo-colorless.svg" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo-colorless.svg') %>" alt="loader" title="loader">
                         </picture>
                     </a>
                 </div>
@@ -273,7 +256,8 @@
                         </div>
 
                         <div class="col-12 order-lg-3 order-1">
-                            <p class="copyright">2020 © ООО «Николино Парк» <span class="copyright__designer float-lg-right">Дизайн — <a href="#" target="_blank">Карачинский</a></span></p>
+                            <p class="copyright">2020 © ООО «Николино Парк» <span class="copyright__designer float-lg-right">Дизайн — <a href="#"
+                                                                                                                                         target="_blank">Карачинский</a></span></p>
                         </div>
                     </div>
                 </div>
@@ -290,7 +274,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <div class="callback d-flex flex-wrap">
                     <picture>
-                        <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
+                        <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/manager-img.png') %>" alt="manager">
                     </picture>
 
                     <p class="callback__title">На связи!</p>
@@ -350,5 +334,7 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.3e404db3adbe0529db83.min.js"></script></body>
+</body>
 </html>
+
+

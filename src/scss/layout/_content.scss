@@ -540,6 +540,25 @@
   }
 }
 
+#map {
+  height: 450px;
+  box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+
+  &.contacts-map {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 // Callback
 .callback-section {
   padding: 50px 0;
@@ -548,7 +567,7 @@
 .callback {
   picture {
     display: inline-block;
-    width: 15%;
+    width: 20%;
     text-align: center;
 
     img {
@@ -561,7 +580,7 @@
 
   &__title {
     display: inline-block;
-    width: 85%;
+    width: 80%;
     margin: 0;
     padding: 0 0 0 60px;
     color: $main-first-color;
@@ -803,7 +822,6 @@
 
 .head-block {
   &__subtitle {
-    max-width: 420px;
     font-size: 1.444em;
     font-weight: $font-weight-medium;
   }
@@ -1592,6 +1610,62 @@ a.text-link-1 {
         padding: 0;
         color: $main-third-color;
         font-size: 0.667em;
+      }
+    }
+  }
+}
+
+// House cart
+.house-price {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &:before {
+    content: '';
+    flex-grow: 1;
+    order: 2;
+    display: block;
+    margin: 0 20px;
+    border-top: 1px dashed #000;
+  }
+
+  span {
+    &:first-child {
+      order: 1;
+    }
+    &:last-child {
+      order: 3;
+    }
+  }
+}
+
+.about-house-section {
+
+}
+
+.about-house {
+  &-sliders {
+
+  }
+
+  &__facade {
+    &-slide {
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  &__layout {
+    &-slide {
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
       }
     }
   }

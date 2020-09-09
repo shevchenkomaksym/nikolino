@@ -97,10 +97,9 @@
 }
 
 .main-title {
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
   font-size: 6.5rem;
   font-weight: $font-weight-light;
-  line-height: .95;
   @extend %gradient-text;
 }
 
@@ -247,14 +246,45 @@ input.input {
     border: none;
     border-radius: 100%;
     color: #ffffff;
+    font-size: 0;
     transform: translateY(-50%);
     z-index: 1;
 
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 3px;
+      height: 20px;
+      background: #fff;
+    }
+    &:before {
+      top: 43%;
+    }
+    &:after {
+      top: 57%
+    }
+
     &.slick-prev {
       left: 22px;
+
+      &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
     }
     &.slick-next {
       right: 22px;
+
+      &:before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &:after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
     }
   }
 
@@ -579,6 +609,10 @@ input.input {
 
 .font-weight-sbold {
   font-weight: 600 !important;
+}
+
+.text-pre-line {
+  white-space: pre-line;
 }
 
 .modal {

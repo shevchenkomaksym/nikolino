@@ -5,23 +5,17 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'popper.js';
 import 'slick-carousel';
-import 'nouislider';
-import IMask from 'imask';
 import 'jquery-ui';
-import '../../node_modules/jquery-ui/ui/widgets/tabs';
-import '../../node_modules/jquery-ui/ui/widgets/selectmenu';
-import '../../node_modules/jquery-ui/ui/widgets/slider';
-import '../../node_modules/jquery-ui/ui/widgets/checkboxradio';
-import '../../node_modules/jquery-ui/ui/widgets/datepicker';
-import '../../node_modules/jquery-ui/ui/i18n/datepicker-ru';
-import '../../node_modules/jquery-ui/ui/effect';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-icons_444444_256x240.png';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-icons_555555_256x240.png';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-icons_777620_256x240.png';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-icons_777777_256x240.png';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-icons_cc0000_256x240.png';
-// import '../../node_modules/jquery-ui/themes/base/images/ui-icons_ffffff_256x240.png';
+import 'jquery-ui/ui/effect';
+import 'jquery-ui/ui/widgets/tabs';
+import 'jquery-ui/ui/widgets/selectmenu';
+import 'jquery-ui/ui/widgets/slider';
+import 'jquery-ui/ui/widgets/checkboxradio';
+import 'jquery-ui/ui/widgets/datepicker';
+import 'jquery-ui/ui/i18n/datepicker-ru';
+import IMask from 'imask';
+import '../img/map-logo.svg';
+// import ymaps from 'ymaps'
 
 $(window).on('load', function () {
     let b = $('body');
@@ -56,6 +50,30 @@ $(function () {
             imgObserve.observe(image);
         });
     }
+
+    /*const iframes = document.querySelectorAll('.video-preview');
+    let observerFrame = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > 0) {
+                let newFrame = document.createElement('iframe');
+                let source = entry.target.getAttribute('data-src');
+
+                newFrame.setAttribute('src', source);
+                newFrame.setAttribute('allowfullscreen', '1');
+
+                newFrame.onload = function() {
+                    entry.target.remove();
+                };
+
+                entry.target.parentNode.appendChild(newFrame);
+            }
+        });
+    });
+    if (iframes.length > 0) {
+        iframes.forEach(function (frame) {
+            observerFrame.observe(frame);
+        });
+    }*/
 
     // Scroll to up
     const scrollTop = $('.scroll-top');
@@ -148,6 +166,14 @@ $(function () {
         infinite: false,
         // autoplay: true,
         // autoplaySpeed: 5000
+    });
+
+    // about house sliders
+    $('.about-house__facade, .about-house__layout').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
     });
 
     $(window).on('load resize', function () {
@@ -339,3 +365,30 @@ $(function () {
         });
     });
 });
+
+/*https://api-maps.yandex.ru/2.1/?lang=ru_RU*/
+/*https://api-maps.yandex.ru/2.1/?apikey=39c338bb-8bcf-41ce-8e93-12b6b6a1212a&lang=ru_RU*/
+
+ymaps.load().then(maps => {
+    $('#map').children('picture').remove();
+
+    const map = new maps.Map('map', {
+            center: [45.101284, 39.056416],
+            zoom: 11
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+        // const MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div>$[properties.iconContent]</div>');
+        myPlacemark = new ymaps.Placemark(map.getCenter(), {
+            hintContent: 'Николино Парк — экопоселок в Краснодаре',
+            balloonContent: 'Николино Парк'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-logo.svg',
+            iconImageSize: [86, 69],
+            iconImageOffset: [-43, -34]
+        });
+
+    map.geoObjects.add(myPlacemark);
+}).catch(error => console.log('Failed to load Yandex Maps', error));
