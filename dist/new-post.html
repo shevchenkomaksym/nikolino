@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>New post</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.3e404db3adbe0529db83.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.26480a293aedb4a47bca.min.css" rel="stylesheet"></head>
 
 <body class="loaded">
 
@@ -158,18 +158,18 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="text" class="input datepicker" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" readonly>
                                 <svg>
                                     <use xlink:href="img/spritemap.svg#sprite-date"></use>
                                 </svg>
                             </label>
 
                             <label>
-                                <input type="time" class="input mask-time">
+                                <input type="time" class="input mask-time required">
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone" class="input-select">
+                                <select name="timezone" id="timezone" class="input-select" required>
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -179,7 +179,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone" placeholder="+7">
+                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7">
                             </label>
 
                             <label>
@@ -296,9 +296,9 @@
                         </div>
 
                         <div class="col-lg-3 order-lg-2 order-2">
-                            <div class="footer-callback d-flex flex-column flex-lg-row flex-wrap align-items-center align-items-lg-end pb-lg-2">
+                            <div class="footer-callback d-flex flex-wrap flex-column flex-lg-row align-content-center justify-content-md-center justify-content-lg-end pb-lg-2">
                                 <a href="tel:88001001343" class="footer-callback__number">8-800-100-13-43</a>
-                                <button type="button" class="footer-callback__modal-btn" data-toggle="modal" data-target="#callback">Заказать обратный звонок</button>
+                                <button type="button" class="footer-callback__modal-btn text-center text-lg-right" data-toggle="modal" data-target="#callback">Заказать обратный звонок</button>
                             </div>
 
                             <div class="footer-info d-flex flex-column flex-wrap align-items-lg-end align-items-center pb-lg-2 text-right">
@@ -344,7 +344,7 @@
     <!-- FOOTER END -->
 </div>
 
-<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="reserve" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-body">
@@ -354,7 +354,7 @@
                         <img src="img/default.svg" data-src="img/manager-img.png" alt="manager">
                     </picture>
 
-                    <p class="callback__title">На связи!</p>
+                    <p class="callback__title" id="reserve">Забронировать участок</p>
 
                     <p class="callback__text">Ирина
                         <span>Менеджер
@@ -377,7 +377,7 @@
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone" class="input-select">
+                                <select name="timezone" id="timezone-modal" class="input-select">
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -411,5 +411,5 @@
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.3e404db3adbe0529db83.min.js"></script></body>
+<script type="text/javascript" src="bundle.26480a293aedb4a47bca.min.js"></script></body>
 </html>

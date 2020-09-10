@@ -375,7 +375,7 @@ input.input {
     li {
       &.main-tabs__tab {
         top: auto;
-        height: 98px;
+        max-height: 98px;
         float: none;
         margin: 0;
         border: 0;
@@ -408,7 +408,7 @@ input.input {
 
         &_first {
           .ui-tabs-anchor {
-            border-bottom: 3px dashed $main-second-color;
+            border-bottom: 3px dashed $main-second-color !important;
             @extend %gradient-text;
           }
 
@@ -446,7 +446,7 @@ input.input {
   -moz-border-radius: 12px;
   border-radius: 12px;
   background: #ffffff;
-  z-index: 101 !important;
+  z-index: 105 !important;
 
   .ui-datepicker {
     &-header {
@@ -583,6 +583,7 @@ input.input {
     border-radius: 0 0 40px 40px;
     background: #ffffff;
     overflow: hidden;
+    z-index: 105 !important;
   }
 }
 
@@ -639,7 +640,17 @@ input.input {
     }
   }
 
+  input.input {
+    margin-bottom: 18px;
+    padding: 17px 20px !important;
+  }
+
   .callback {
+    &__title {
+      color: #000000;
+      font-size: 2em;
+    }
+
     &__text {
       width: 20%;
     }
@@ -649,6 +660,21 @@ input.input {
 
       &-hide {
         height: auto;
+        margin-bottom: 18px;
+      }
+
+      .datepicker {
+        max-width: 260px;
+        padding-right: 60px !important;
+      }
+
+      .ui-selectmenu-button.ui-button {
+        max-width: 380px;
+        padding: 21px 45px 21px 20px;
+      }
+
+      svg {
+        right: 25px;
       }
     }
   }

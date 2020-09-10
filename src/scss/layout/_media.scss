@@ -46,6 +46,30 @@
     }
   }
 
+  .modal {
+    .callback {
+      picture {
+        width: 20%;
+      }
+      &__title {
+        width: 80%;
+      }
+      &__text {
+        width: 20%;
+      }
+      &__form {
+        width: 80%;
+        svg {
+          top: 40%;
+        }
+
+        &-submit {
+          margin-top: 18px;
+        }
+      }
+    }
+  }
+
   //header
   .site-menu {
     &__link {
@@ -92,6 +116,24 @@
 }
 
 @include media-breakpoint-down(md) {
+  .modal .callback {
+    &__text {
+      width: 40%;
+    }
+
+    &__form {
+      width: 100%;
+
+      label:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      &-submit {
+        margin: 0;
+      }
+    }
+  }
+
   .slick-slider {
     .slick-dots {
       padding: 18px 0 0;
@@ -322,6 +364,11 @@
     }
   }
 
+  .houses-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
   .infrastructure-section {
     .container {
       padding-top: 28px;
@@ -347,6 +394,14 @@
   .location {
     &__description {
       padding: 54px 20px;
+    }
+  }
+
+  .partners {
+    padding: 35px 0 0;
+
+    picture {
+      margin-bottom: 45px;
     }
   }
 
@@ -513,6 +568,53 @@
     }
   }
 
+  .main-tabs {
+    &.ui-tabs {
+      .ui-tabs-nav {
+        li {
+          &.main-tabs__tab {
+            &_first.ui-tabs-active {
+              .ui-tabs-anchor {
+                border-width: 0;
+              }
+            }
+
+            .ui-tabs-anchor {
+              border-color: #000;
+              color: #000;
+              font-size: 2em;
+            }
+          }
+
+          &:nth-child(2) {
+            margin: 0 25px;
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+  }
+
+  .house {
+    &__cart-name {
+      order: 2;
+      margin: 0 0 5px;
+      font-family: $font-family-base;
+      font-size: 1em;
+      font-weight: bold;
+      text-align: left;
+      letter-spacing: 3px;
+
+      picture {
+        order: 1;
+      }
+    }
+
+    &__cart-info {
+      order: 3;
+    }
+  }
+
   //footer
   footer.footer {
     padding-top: 43px;
@@ -616,6 +718,8 @@
   }
 
   .land-section {
+    padding: 40px 0 0 0;
+
     .row hr {
       display: none;
     }
@@ -753,7 +857,12 @@
   }
 
   .ui-menu .ui-menu-item-wrapper {
+    padding: 20px;
     font-size: 18px;
+  }
+
+  .modal .callback__form label {
+    margin: 0 auto !important;
   }
 
   .main-title {
@@ -937,6 +1046,12 @@
     }
   }
 
+  .modal {
+    .callback__title {
+      font-size: 25px;
+    }
+  }
+
   //header
   .logo {
     img {
@@ -1001,6 +1116,10 @@
         }
       }
     }
+  }
+
+  .houses-subtitle {
+    font-size: 12px;
   }
 
   .contacts-employees {
@@ -1099,6 +1218,15 @@
 
     &__info {
       padding: 20px 10px;
+    }
+  }
+
+  .partners {
+    picture {
+      img {
+        max-width: 110px;
+        height: 36px;
+      }
     }
   }
 

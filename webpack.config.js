@@ -54,6 +54,10 @@ module.exports = {
                         outputPath: 'fonts'
                     }
                 }
+            },
+            {
+                test: /\.xml/,
+                use: 'raw-loader',
             }
         ]
     },

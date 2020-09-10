@@ -1,5 +1,14 @@
 import '../scss/main.scss';
 import '../img/logo-h.svg';
+import '../img/map-logo.svg';
+import '../img/map-01.svg';
+import '../img/map-02.svg';
+import '../img/map-03.svg';
+import '../img/map-04.svg';
+import '../img/map-05.svg';
+import '../img/map-06.svg';
+import '../img/map-07.svg';
+import data from './data.xml';
 import 'intersection-observer';
 import $ from 'jquery';
 import 'bootstrap';
@@ -10,12 +19,11 @@ import 'jquery-ui/ui/effect';
 import 'jquery-ui/ui/widgets/tabs';
 import 'jquery-ui/ui/widgets/selectmenu';
 import 'jquery-ui/ui/widgets/slider';
+import 'jquery-ui/ui/widgets/accordion';
 import 'jquery-ui/ui/widgets/checkboxradio';
 import 'jquery-ui/ui/widgets/datepicker';
 import 'jquery-ui/ui/i18n/datepicker-ru';
 import IMask from 'imask';
-import '../img/map-logo.svg';
-// import ymaps from 'ymaps'
 
 $(window).on('load', function () {
     let b = $('body');
@@ -119,7 +127,7 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
     });
@@ -130,7 +138,7 @@ $(function () {
         slidesToScroll: 1,
         arrows: true,
         dots: true,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
     });
@@ -141,7 +149,7 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 5000
     });
@@ -152,7 +160,7 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 5000
     });
@@ -163,7 +171,7 @@ $(function () {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        infinite: false,
+        infinite: true,
         // autoplay: true,
         // autoplaySpeed: 5000
     });
@@ -172,6 +180,7 @@ $(function () {
     $('.about-house__facade, .about-house__layout').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
+        infinite: true,
         arrows: true,
         dots: true,
     });
@@ -240,6 +249,12 @@ $(function () {
         console.log(tabIndex);
         mainTabs.tabs("option", "active", tabIndex);
     });
+    // tabs vertical
+    $('.vertical-tabs').tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+    $('.vertical-tabs').removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+
+    // Accordion
+    $('.tabs-accordion').accordion();
 
     // Slider price
     let rangeSlider = document.querySelectorAll('.calculate__range');
@@ -258,7 +273,7 @@ $(function () {
                 let sliderWidth = /\d+/.exec($(this).css('width'));
                 let rvPosition = Math.round(Number(srPosition[0]) * 100 / Number(sliderWidth[0])) + '%';
 
-                let a = +rvWidth/2;
+                let a = +rvWidth / 2;
                 let b = +srPosition[0];
                 let sliderWidthVal = +sliderWidth[0];
                 let posValue = (b + a) - sliderWidthVal;
@@ -267,17 +282,17 @@ $(function () {
 
                 if (a >= b) {
                     rangeValue.css({
-                        left: a+'px',
+                        left: a + 'px',
                     });
                 }
-                else if ((a+b) < sliderWidthVal) {
+                else if ((a + b) < sliderWidthVal) {
                     rangeValue.css({
                         left: rvPosition,
                         transform: 'translateX(-50%)',
                     });
                 }
                 else {
-                    rangeValue.css('left', 'calc(100% - '+ a +'px)');
+                    rangeValue.css('left', 'calc(100% - ' + a + 'px)');
                 }
             },
             change: function (event, ui) {
@@ -289,7 +304,7 @@ $(function () {
                 let sliderWidth = /\d+/.exec($(this).css('width'));
                 let rvPosition = Math.round(Number(srPosition[0]) * 100 / Number(sliderWidth[0])) + '%';
 
-                let a = +rvWidth/2;
+                let a = +rvWidth / 2;
                 let b = +srPosition[0];
                 let sliderWidthVal = +sliderWidth[0];
                 let posValue = (b + a) - sliderWidthVal;
@@ -298,17 +313,17 @@ $(function () {
 
                 if (a >= b) {
                     rangeValue.css({
-                        left: a+'px',
+                        left: a + 'px',
                     });
                 }
-                else if ((a+b) < sliderWidthVal) {
+                else if ((a + b) < sliderWidthVal) {
                     rangeValue.css({
                         left: rvPosition,
                         transform: 'translateX(-50%)',
                     });
                 }
                 else {
-                    rangeValue.css('left', 'calc(100% - '+ a +'px)');
+                    rangeValue.css('left', 'calc(100% - ' + a + 'px)');
                 }
             }
         });
@@ -363,24 +378,55 @@ $(function () {
         let mask = IMask(e, {
             mask: '{+7}(000)000-00-00'
         });
+
+        let placeholder = '+7(';
+        e.onfocus = function () {
+            if (this.value === placeholder || this.value === '') {
+                this.value = placeholder
+            }
+        };
+        e.onblur = function () {
+            if (this.value === placeholder) {
+                this.value = ''
+            }
+        };
+    });
+
+    // Sliders switch
+    $('.about-house__switch').on('click', '.about-house__switch-button', function () {
+        let indexCurrent = $(this).index();
+        let indexOff = indexCurrent > 0 ? indexCurrent - 1 : indexCurrent + 1;
+        let sliders = $('.about-house-sliders .slick-slider');
+
+        if (!$(this).hasClass('active')) {
+            $('.about-house__switch-button.active').removeClass('active');
+            $(this).addClass('active');
+            sliders.eq(indexOff).addClass('position-absolute').fadeOut();
+            sliders.eq(indexCurrent).removeClass('position-absolute').fadeIn().slick('slickGoTo', 0);
+        } else {
+            return false;
+        }
+    });
+
+    $('.about-house__switch-button').each(function (i, e) {
+        if ($(e).hasClass('active')) $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').hide();
     });
 });
 
-/*https://api-maps.yandex.ru/2.1/?lang=ru_RU*/
-/*https://api-maps.yandex.ru/2.1/?apikey=39c338bb-8bcf-41ce-8e93-12b6b6a1212a&lang=ru_RU*/
-
-ymaps.load().then(maps => {
+if ($('#map').length) {
     $('#map').children('picture').remove();
-
-    const map = new maps.Map('map', {
+    ymaps.load().then(maps => {
+        const map = new maps.Map('map', {
             center: [45.101284, 39.056416],
             zoom: 11
         }, {
             searchControlProvider: 'yandex#search'
-        }),
+        });
 
-        // const MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div>$[properties.iconContent]</div>');
-        myPlacemark = new ymaps.Placemark(map.getCenter(), {
+        map.behaviors.disable('scrollZoom');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) map.behaviors.disable('drag');
+
+        const myPlacemark = new ymaps.Placemark(map.getCenter(), {
             hintContent: 'Николино Парк — экопоселок в Краснодаре',
             balloonContent: 'Николино Парк'
         }, {
@@ -390,5 +436,121 @@ ymaps.load().then(maps => {
             iconImageOffset: [-43, -34]
         });
 
-    map.geoObjects.add(myPlacemark);
-}).catch(error => console.log('Failed to load Yandex Maps', error));
+        const placemarket1 = new ymaps.Placemark([45.035470, 38.975313], {
+            hintContent: 'Краснодар'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-01.svg',
+            iconImageSize: [92, 32],
+            iconImageOffset: [-46, -16]
+        });
+        const placemarket2 = new ymaps.Placemark([45.093275, 38.981266], {
+            hintContent: 'Спорт и отдых'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-02.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        });
+        const placemarket3 = new ymaps.Placemark([45.031720, 39.046046], {
+            hintContent: 'Магазины и ТЦ'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-03.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        });
+        const placemarket4 = new ymaps.Placemark([45.088725, 39.121138], {
+            hintContent: 'Медицинские учреждения'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-04.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        });
+        const placemarket5 = new ymaps.Placemark([45.034333, 39.138979], {
+            hintContent: 'Аэропорт'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-05.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        });
+        const placemarket6 = new ymaps.Placemark([45.074286, 39.193945], {
+            hintContent: 'Школы и десткие сады'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-06.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        });
+        const placemarket7 = new ymaps.Placemark([45.052368, 39.017724], {
+            hintContent: 'Рестораны и кафе'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-07.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        });
+
+
+        map.geoObjects
+            .add(myPlacemark)
+            .add(placemarket1)
+            .add(placemarket2)
+            .add(placemarket3)
+            .add(placemarket4)
+            .add(placemarket4)
+            .add(placemarket5)
+            .add(placemarket5)
+            .add(placemarket6)
+            .add(placemarket7);
+    }).catch(error => console.log('Failed to load Yandex Maps', error));
+}
+
+
+// ymaps.ready(init);
+/*
+function init() {
+        // Создание экземпляра карты.
+        var myMap = new ymaps.Map('map', {
+            center: [50.443705, 30.530946],
+            zoom: 12,
+            controls: []
+        });
+
+        // Загрузка YMapsML-файла.
+        ymaps.geoXml.load('data.xml').then(function (res) {
+                    res.geoObjects.each(function (item) {
+                        addMenuItem(item, myMap);
+                    });
+                },
+                // Вызывается в случае неудачной загрузки YMapsML-файла.
+                function (error) {
+                    alert("При загрузке YMapsML-файла произошла ошибка: " + error);
+                });
+
+        // Добавление элемента в список.
+        function addMenuItem(group, map) {
+            // Показать/скрыть группу геообъектов на карте.
+            $("<a class=\"title\" href=\"#\">" + group.properties.get('name') + "</a>")
+                .bind("click", function () {
+                    let link = $(this);
+                    // Если пункт меню "неактивный", то добавляем группу на карту,
+                    // иначе - удаляем с карты.
+                    if (link.hasClass("active")) {
+                        map.geoObjects.remove(group);
+                    } else {
+                        map.geoObjects.add(group);
+                    }
+                    // Меняем "активность" пункта меню.
+                    link.toggleClass("active");
+                    return false;
+                })
+                // Добавление нового пункта меню в список.
+                .appendTo(
+                    $("<li></li>").appendTo($("#menu"))
+                );
+        }
+    }
+}*/
