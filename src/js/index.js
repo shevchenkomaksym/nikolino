@@ -8,7 +8,6 @@ import '../img/map-04.svg';
 import '../img/map-05.svg';
 import '../img/map-06.svg';
 import '../img/map-07.svg';
-import data from './data.xml';
 import 'intersection-observer';
 import $ from 'jquery';
 import 'bootstrap';
@@ -250,11 +249,14 @@ $(function () {
         mainTabs.tabs("option", "active", tabIndex);
     });
     // tabs vertical
-    $('.vertical-tabs').tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-    $('.vertical-tabs').removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+    $('.vertical-tabs').tabs()
+        .addClass("ui-tabs-vertical ui-helper-clearfix ui-corner-left")
+        .removeClass("ui-corner-top");
 
     // Accordion
-    $('.tabs-accordion').accordion();
+    $('.tabs-accordion').accordion({
+        heightStyle: "content"
+    });
 
     // Slider price
     let rangeSlider = document.querySelectorAll('.calculate__range');
@@ -362,11 +364,15 @@ $(function () {
     $("input[type='radio']").checkboxradio();
 
     // Input date
-    $('input.datepicker').datepicker({
+    let datepicker = $('input.datepicker')
+    datepicker.datepicker({
         showOtherMonths: true,
         selectOtherMonths: true,
         minDate: new Date(),
         showAnim: 'slideDown'
+    });
+    datepicker.on('keydown keypress paste', function (e) {
+        e.preventDefault();
     });
 
     // Input select
@@ -399,7 +405,7 @@ $(function () {
         let sliders = $('.about-house-sliders .slick-slider');
 
         if (!$(this).hasClass('active')) {
-            $('.about-house__switch-button.active').removeClass('active');
+            $('.about-house__switch-button').eq(indexOff).removeClass('active');
             $(this).addClass('active');
             sliders.eq(indexOff).addClass('position-absolute').fadeOut();
             sliders.eq(indexCurrent).removeClass('position-absolute').fadeIn().slick('slickGoTo', 0);
@@ -409,7 +415,15 @@ $(function () {
     });
 
     $('.about-house__switch-button').each(function (i, e) {
-        if ($(e).hasClass('active')) $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').hide();
+        if (!$(e).hasClass('active')) {
+            $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
+        }
+    });
+
+    // Plans switch
+    $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {
+        let index = Number($(this).data('index'));
+        $('.plans__images-wrap picture').eq(index).toggleClass('hide');
     });
 });
 
@@ -507,50 +521,3 @@ if ($('#map').length) {
             .add(placemarket7);
     }).catch(error => console.log('Failed to load Yandex Maps', error));
 }
-
-
-// ymaps.ready(init);
-/*
-function init() {
-        // Создание экземпляра карты.
-        var myMap = new ymaps.Map('map', {
-            center: [50.443705, 30.530946],
-            zoom: 12,
-            controls: []
-        });
-
-        // Загрузка YMapsML-файла.
-        ymaps.geoXml.load('data.xml').then(function (res) {
-                    res.geoObjects.each(function (item) {
-                        addMenuItem(item, myMap);
-                    });
-                },
-                // Вызывается в случае неудачной загрузки YMapsML-файла.
-                function (error) {
-                    alert("При загрузке YMapsML-файла произошла ошибка: " + error);
-                });
-
-        // Добавление элемента в список.
-        function addMenuItem(group, map) {
-            // Показать/скрыть группу геообъектов на карте.
-            $("<a class=\"title\" href=\"#\">" + group.properties.get('name') + "</a>")
-                .bind("click", function () {
-                    let link = $(this);
-                    // Если пункт меню "неактивный", то добавляем группу на карту,
-                    // иначе - удаляем с карты.
-                    if (link.hasClass("active")) {
-                        map.geoObjects.remove(group);
-                    } else {
-                        map.geoObjects.add(group);
-                    }
-                    // Меняем "активность" пункта меню.
-                    link.toggleClass("active");
-                    return false;
-                })
-                // Добавление нового пункта меню в список.
-                .appendTo(
-                    $("<li></li>").appendTo($("#menu"))
-                );
-        }
-    }
-}*/

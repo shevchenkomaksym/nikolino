@@ -18,7 +18,11 @@ header.header {
     box-shadow: 0 25px 24px rgba(207, 207, 207, 0.25);
 
     .site-menu__link {
-      background: #f8f9fa padding-box;
+      background: #f8f9fa;
+
+      &.active {
+        background-clip: padding-box;
+      }
     }
   }
 

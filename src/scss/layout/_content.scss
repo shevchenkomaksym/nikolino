@@ -108,6 +108,12 @@
       top: 850px;
       left: -15%;
     }
+
+    &-3 {
+      top: 4374px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -706,6 +712,7 @@
     }
 
     &-checkbox {
+      position: relative;
       display: inline-block;
       width: 27px;
       height: 27px;
@@ -724,10 +731,24 @@
 
       &:before {
         content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: inline-block;
+        border-radius: inherit;
+        @extend %gradient;
+        z-index: -1;
       }
 
-      &:after {
-        content: '';
+      &:hover {
+        background: #ffffff padding-box;
+        border: 3px solid transparent;
+        &:before {
+          margin: -3px;
+          @extend %gradient;
+        }
       }
 
       & + * {
@@ -739,20 +760,10 @@
     }
 
     input[type="checkbox"]:checked + .callback__form-checkbox {
+      background: transparent;
+      border: 5px solid #ffffff;
       &:before {
-        content: '';
-        display: inline-block;
-        width: 17px;
-        height: 17px;
-        margin: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        @extend %gradient;
-      }
-
-      &:after {
-        content: '';
+        margin: -5px;
       }
     }
 
@@ -808,8 +819,17 @@
         height: 35px;
       }
 
-      &:hover {
-
+      &:nth-child(1):hover svg {
+        fill: #597da3;
+      }
+      &:nth-child(2):hover svg {
+        fill: #3b5998;
+      }
+      &:nth-child(3):hover svg {
+        fill: #EE8208;
+      }
+      &:nth-child(4):hover svg {
+        fill: url(#gradient1) #ccc;
       }
     }
   }
@@ -824,6 +844,18 @@
   &__subtitle {
     font-size: 1.444em;
     font-weight: $font-weight-medium;
+
+    &.lands-subtitle {
+      margin-bottom: 34px;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-height: 530px;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
@@ -1627,6 +1659,7 @@ a.text-link-1 {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 40px;
 
   &:before {
     content: '';
@@ -1684,7 +1717,7 @@ a.text-link-1 {
 
   &__switch {
     position: absolute;
-    bottom: 75px;
+    bottom: 90px;
     left: 55px;
     display: flex;
     flex-wrap: wrap;
@@ -1713,11 +1746,240 @@ a.text-link-1 {
       }
 
       &.active {
-        color: #000;
+        color: #ffffff;
         background: #F9C50F;
         box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.51);
       }
     }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 82px 92px 77px;
+
+    &-item {
+      flex: 0 1 auto;
+      width: 26%;
+      margin-bottom: 49px;
+      font-size: 26px;
+      font-weight: 500;
+
+      &:nth-child(3n+3) {
+        flex: 50 0 auto;
+      }
+
+      span {
+        display: block;
+        flex-shrink: 1;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// House option
+.house-option {
+  margin-bottom: 80px;
+  border-radius: 12px;
+  padding: 60px 45px;
+  background: #fff;
+  box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
+
+  .title {
+    margin-bottom: 96px;
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 320px;
+    height: 100%;
+    text-align: center;
+
+    picture {
+      width: 100%;
+      margin: 0 auto 55px;
+      text-align: center;
+
+      img {
+        max-width: 191px;
+        max-height: 191px;
+        object-fit: cover;
+        object-position: center;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
+      }
+    }
+  }
+}
+
+.house-add-option {
+  width: 88%;
+  margin: 0 auto;
+  border-bottom: 1px solid #666666;
+
+  .title {
+    margin-bottom: 67px;
+    text-align: center;
+  }
+
+  &__summ {
+    position: relative;
+    margin-top: 58px;
+    padding: 43px 100px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      display: block;
+      max-width: 365px;
+      width: 100%;
+      height: 5px;
+      background: $main-third-color;
+    }
+
+    .title {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    color: $main-third-color;
+    font-size: 3.611em;
+  }
+}
+
+// House equipment
+.equipment-house-section {}
+
+.equipment-house {
+  .title {
+    margin-bottom: 66px;
+  }
+
+  &__tabs {
+    &.ui-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-bottom: 84px;
+      padding: 0;
+      &:before, &:after {
+        display: none;
+      }
+
+      .ui-tabs-nav {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 33%;
+        max-width: 375px;
+
+        padding: 0;
+        &:before, &:after {
+          display: none;
+        }
+
+        li {
+          display: inline-flex;
+          margin: 0;
+          &.ui-tabs-active {
+            padding: 0;
+            background: #fff;
+            box-shadow: -50px 44px 64px rgba(0, 0, 0, 0.1);
+
+            .ui-tabs-anchor {
+              font-weight: bold;
+            }
+          }
+
+          .ui-tabs-anchor {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            padding: 12px 37px 12px 67px;
+            color: $text-color !important;
+            font-size: 1.111111em;
+            white-space: normal;
+
+            picture {
+              display: inline-block;
+              margin-right: 32px;
+              border: 1px solid #000;
+              border-radius: 100%;
+
+              img {
+                width: 74px;
+                height: 74px;
+                border: 3px solid transparent;
+                border-radius: inherit;
+              }
+            }
+          }
+        }
+      }
+
+      .ui-tabs-panel {
+        flex: 3 1 auto;
+        width: 67%;
+        padding: 0;
+        background: #ffffff;
+        box-shadow: 0px 44px 128px rgba(0, 0, 0, 0.1);
+
+        .tabs-accordion {
+          width: 100%;
+
+          .ui-accordion-header {
+            padding: 24px 31px;
+            outline: none !important;
+            font-size: 1.111em;
+            font-weight: bold;
+            &:nth-of-type(even) {
+              background: #F7F7F7;
+            }
+          }
+
+          .ui-accordion-content {
+            padding: 11px 51px 34px;
+            font-size: 0.778em;
+
+            p:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    margin-bottom: -28px;
+  }
+}
+
+// House video
+.house-video-section {
+  .section-bg:after {
+    background: #EEEDEC !important;
+  }
+}
+
+.house-video {
+  padding: 90px 0 67px;
+
+  .title {
+    margin-bottom: 60px;
   }
 }
 
@@ -1729,6 +1991,7 @@ a.text-link-1 {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
+    box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
   }
 
   .title {
@@ -1775,6 +2038,10 @@ a.text-link-1 {
         content: '— ';
       }
     }
+  }
+
+  &__link {
+    color: #ffffff;
   }
 }
 
@@ -2105,6 +2372,78 @@ a.text-link-1 {
       width: 100%;
       height: 60px;
       margin: 0 auto;
+    }
+  }
+}
+
+.plans-section {
+  padding: 83px 0 36px;
+}
+
+.plans {
+  &__title-text {
+    margin-bottom: 11px;
+    @extend .plans__text;
+  }
+
+  &__text {
+    font-size: 1.444em;
+    font-weight: 500;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 40px;
+    padding: 0;
+
+    li:nth-child(2) {
+      margin: 0 10px;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 65px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      @extend %gradient;
+    }
+
+    &:hover {
+      padding: 10px 30px;
+      color: #fff;
+      border-radius: 44px 0;
+      @extend %gradient;
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__images-wrap {
+    display: flex;
+
+    picture {
+      width: 50%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0px 32px 128px rgba(151, 139, 121, 0.9);
+      @include transition();
+      &.hide {
+        opacity: .1;
+      }
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

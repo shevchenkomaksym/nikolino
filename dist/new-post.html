@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no">
     <title>New post</title>
-<link rel="shortcut icon" href="favicon.ico"><link href="style.26480a293aedb4a47bca.min.css" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="style.f62c322c484a51bac2f7.min.css" rel="stylesheet"></head>
 
 <body class="loaded">
 
@@ -158,18 +158,18 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" pattern="^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$" required>
                                 <svg>
                                     <use xlink:href="img/spritemap.svg#sprite-date"></use>
                                 </svg>
                             </label>
 
                             <label>
-                                <input type="time" class="input mask-time required">
+                                <input type="time" class="input mask-time" pattern="^[0-9]{2}:[0-9]{2}$" required>
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone" class="input-select" required>
+                                <select name="timezone" class="input-select" required>
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -179,7 +179,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7">
+                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -366,18 +366,18 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="text" class="input datepicker" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" pattern="^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$" required>
                                 <svg>
                                     <use xlink:href="img/spritemap.svg#sprite-date"></use>
                                 </svg>
                             </label>
 
                             <label>
-                                <input type="time" class="input mask-time">
+                                <input type="time" class="input mask-time" pattern="^[0-9]{2}:[0-9]{2}$" required>
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone-modal" class="input-select">
+                                <select name="timezone" class="input-select" required>
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -387,7 +387,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone" placeholder="+7">
+                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -406,10 +406,21 @@
 </div>
 
 <div class="icon-load"></div>
+<div id="svg">
+    <svg>
+        <defs>
+            <linearGradient id="gradient1" x1="1" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#32C5FF"/>
+                <stop offset="50%" stop-color="#B620E0"/>
+                <stop offset="100%" stop-color="#F7B500"/>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
 <button class="scroll-top">Вверх
     <span class="scroll-top__background"></span>
 </button>
 <!-- BODY END   -->
 
-<script type="text/javascript" src="bundle.26480a293aedb4a47bca.min.js"></script></body>
+<script type="text/javascript" src="bundle.f62c322c484a51bac2f7.min.js"></script></body>
 </html>
