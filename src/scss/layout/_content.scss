@@ -1648,6 +1648,9 @@ a.text-link-1 {
         padding: 0;
         color: $main-third-color;
         font-size: 0.667em;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
     }
   }
@@ -1800,6 +1803,8 @@ a.text-link-1 {
     justify-content: center;
     max-height: 320px;
     height: 100%;
+    font-size: 1.333em;
+    font-weight: 500;
     text-align: center;
 
     picture {
@@ -2377,7 +2382,7 @@ a.text-link-1 {
 }
 
 .plans-section {
-  padding: 83px 0 36px;
+  padding: 0 0 36px;
 }
 
 .plans {
