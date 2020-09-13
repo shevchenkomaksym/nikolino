@@ -16,9 +16,9 @@
         <div class="container">
             <div class="header-content row align-items-lg-end align-items-center py-lg-4">
                 <div class="col-2 col-lg-2 order-1 order-lg-1">
-                    <a href="index.html" class="logo">
+                    <a href="index.html" class="logo" data-src="<%= require('./img/logo.svg') %>" data-logo="<%= require('./img/logo-h.svg') %>">
                         <picture>
-                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="logo" title="logo">
                         </picture>
                     </a>
                 </div>
@@ -117,6 +117,7 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-01.png') %>" alt="">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-1"></use></svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -130,6 +131,7 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-02.png') %>" alt="">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-2"></use></svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -143,6 +145,7 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-03.png') %>" alt="">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-3"></use></svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -156,6 +159,7 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-04.png') %>" alt="">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-4"></use></svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -169,6 +173,7 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-05.png') %>" alt="">
+                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-5"></use></svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -630,7 +635,9 @@
     </div>
 </div>
 
-<div class="icon-load"></div>
+<div class="icon-load">
+    <picture><img src="<%= require('./img/loader.svg') %>" alt="preloader"></picture>
+</div>
 <div id="svg">
     <svg>
         <defs>

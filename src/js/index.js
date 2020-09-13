@@ -1,5 +1,4 @@
 import '../scss/main.scss';
-import '../img/logo-h.svg';
 import '../img/map-logo.svg';
 import '../img/map-01.svg';
 import '../img/map-02.svg';
@@ -95,29 +94,32 @@ $(function () {
     });
 
     // Scroll event
-    $(window).on('scroll', function () {
+    $(window).on('load scroll', function () {
         let yOffset = window.pageYOffset;
         let header = $('header.header');
+        let logo = $('.logo');
+        let logoImg = logo.find('img');
+        let logoMain = logo.data('src');
+        let logoMin = logo.data('logo');
+
         if (yOffset > 0) {
             header.addClass('bg-light');
             header.find('.row').removeClass('py-lg-4');
             header.find('.row').addClass('py-lg-2');
-            $('.logo img').attr('src', '../img/logo-h.svg');
+            logoImg.attr('src', logoMin);
         }
         else {
             header.removeClass('bg-light');
             header.find('.row').removeClass('py-lg-2');
             header.find('.row').addClass('py-lg-4');
-            $('.logo img').attr('src', '../img/logo.svg');
+            logoImg.attr('src', logoMain);
         }
 
-        if (yOffset >= 800) scrollTop.addClass('active'); else scrollTop.removeClass('active');
-    });
-
-    $(window).on('load scroll', function () {
         if ($(window).width() < 1080) {
-            $('.logo img').attr('src', '../img/logo.svg');
+            logoImg.attr('src', logoMain);
         }
+
+        yOffset >= 800 ? scrollTop.addClass('active') : scrollTop.removeClass('active');
     });
 });
 
@@ -167,7 +169,7 @@ $(function () {
     });
 
     // service slider
-    $('.service-village__slider').slick({
+    /*$('.service-village__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -175,7 +177,7 @@ $(function () {
         infinite: true,
         // autoplay: true,
         // autoplaySpeed: 5000
-    });
+    });*/
 
     // about house sliders
     $('.about-house__facade, .about-house__layout').slick({

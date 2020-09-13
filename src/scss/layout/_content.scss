@@ -45,7 +45,7 @@
     width: 20px;
     height: 4px;
     background: #000000;
-    @include transition();
+    @include transition($transition-base);
   }
   &:before {
     left: calc(50% - 8px);
@@ -73,7 +73,7 @@
     visibility: hidden;
     @extend %gradient;
     z-index: -1;
-    @include transition();
+    @include transition($transition-base);
   }
   &:hover .scroll-top__background {
     opacity: 1;
@@ -190,7 +190,7 @@
   .slick-slide {
     opacity: 0;
     visibility: hidden;
-    @include transition();
+    @include transition($transition-base);
 
     &.slick-current {
       opacity: 1;
@@ -288,7 +288,10 @@
 
     img {
       width: 100%;
-      @include transition();
+      height: 235px;
+      object-fit: cover;
+      object-position: center;
+      @include transition($transition-base);
     }
     &-name {
       position: relative;
@@ -333,7 +336,7 @@
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      @include transition();
+      @include transition($transition-base);
     }
 
     &:hover {
@@ -404,7 +407,7 @@
       object-position: center;
       margin: 0 auto 40px;
       box-shadow: 0 0 0 2px #fff;
-      @include transition();
+      @include transition($transition-base);
     }
 
     p {
@@ -436,7 +439,8 @@
 }
 
 // Infrastructure page
-.infrastructure-section {}
+.infrastructure-section {
+}
 
 .infrastructure {
   margin-bottom: 60px;
@@ -451,6 +455,7 @@
 
   &__image {
     width: 100%;
+    height: 340px;
     margin-top: -180px;
     object-fit: cover;
     object-position: center;
@@ -487,6 +492,7 @@
         width: 194px;
         height: 194px;
         margin: 0 auto 62px;
+        border-radius: 100%;
         object-fit: cover;
         object-position: center;
       }
@@ -520,12 +526,15 @@
 
   &__slider {
     &.slick-slider .slick-dots {
-      padding-top: 0;
+      padding-top: 30px;
     }
 
     &-item {
       img {
         width: 100%;
+        height: 550px;
+        object-fit: cover;
+        object-position: center;
       }
     }
   }
@@ -594,7 +603,7 @@
     position: relative;
     padding: 54px 40px;
     z-index: -1;
-    @include transition();
+    @include transition($transition-base);
   }
 
   &__numbers {
@@ -682,9 +691,13 @@
     text-align: center;
 
     img {
+      width: 172px;
+      height: 172px;
       -webkit-border-radius: 100px;
       -moz-border-radius: 100px;
       border-radius: 100px;
+      object-fit: cover;
+      object-position: center;
       box-shadow: 0 63px 92px rgba(201, 189, 171, .7);
     }
   }
@@ -786,7 +799,7 @@
         border-right: 8px solid transparent;
         border-left: 8px solid transparent;
         transform: translateY(-50%);
-        @include transition();
+        @include transition($transition-base);
       }
 
       &.on {
@@ -799,7 +812,7 @@
     &-hide {
       height: 70px;
       margin-bottom: 43px;
-      @include transition();
+      @include transition($transition-base);
 
       &.hide {
         height: 0;
@@ -984,7 +997,7 @@
 
   img {
     width: 100%;
-    max-height: 530px;
+    height: 530px;
     margin: 0 auto;
     object-fit: contain;
     object-position: center;
@@ -998,9 +1011,10 @@
 
 .about {
   &__block {
+    margin-bottom: 150px;
     background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0px 63px 92px rgba(201, 189, 171, 0.7);
+    box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
   }
 
   &__video {
@@ -1068,6 +1082,17 @@
       box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
     }
   }
+
+  .title {
+    margin-bottom: 60px;
+    span {
+      display: inline-block;
+      max-width: 480px;
+      margin-left: 150px;
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+  }
 }
 
 .about-slider {
@@ -1075,11 +1100,17 @@
     img {
       width: 100%;
       height: 530px;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
 
 // Utilities
+.communic-section {
+  padding: 74px 0 160px;
+}
+
 .utilities {
   &:after {
     content: '';
@@ -1173,7 +1204,11 @@
     transform: translateY(-50%);
 
     img {
-
+      width: 230px;
+      height: 230px;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     svg {
@@ -1202,7 +1237,11 @@
 
 // About reviews
 .about-review-section {
+  margin-bottom: 40px;
 
+  .title {
+    margin-bottom: 105px;
+  }
 }
 
 .about-review {
@@ -1212,7 +1251,7 @@
 
   .slick-slide {
     opacity: 0;
-    @include transition();
+    @include transition($transition-base);
 
     &.slick-active {
       opacity: 1;
@@ -1227,7 +1266,7 @@
     background: #fff;
     border-radius: 22px;
     box-shadow: 0px 63px 92px rgba(228, 226, 222, 0.7), inset 0px -6px 0px rgba(179, 179, 179, 0.15);
-    @include transition();
+    @include transition($transition-base);
 
     &:hover {
       box-shadow: 0px 33px 64px #C9BDAB, inset 0px -6px 0px rgba(179, 179, 179, 0.15);
@@ -1239,6 +1278,8 @@
     height: 100px;
     margin: -57px 0 20px;
     border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   &__date {
@@ -1301,12 +1342,17 @@
       }
     }
   }
+
+  .news-link {
+    width: max-content;
+    padding: 22px;
+  }
 }
 
 .about-news {
   &__background {
     position: absolute;
-    bottom: 60px;
+    top: 100px;
   }
 
   &__slider {
@@ -1316,7 +1362,7 @@
 
     .slick-slide {
       opacity: 0;
-      @include transition();
+      @include transition($transition-base);
 
       &.slick-active {
         opacity: 1;
@@ -1334,6 +1380,9 @@
 
   &__img {
     width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
   }
 
   &__description {
@@ -1352,7 +1401,9 @@
   }
 
   &__text {
+    max-height: 155px;
     margin-bottom: 25px;
+    overflow: hidden;
   }
 
   &__link {
@@ -1433,20 +1484,15 @@
     }
   }
 
-  &__slider {
+  &__house {
+    position: relative;
     max-width: 823px;
     margin-left: -15px;
-
-    &-item {
-      position: relative;
-    }
 
     img {
 
     }
-  }
 
-  &__slide {
     &-signature {
       position: absolute;
       bottom: 0;
@@ -1512,7 +1558,7 @@
     padding: 4px 20px 6px;
     color: $main-third-color;
     background: #ffffff;
-    @include transition();
+    @include transition($transition-base);
 
     &-text {
       border-bottom: 1px solid $main-third-color;
@@ -1592,7 +1638,7 @@
     max-width: 333px;
     margin: 0 auto 35px;
     padding: 12px 12px 18px;
-    @include transition();
+    @include transition($transition-base);
 
     &:hover {
       background: #ffffff;
@@ -1600,7 +1646,11 @@
     }
 
     img {
+      width: 100%;
+      height: 170px;
       margin-bottom: 15px;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -1619,6 +1669,7 @@
     border-bottom: 1px dashed $main-third-color;
     color: $main-third-color;
     font-size: .5em;
+    font-weight: bold;
     text-transform: uppercase;
   }
 
@@ -1739,6 +1790,9 @@
 
     img {
       width: 100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
@@ -1815,7 +1869,7 @@ a.text-link-1 {
 
       img {
         width: 100%;
-        max-height: 314px;
+        height: 314px;
         object-fit: cover;
         object-position: center;
       }
@@ -1899,6 +1953,7 @@ a.text-link-1 {
     &-slide {
       img {
         width: 100%;
+        height: 550px;
         object-fit: cover;
         object-position: center;
       }
@@ -1909,6 +1964,7 @@ a.text-link-1 {
     &-slide {
       img {
         width: 100%;
+        height: 550px;
         object-fit: cover;
         object-position: center;
       }
@@ -2010,8 +2066,8 @@ a.text-link-1 {
       text-align: center;
 
       img {
-        max-width: 191px;
-        max-height: 191px;
+        width: 191px;
+        height: 191px;
         object-fit: cover;
         object-position: center;
         -webkit-border-radius: 100%;
@@ -2315,7 +2371,7 @@ a.text-link-1 {
         font-size: 1.444em;
         font-weight: 500;
         white-space: nowrap;
-        @include transition();
+        @include transition($transition-base);
 
         .ui-icon {
           width: 34px;
@@ -2469,7 +2525,7 @@ a.text-link-1 {
         width: 16px;
         height: 16px;
         transform: translateY(-50%);
-        @include transition();
+        @include transition($transition-base);
         pointer-events: none;
       }
     }
@@ -2639,7 +2695,7 @@ a.text-link-1 {
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0px 32px 128px rgba(151, 139, 121, 0.9);
-      @include transition();
+      @include transition($transition-base);
       &.hide {
         opacity: .1;
       }
@@ -2681,7 +2737,7 @@ a.text-link-1 {
         width: 15%;
         margin: 0;
         padding: 40px 7px;
-        @include transition();
+        @include transition($transition-base);
         &:before {
           content: '';
           position: absolute;
@@ -2691,7 +2747,7 @@ a.text-link-1 {
           height: 9px;
           transform: translateX(-50%);
           @extend %gradient;
-          @include transition();
+          @include transition($transition-base);
         }
         &.ui-state-hover {
           .ui-tabs-anchor {
@@ -2756,7 +2812,7 @@ a.text-link-1 {
               border-radius: 100%;
               transform: translate(-50%, -50%) scale(.5);
               z-index: -1;
-              @include transition();
+              @include transition($transition-base);
               @extend %gradient;
             }
 
@@ -2764,6 +2820,8 @@ a.text-link-1 {
               width: 85px;
               height: 85px;
               border-radius: inherit;
+              object-fit: cover;
+              object-position: center;
               box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
             }
           }
@@ -2819,6 +2877,9 @@ a.text-link-1 {
 
       img {
         width: 100%;
+        height: 530px;
+        object-fit: cover;
+        object-position: center;
       }
     }
   }

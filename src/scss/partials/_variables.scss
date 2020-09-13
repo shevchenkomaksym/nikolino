@@ -22,7 +22,7 @@ $font-size-default: 18px;
 $line-height-base: 1.25;
 
 // behavior
-$transition-base: all .3s ease 0s;
+$transition-base: all .3s ease 0s !important;
 
 // plugins var
 $lg-path-fonts: '../../node_modules/lightgallery/src/fonts';

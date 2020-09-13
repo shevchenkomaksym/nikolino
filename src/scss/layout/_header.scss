@@ -10,7 +10,7 @@ header.header {
   min-width: 320px;
   width: 100%;
   z-index: 100;
-  @include transition();
+  @include transition($transition-base);
 
   &.bg-light {
     -webkit-box-shadow: 0 25px 24px rgba(207, 207, 207, 0.25);
@@ -32,7 +32,7 @@ header.header {
 }
 
 .header-content {
-  @include transition();
+  @include transition($transition-base);
 }
 
 .logo {
@@ -41,7 +41,7 @@ header.header {
 
   img {
     width: 150px;
-    @include transition();
+    @include transition($transition-base);
   }
 }
 
@@ -55,7 +55,7 @@ header.header {
   outline: none !important;
   padding: 0;
   background: none;
-  @include transition();
+  @include transition($transition-base);
   z-index: 120;
 
   &__line {
@@ -65,7 +65,7 @@ header.header {
     margin: 0 auto;
     opacity: .4;
     background: #000;
-    @include transition();
+    @include transition($transition-base);
   }
 
   &:before,
@@ -77,7 +77,7 @@ header.header {
     margin: 4px auto;
     opacity: .4;
     background: #000;
-    @include transition();
+    @include transition($transition-base);
   }
 
   &.active {
@@ -114,7 +114,7 @@ header.header {
     text-align: center;
     text-decoration: none !important;
     background: #f5f4f3;
-    @include transition();
+    @include transition($transition-base);
 
     &:not(:last-child) {
       margin-right: 5px;
@@ -130,7 +130,7 @@ header.header {
       height: 1px;
       background: rgba(0, 0, 0, 0.33);
       transform: translateX(-50%);
-      @include transition();
+      @include transition($transition-base);
     }
 
     &.active {

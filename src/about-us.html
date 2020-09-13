@@ -16,9 +16,9 @@
         <div class="container">
             <div class="header-content row align-items-lg-end align-items-center py-lg-4">
                 <div class="col-2 col-lg-2 order-1 order-lg-1">
-                    <a href="index.html" class="logo">
+                    <a href="index.html" class="logo" data-src="<%= require('./img/logo.svg') %>" data-logo="<%= require('./img/logo-h.svg') %>">
                         <picture>
-                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="logo" title="logo">
                         </picture>
                     </a>
                 </div>
@@ -93,13 +93,19 @@
                         </div>
 
                         <div id="gallery" class="about__gallery">
-                            <a href="<%= require('./img/house-01.png') %>" class="about__button button button-square">больше фото<img src="<%= require('./img/house-01.png') %>" class="d-none" alt=""></a>
+                            <a href="<%= require('./img/house-01.png') %>" class="about__button button button-square">больше фото<img src="<%= require('./img/house-01.png') %>"
+                                                                                                                                      class="d-none" alt=""></a>
 
-                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>" alt=""></a>
-                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>" alt=""></a>
-                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>" alt=""></a>
-                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>" alt=""></a>
-                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>" alt=""></a>
+                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>"
+                                                                                                                                 alt=""></a>
+                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>"
+                                                                                                                                 alt=""></a>
+                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>"
+                                                                                                                                 alt=""></a>
+                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>"
+                                                                                                                                 alt=""></a>
+                            <a href="<%= require('./img/default.svg') %>" class="about__button button button-square d-none"><img src="<%= require('./img/default.svg') %>"
+                                                                                                                                 alt=""></a>
                         </div>
                     </div>
 
@@ -116,7 +122,8 @@
 
                 <div class="row">
                     <div class="col-10 offset-2">
-                        <h2 class="title">Эко-стиль</h2>
+                        <h2 class="title">Эко-стиль <span>Была идея добавить кнопку для выбора времени, но 2 кнопки на одной форме как то не очень смотрятся. Можно поставить радиобаттон и если человек ставит галочку и нажимает</span>
+                        </h2>
                     </div>
                 </div>
 
@@ -212,7 +219,9 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-01.png') %>" alt="">
-                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-1"></use></svg>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-comm-1"></use>
+                                </svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -226,7 +235,9 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-02.png') %>" alt="">
-                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-2"></use></svg>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-comm-2"></use>
+                                </svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -240,7 +251,9 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-03.png') %>" alt="">
-                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-3"></use></svg>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-comm-3"></use>
+                                </svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -254,7 +267,9 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-04.png') %>" alt="">
-                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-4"></use></svg>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-comm-4"></use>
+                                </svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -268,7 +283,9 @@
                         <div class="utilities__item">
                             <picture class="utilities__img">
                                 <img src="<%= require('./img/utilities-05.png') %>" alt="">
-                                <svg><use xlink:href="img/spritemap.svg#sprite-comm-5"></use></svg>
+                                <svg>
+                                    <use xlink:href="img/spritemap.svg#sprite-comm-5"></use>
+                                </svg>
                             </picture>
 
                             <div class="utilities__description">
@@ -283,8 +300,13 @@
 
         <div class="section about-review-section">
             <div class="container">
-                <div class="row col-10 offset-2">
-                    <h2 class="title">Отзывы</h2>
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-2">
+                        <h2 class="title">Отзывы</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="feedback.html" class="button button-violet">все отзывы</a>
+                    </div>
                 </div>
 
                 <div class="about-review">
@@ -368,9 +390,12 @@
         <div class="section about-news-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 offset-lg-2">
+                    <div class="col-lg-8 offset-lg-2">
                         <h2 class="title">Новости
                             <span>и ход строительства</span></h2>
+                    </div>
+                    <div class="col-lg-2 align-self-lg-center">
+                        <a href="news.html" class="button button-violet news-link">все новости</a>
                     </div>
                 </div>
 
@@ -451,6 +476,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col text-right">
+                        <button class="button button-primary" data-toggle="modal" data-target="#documentation">документация</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -497,60 +528,14 @@
                         </div>
                     </div>
 
-                    <div class="service-village__slider">
-                        <div class="service-village__slider-item">
-                            <picture>
-                                <img src="<%= require('./img/service01.png') %>" alt="service">
-                            </picture>
+                    <div class="service-village__house">
+                        <picture>
+                            <img src="<%= require('./img/service01.png') %>" alt="service">
+                        </picture>
 
-                            <div class="service-village__slide-signature">
-                                <p class="service-village__slide-title">Дом семьи Иванов</p>
-                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
-                            </div>
-                        </div>
-
-                        <div class="service-village__slider-item">
-                            <picture>
-                                <img src="<%= require('./img/service01.png') %>" alt="service">
-                            </picture>
-
-                            <div class="service-village__slide-signature">
-                                <p class="service-village__slide-title">Дом семьи Иванов</p>
-                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
-                            </div>
-                        </div>
-
-                        <div class="service-village__slider-item">
-                            <picture>
-                                <img src="<%= require('./img/service01.png') %>" alt="service">
-                            </picture>
-
-                            <div class="service-village__slide-signature">
-                                <p class="service-village__slide-title">Дом семьи Иванов</p>
-                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
-                            </div>
-                        </div>
-
-                        <div class="service-village__slider-item">
-                            <picture>
-                                <img src="<%= require('./img/service01.png') %>" alt="service">
-                            </picture>
-
-                            <div class="service-village__slide-signature">
-                                <p class="service-village__slide-title">Дом семьи Иванов</p>
-                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
-                            </div>
-                        </div>
-
-                        <div class="service-village__slider-item">
-                            <picture>
-                                <img src="<%= require('./img/service01.png') %>" alt="service">
-                            </picture>
-
-                            <div class="service-village__slide-signature">
-                                <p class="service-village__slide-title">Дом семьи Иванов</p>
-                                <p class="service-village__slide-text">Николино Парк, 2015 год</p>
-                            </div>
+                        <div class="service-village__house-signature">
+                            <p class="service-village__house-title">Дом семьи Иванов</p>
+                            <p class="service-village__house-text">Николино Парк, 2015 год</p>
                         </div>
                     </div>
                 </div>
@@ -818,7 +803,51 @@
     </div>
 </div>
 
-<div class="icon-load"></div>
+<div class="modal fade" id="documentation" tabindex="-1" role="dialog" aria-labelledby="doc" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content document">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="modal-title">Документация</h3>
+                    </div>
+                </div>
+
+                <ul class="document__list">
+                    <li class="document__list-item">Документ может <a href="#doc" class="document__list-link">называться длинно как вы думаете</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Второй документ</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Третий пусть тоже будет подлинее</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Четвертый может быть таким же</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Пятый пусть будет покороче</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Шестой совсем прост</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Седьмой день для отдыха</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Восьмой тяжело генерить текст</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Девятый как название мультика</a></li>
+                </ul>
+
+                <div class="row">
+                    <div class="col-12">
+                        <a href="img/default.svg" download class="button button-primary">скачать все файлы</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="doc">Документация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="icon-load">
+    <picture><img src="<%= require('./img/loader.svg') %>" alt="preloader"></picture>
+</div>
 <div id="svg">
     <svg>
         <defs>
@@ -826,16 +855,6 @@
                 <stop offset="0%" stop-color="#32C5FF"/>
                 <stop offset="50%" stop-color="#B620E0"/>
                 <stop offset="100%" stop-color="#F7B500"/>
-            </linearGradient>
-
-            <linearGradient id="gradient2" x1="1" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#98EA6F"/>
-                <stop offset="100%" stop-color="#79DE74"/>
-            </linearGradient>
-
-            <linearGradient id="gradient3" x1="1" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#F6C837"/>
-                <stop offset="100%" stop-color="#EFB51F"/>
             </linearGradient>
         </defs>
     </svg>

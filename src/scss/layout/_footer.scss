@@ -38,7 +38,7 @@ footer.footer {
     text-align: center;
     text-decoration: none !important;
     vertical-align: middle;
-    @include transition();
+    @include transition($transition-base);
 
     &:hover {
       color: #ffffff;
@@ -134,7 +134,7 @@ footer.footer {
       height: 24px;
       fill: #fff;
       opacity: .3;
-      @include transition();
+      @include transition($transition-base);
     }
   }
 }
