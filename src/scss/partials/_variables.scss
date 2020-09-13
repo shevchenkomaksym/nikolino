@@ -24,6 +24,10 @@ $line-height-base: 1.25;
 // behavior
 $transition-base: all .3s ease 0s;
 
+// plugins var
+$lg-path-fonts: '../../node_modules/lightgallery/src/fonts';
+$lg-path-images: '../../node_modules/lightgallery/src/img';
+
 //Bootstrap var
 $enable-shadows: false;
 $body-color: $text-color;

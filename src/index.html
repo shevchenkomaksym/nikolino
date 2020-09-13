@@ -27,10 +27,10 @@
                 <div class="col-2 col-sm-1 col-lg-7 order-3 order-lg-2">
                     <nav class="site-menu d-flex flex-wrap">
                         <a href="about-us.html" class="site-menu__link active">О поселке</a>
-                        <a href="#plan" class="site-menu__link">Генплан</a>
+                        <a href="general-plan.html" class="site-menu__link">Генплан</a>
                         <a href="houses.html" class="site-menu__link">Дома</a>
-                        <a href="#region" class="site-menu__link">Участки</a>
-                        <a href="#infrastructure" class="site-menu__link">Инфраструктура</a>
+                        <a href="lands.html" class="site-menu__link">Участки</a>
+                        <a href="infrastructure.html" class="site-menu__link">Инфраструктура</a>
                         <a href="contacts.html" class="site-menu__link">Контакты</a>
 
                         <!--<a href="contacts.html" class="site-menu__link button button-primary">Обратный звонок</a>-->
@@ -213,7 +213,7 @@
             </div>
         </div>
 
-        <div class="section infrastructure-section">
+        <div class="section inf-section">
             <div class="container position-relative text-center">
                 <div class="section-bg">
                     <picture>
@@ -355,18 +355,12 @@
                         <span>На карте:</span>
                     </div>
 
-                    <div class="col-lg-10">
-                        <ul class="map-switcher d-flex flex-wrap p-0 mb-4">
-                            <li><a href="#" class="map-switcher__button active">Магазины и ТЦ</a></li>
-                            <li><a href="#" class="map-switcher__button">Школы и десткие сады</a></li>
-                            <li><a href="#" class="map-switcher__button">Медицинские учреждения</a></li>
-                            <li><a href="#" class="map-switcher__button">Спорт и отдых</a></li>
-                            <li><a href="#" class="map-switcher__button">Рестораны и кафе</a></li>
-                        </ul>
+                    <div class="map-switcher-wrap col-lg-10">
+                        <ul class="map-switcher d-flex flex-wrap p-0 mb-4"></ul>
                     </div>
                 </div>
                 <div id="map">
-                    <picture><img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/map.jpg') %>" alt="map" style="width: 100%;"></picture>
+                    <!--<picture><img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/map.jpg') %>" alt="map" style="width: 100%;"></picture>-->
                 </div>
             </div>
         </div>
@@ -510,9 +504,9 @@
                         <div class="col-lg-9 order-lg-1 order-3">
                             <nav class="footer-info pb-lg-4 border-0">
                                 <a href="about-us.html" class="footer-info__nav-link">О поселке</a>
-                                <a href="#plan" class="footer-info__nav-link">Генплан</a>
+                                <a href="general-plan.html" class="footer-info__nav-link">Генплан</a>
                                 <a href="houses.html" class="footer-info__nav-link">Дома</a>
-                                <a href="#lands" class="footer-info__nav-link">Участки</a>
+                                <a href="lands.html" class="footer-info__nav-link">Участки</a>
                                 <a href="#infra" class="footer-info__nav-link">Инфраструктура</a>
                                 <a href="feedback.html" class="footer-info__nav-link">Отзывы</a>
                                 <a href="news.html" class="footer-info__nav-link">Ход строительства</a>

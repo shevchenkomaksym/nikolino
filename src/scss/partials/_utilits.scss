@@ -300,7 +300,7 @@ input.input {
 
   .slick-slide {
     opacity: 0;
-    @include transition();
+    transition: $transition-base !important;
 
     &.slick-active {
       opacity: 1;
@@ -551,6 +551,7 @@ input.input {
   }
 
   &-text {
+    margin: 0;
     font-size: 1.444em;
     font-weight: $font-weight-medium;
     line-height: 1;

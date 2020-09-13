@@ -40,9 +40,20 @@
 
 // max-width
 @include media-breakpoint-down(lg) {
+  input.input {
+    padding: 17px 20px!important;
+  }
+
   .ui-selectmenu-button {
     &.ui-button {
-      max-width: 360px;
+      max-width: 340px;
+      padding: 21px 45px 21px 20px;
+    }
+  }
+
+  .ui-menu {
+    .ui-menu-item-wrapper {
+      padding: 20px;
     }
   }
 
@@ -82,7 +93,8 @@
     &__form {
       label {
         .datepicker {
-          max-width: 290px;
+          max-width: 260px;
+          padding-right: 65px !important;
         }
       }
     }
@@ -116,20 +128,27 @@
 }
 
 @include media-breakpoint-down(md) {
-  .modal .callback {
-    &__text {
-      width: 40%;
-    }
-
-    &__form {
-      width: 100%;
-
-      label:not(:last-child) {
-        margin-bottom: 0;
+  .modal {
+    .callback {
+      &__title {
+        width: 100%;
+        padding: 20px 0;
       }
 
-      &-submit {
-        margin: 0;
+      &__text {
+        width: 40%;
+      }
+
+      &__form {
+        width: 100%;
+
+        label:not(:last-child) {
+          margin-bottom: 0;
+        }
+
+        &-submit {
+          margin: 0;
+        }
       }
     }
   }
@@ -861,8 +880,24 @@
     font-size: 18px;
   }
 
-  .modal .callback__form label {
-    margin: 0 auto !important;
+  .modal {
+    .callback {
+      picture {
+        max-width: 120px;
+        width: auto;
+      }
+
+      &__text {
+        max-width: 120px;
+        width: auto;
+      }
+
+      &__form {
+        label {
+          margin: 0 auto !important;
+        }
+      }
+    }
   }
 
   .main-title {
