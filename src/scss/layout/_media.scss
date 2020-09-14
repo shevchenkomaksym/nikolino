@@ -3,9 +3,15 @@
 *************************************************/
 // min-width
 @media screen and (min-width: 320px) {
+  .about-news__item {
+    padding: 0 3px;
+  }
 }
 
 @include media-breakpoint-up(sm) {
+  .about-news__item {
+    padding: 0;
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -40,9 +46,20 @@
 
 // max-width
 @include media-breakpoint-down(lg) {
+  input.input {
+    padding: 17px 20px !important;
+  }
+
   .ui-selectmenu-button {
     &.ui-button {
-      max-width: 360px;
+      max-width: 340px;
+      padding: 21px 45px 21px 20px;
+    }
+  }
+
+  .ui-menu {
+    .ui-menu-item-wrapper {
+      padding: 20px;
     }
   }
 
@@ -82,7 +99,8 @@
     &__form {
       label {
         .datepicker {
-          max-width: 290px;
+          max-width: 260px;
+          padding-right: 65px !important;
         }
       }
     }
@@ -95,6 +113,56 @@
 
     &__social-text {
       font-size: 35px;
+    }
+  }
+
+  .about {
+    .title {
+      span {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .utilities {
+    &__item {
+      padding: 0 260px;
+    }
+  }
+
+  .about-news-section {
+    .title {
+      padding: 0;
+    }
+  }
+
+  .service-village {
+    &__indicators {
+      bottom: 0;
+      height: auto;
+      padding: 60px 20px 60px 75px;
+    }
+
+    &__text-block {
+      max-width: 670px;
+    }
+
+    &__house {
+      max-width: 720px;
+    }
+  }
+
+  .offers {
+    &__link {
+      padding: 22px 40px;
+    }
+  }
+
+  .calculate {
+    &__radio-box {
+      .ui-checkboxradio-radio-label {
+        font-size: 20px;
+      }
     }
   }
 
@@ -116,21 +184,38 @@
 }
 
 @include media-breakpoint-down(md) {
-  .modal .callback {
-    &__text {
-      width: 40%;
+  .modal {
+    .callback {
+      &__title {
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      &__text {
+        width: 40%;
+      }
+
+      &__form {
+        width: 100%;
+
+        label:not(:last-child) {
+          margin-bottom: 0;
+        }
+
+        &-submit {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .document {
+    .modal-title {
+      margin: 0 0 25px;
     }
 
-    &__form {
-      width: 100%;
-
-      label:not(:last-child) {
-        margin-bottom: 0;
-      }
-
-      &-submit {
-        margin: 0;
-      }
+    &__list {
+      max-height: none;
     }
   }
 
@@ -144,6 +229,10 @@
     &.ui-button {
       max-width: none;
     }
+  }
+
+  .head-block img {
+    height: 430px;
   }
 
   .breadcrumb {
@@ -504,6 +593,20 @@
     }
   }
 
+  .about-section {
+    margin-top: 24px;
+  }
+
+  .about {
+    &__video {
+      margin: 15px 0 40px;
+    }
+
+    &__gallery {
+      text-align: center;
+    }
+  }
+
   /*contacts page*/
   .contacts {
     &__title {
@@ -573,6 +676,9 @@
       .ui-tabs-nav {
         li {
           &.main-tabs__tab {
+            border-radius: 20px 0;
+            padding: 10px 20px;
+
             &_first.ui-tabs-active {
               .ui-tabs-anchor {
                 border-width: 0;
@@ -582,14 +688,24 @@
             .ui-tabs-anchor {
               border-color: #000;
               color: #000;
-              font-size: 2em;
+              font-size: 30px;
             }
           }
 
           &:nth-child(2) {
-            margin: 0 25px;
+            margin: 0 15px;
             font-size: 1.25em;
           }
+        }
+      }
+
+      .tab-switch {
+        font-size: 26px;
+
+        svg {
+          right: calc(100% + 10px);
+          width: 20px;
+          height: 20px;
         }
       }
     }
@@ -612,6 +728,125 @@
 
     &__cart-info {
       order: 3;
+    }
+  }
+
+  .utilities {
+    &__item {
+      padding: 0 200px;
+
+      img {
+        width: 175px;
+        height: 175px;
+      }
+    }
+  }
+
+  .service-village {
+    border-radius: 12px;
+    padding: 20px 20px 30px;
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgba(156, 143, 124, 0.36);
+
+    &__indicators {
+      position: static;
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      height: auto;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #F0B520;
+      padding: 0;
+      background: none;
+
+      &-item {
+        max-width: 30%;
+        margin-bottom: 28px;
+        &:last-child {
+          margin-bottom: 28px;
+        }
+      }
+
+      &-value {
+        margin-bottom: 6px;
+        font-size: 76px;
+      }
+
+      &-signature {
+        max-width: none;
+        margin: 0;
+      }
+    }
+
+    &__signature {
+      max-width: 80%;
+      margin: 0 0 40px;
+      border: none;
+      padding: 0;
+    }
+
+    &__text-block {
+      max-width: none;
+      background: none;
+      &:after {
+        display: none;
+      }
+    }
+
+    &__house {
+      max-width: none;
+      margin-left: -20px;
+
+      img {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .offers-section {
+    .container {
+      padding: 0 15px;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .offers {
+    &__box {
+      border-color: $main-first-color;
+      padding-bottom: 0;
+    }
+
+    &__title {
+      position: relative;
+      margin-bottom: 13px;
+      padding-left: 40px;
+      &:before {
+        content: counter(section)'.';
+        right: auto;
+        left: 0;
+        font-size: 2em;
+      }
+    }
+
+    &__link {
+      display: block;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+  }
+
+  .calculate {
+    &__radio-box {
+      .ui-checkboxradio-radio-label {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .plans {
+    &__btn-wrap {
+      justify-content: center;
     }
   }
 
@@ -675,6 +910,7 @@
   }
 
   .background-site {
+    display: none;
     .elem {
       &.elem-1 {
         top: 470px;
@@ -725,6 +961,10 @@
     }
   }
 
+  .callback-section {
+    padding: 50px 0;
+  }
+
   .decoration-icon-list {
     li {
       font-size: 18px;
@@ -738,6 +978,7 @@
   }
 
   .house-section {
+    margin: 0;
     .title {
 
     }
@@ -824,6 +1065,338 @@
     }
   }
 
+  .about {
+    .title span {
+      display: none;
+    }
+
+    &__block {
+      margin-bottom: 35px;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .about-slider {
+    &__item {
+      img {
+        height: 320px;
+      }
+    }
+  }
+
+  .communic-section {
+    padding: 24px 0 26px;
+  }
+
+  .utilities {
+    &__item-wrap:not(:last-child) {
+      margin: 0 0 34px;
+    }
+
+    &__item {
+      height: auto;
+      padding: 0;
+    }
+
+    &__img {
+      position: static;
+      top: 0;
+      transform: translateY(0);
+
+      img {
+        width: 125px;
+        height: 125px;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    &__description {
+      flex-direction: column;
+      padding-left: 30px;
+    }
+
+    &__name {
+      width: auto;
+    }
+
+    &__text {
+      width: auto;
+    }
+  }
+
+  .about-review {
+    &__item {
+      display: flex !important;
+      flex-direction: row;
+      max-width: none;
+      padding: 25px;
+    }
+
+    &__img {
+      display: inline-block !important;
+      margin: 0 16px 0 0;
+    }
+
+    &__text {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .about-news-section {
+    * {
+      box-shadow: none;
+    }
+
+    .container {
+      padding-top: 17px;
+      padding-bottom: 20px;
+      background: #fff;
+    }
+
+    .title span:after {
+      background: none;
+    }
+  }
+
+  .about-news {
+    &__background {
+      display: none;
+    }
+
+    &__description {
+      padding: 14px 4px 0;
+    }
+
+    &__slider.slick-slider .slick-dots {
+      position: absolute;
+      top: 108%;
+      left: 50%;
+      padding: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  .service-village {
+    &__indicators {
+      &-item {
+        color: #000000;
+      }
+
+      &-value {
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 1;
+      }
+    }
+
+    &__signature {
+      max-width: none;
+      font-weight: 400;
+    }
+
+    &__goal-title {
+      color: #000;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    &__goal-list {
+      margin: 0;
+    }
+
+    &__house {
+      display: none;
+    }
+  }
+
+  .main-tabs {
+    &.ui-tabs {
+      .ui-tabs-nav {
+        margin-bottom: 35px;
+      }
+
+      .ui-tabs-panel {
+        padding: 0;
+      }
+
+      .tab-switch {
+        margin: 40px auto;
+      }
+    }
+  }
+
+  .house {
+    padding: 8px 0 4px;
+    background: #fff;
+
+    &__cart {
+      margin-bottom: 30px;
+      padding: 0;
+      &:hover {
+        background: none;
+        box-shadow: none;
+      }
+
+      picture img {
+        height: 250px;
+      }
+    }
+
+    &__cart-text {
+      &_large {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .offers-section {
+    margin-bottom: 47px;
+    .title {
+      color: #000000;
+    }
+  }
+
+  .calculate-section {
+    .container {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      &> .row {
+        padding: 14px 30px 12px;
+        background: #E2DFDD;
+      }
+    }
+    .title {
+      margin: 0;
+      text-align: left;
+
+      span {
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  .calculate {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &__form {
+      fieldset {
+        width: 100%;
+        justify-content: center;
+        &:last-child {
+          background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
+        }
+      }
+    }
+
+    &__radio-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: #F8F8F8;
+    }
+
+    &__radio-box {
+      width: 420px;
+
+      .ui-checkboxradio-radio-label {
+        margin-bottom: 18px;
+        &:hover {
+          .ui-icon {
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            box-shadow: inset 0 0 0 3px #ffffff !important;
+          }
+        }
+
+        &.ui-checkboxradio-checked {
+          color: #292929;
+          font-weight: 500;
+          text-shadow: none;
+          background: none !important;
+          box-shadow: none;
+
+          .ui-icon {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 0 3px #ffffff;
+          }
+        }
+
+        .ui-icon {
+          width: 25px;
+          height: 25px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &:last-child .ui-checkboxradio-label {
+        margin: 0;
+      }
+    }
+
+    &__range-wrapper {
+      position: relative;
+      padding: 16px 20px 37px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        border-top: 26px solid #ffffff;
+        border-right: 26px solid transparent;
+        border-left: 26px solid transparent;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__range-box {
+      margin-bottom: 33px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &__value-wrapper {
+      padding: 15px 20px 10px;
+    }
+
+    &__value-name {
+      font-weight: 500;
+    }
+
+    &__value-text {
+      color: #fff;
+    }
+  }
+
+  .plans {
+    &__title-text {
+      text-align: center;
+    }
+
+    &__button {
+      font-size: 36px;
+      &:hover {
+        padding: 10px 20px;
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -861,13 +1434,39 @@
     font-size: 18px;
   }
 
-  .modal .callback__form label {
-    margin: 0 auto !important;
+  .modal {
+    .callback {
+      picture {
+        max-width: 120px;
+        width: auto;
+      }
+
+      &__text {
+        max-width: 120px;
+        width: auto;
+      }
+
+      &__form {
+        label {
+          margin: 0 auto !important;
+        }
+      }
+    }
   }
 
   .main-title {
     &.smaller-main-title {
       font-size: 25px;
+    }
+  }
+
+  .head-block img {
+    height: 340px;
+  }
+
+  .main-tabs.ui-tabs {
+    .tab-switch {
+      font-size: 18px;
     }
   }
 
@@ -1017,6 +1616,61 @@
     box-shadow: 0px 14px 34px rgba(156, 143, 124, 0.36);
   }
 
+  .about {
+    &__video {
+      margin: 0;
+    }
+
+    &__gallery {
+      display: none;
+    }
+  }
+
+  .utilities {
+    &:after {
+      display: none;
+    }
+  }
+
+  .about-news {
+    &__item {
+      max-width: 300px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+
+  .house {
+    &__cart {
+      margin-bottom: 11px;
+
+      picture {
+        margin-bottom: 9px;
+      }
+    }
+
+    &__cart-name {
+      font-size: 12px;
+    }
+
+    &__cart-text {
+      padding: 0;
+      font-size: 12px;
+    }
+  }
+
+  .offers {
+    &__link {
+      max-width: 340px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1043,6 +1697,16 @@
 
     .subtitle-2 {
       font-size: 16px;
+    }
+  }
+
+  .head-block {
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    img {
+      height: 240px;
     }
   }
 
@@ -1074,6 +1738,7 @@
       padding: 0;
       font-size: 16px;
       font-weight: 600;
+      line-height: 1;
       &:not(:last-child) {
         margin-bottom: 16px;
       }
@@ -1086,9 +1751,9 @@
 
   .decoration-list {
     li {
-      line-height: 2.2;
       font-size: 12px;
       font-weight: 600;
+      line-height: 1;
       &:before {
         display: none;
       }
@@ -1097,6 +1762,10 @@
 
   .house-list {
     &__box {
+      img {
+        height: 150px;
+      }
+
       &-name {
         margin-bottom: 7px;
         padding: 0;
@@ -1156,6 +1825,198 @@
     font-size: 16px;
   }
 
+  .about {
+    &__video {
+      max-height: 280px;
+      iframe {
+        height: 280px;
+      }
+    }
+  }
+
+  .about-news {
+    &__img {
+      height: 100px;
+    }
+
+    &__date {
+      margin-bottom: 3px;
+      color: #666666;
+      font-size: 9px;
+    }
+
+    &__title {
+      font-size: 12px;
+    }
+  }
+
+  .service-village {
+    &__indicators {
+      &-value {
+        font-size: 27px;
+      }
+      &-signature {
+        font-size: 9px;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+
+    &__signature {
+      margin-bottom: 13px;
+      font-size: 12px;
+    }
+
+    &__goal {
+      &-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      &-list {
+        padding: 0 0 0 35px;
+
+        li {
+          margin-bottom: 15px;
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+    }
+  }
+
+  .main-tabs.ui-tabs {
+    .ui-tabs-nav {
+      li {
+        &.main-tabs__tab {
+          padding: 10px;
+
+          .ui-tabs-anchor {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  .house {
+    &__cart {
+      picture img {
+        height: 180px;
+      }
+    }
+  }
+
+  .calculate-section {
+    .container > .row {
+      padding: 14px 15px 12px;
+    }
+
+    .title {
+      font-size: 14px;
+      letter-spacing: 2px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .calculate {
+    &__radio-box {
+      width: 300px;
+
+      .ui-checkboxradio-radio-label {
+        padding: 0;
+        font-size: 14px;
+
+        &:hover .ui-icon {
+          margin-right: 9px;
+        }
+
+        .ui-icon {
+          margin-right: 9px;
+        }
+      }
+    }
+
+    &__range-box-name {
+      color: #292929;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &__range-box-info {
+      display: none;
+    }
+
+    &__value {
+      &:not(:first-child):not(:last-child) {
+        width: 45%;
+      }
+
+      &:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &__value-name {
+      width: 80%;
+      font-size: 14px;
+    }
+
+    &__value-text {
+      font-size: 29px;
+    }
+
+    &__link-calculation {
+      max-width: 190px;
+      margin: 0 0 20px 0;
+      font-size: 15px;
+
+      &-ico {
+        width: 32px;
+        height: 32px;
+        padding: 9px;
+
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      &+ .calculate__value-name {
+        padding: 0;
+      }
+    }
+  }
+
+  .plans {
+    &__btn-wrap {
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      font-size: 18px;
+      font-weight: bold;
+
+      &:hover {
+        border-radius: 20px 0;
+      }
+    }
+
+    &__images-wrap {
+      picture {
+        border-radius: 12px;
+      }
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1204,6 +2065,14 @@
     }
   }
 
+  .head-block {
+    img {
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
   .contacts-employees {
     &__box {
       picture {
@@ -1230,6 +2099,108 @@
     }
   }
 
+  .about-slider {
+    &__item {
+      img {
+        height: 180px;
+      }
+    }
+  }
+
+  .utilities {
+    &__img img {
+      width: 90px;
+      height: 90px;
+    }
+
+    &__name {
+      margin: 0 0 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+
+  .about-review {
+    &__img {
+      width: 70px;
+      height: 70px;
+    }
+
+    &__author {
+      margin-bottom: 9px;
+      font-size: 18px;
+    }
+
+    &__author-age {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+  }
+
+  .document {
+    .modal-title {
+      font-size: 20px;
+    }
+
+    &__list {
+      padding-left: 25px;
+    }
+
+    &__list-item {
+      font-size: 14px;
+    }
+  }
+
+  .house {
+    &> .col-6 {
+      padding: 0 3px;
+    }
+
+    &__cart {
+      picture img {
+        height: 100px;
+      }
+    }
+
+    &__cart-name {
+      letter-spacing: 1px;
+    }
+  }
+
+  .main-tabs.ui-tabs {
+    .tab-switch {
+      font-size: 12px;
+    }
+  }
+
+  .offers {
+    &__box:last-child {
+      display: none;
+    }
+
+    &__title {
+      padding-left: 20px;
+      font-size: 18px;
+      &:before {
+        top: 50%;
+        font-size: 18px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__list li {
+      font-size: 12px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1243,6 +2214,28 @@
   .not-found {
     &__text {
       font-size: 12px;
+    }
+  }
+
+  .house-list__box {
+    img {
+      height: 100px;
+    }
+  }
+
+  .main-tabs.ui-tabs {
+    .ui-tabs-nav {
+      li {
+        &:nth-child(2) {
+          font-size: 12px;
+        }
+
+        &.main-tabs__tab {
+          .ui-tabs-anchor {
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
 

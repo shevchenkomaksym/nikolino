@@ -54,10 +54,6 @@ module.exports = {
                         outputPath: 'fonts'
                     }
                 }
-            },
-            {
-                test: /\.xml/,
-                use: 'raw-loader',
             }
         ]
     },
@@ -90,11 +86,6 @@ module.exports = {
         new SVGSpritemapPlugin("src/img/icons/*.svg", {
             output: {
                 filename: "img/spritemap.svg"
-            },
-            sprite: {
-                generate: {
-                    use: true
-                }
             }
         }),
     ]

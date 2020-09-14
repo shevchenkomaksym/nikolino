@@ -1,5 +1,4 @@
 import '../scss/main.scss';
-import '../img/logo-h.svg';
 import '../img/map-logo.svg';
 import '../img/map-01.svg';
 import '../img/map-02.svg';
@@ -8,7 +7,6 @@ import '../img/map-04.svg';
 import '../img/map-05.svg';
 import '../img/map-06.svg';
 import '../img/map-07.svg';
-import data from './data.xml';
 import 'intersection-observer';
 import $ from 'jquery';
 import 'bootstrap';
@@ -24,6 +22,8 @@ import 'jquery-ui/ui/widgets/checkboxradio';
 import 'jquery-ui/ui/widgets/datepicker';
 import 'jquery-ui/ui/i18n/datepicker-ru';
 import IMask from 'imask';
+import 'lightgallery';
+import 'lg-thumbnail';
 
 $(window).on('load', function () {
     let b = $('body');
@@ -94,29 +94,32 @@ $(function () {
     });
 
     // Scroll event
-    $(window).on('scroll', function () {
+    $(window).on('load scroll', function () {
         let yOffset = window.pageYOffset;
         let header = $('header.header');
+        let logo = $('.logo');
+        let logoImg = logo.find('img');
+        let logoMain = logo.data('src');
+        let logoMin = logo.data('logo');
+
         if (yOffset > 0) {
             header.addClass('bg-light');
             header.find('.row').removeClass('py-lg-4');
             header.find('.row').addClass('py-lg-2');
-            $('.logo img').attr('src', '../img/logo-h.svg');
+            logoImg.attr('src', logoMin);
         }
         else {
             header.removeClass('bg-light');
             header.find('.row').removeClass('py-lg-2');
             header.find('.row').addClass('py-lg-4');
-            $('.logo img').attr('src', '../img/logo.svg');
+            logoImg.attr('src', logoMain);
         }
 
-        if (yOffset >= 800) scrollTop.addClass('active'); else scrollTop.removeClass('active');
-    });
-
-    $(window).on('load scroll', function () {
         if ($(window).width() < 1080) {
-            $('.logo img').attr('src', '../img/logo.svg');
+            logoImg.attr('src', logoMain);
         }
+
+        yOffset >= 800 ? scrollTop.addClass('active') : scrollTop.removeClass('active');
     });
 });
 
@@ -141,17 +144,39 @@ $(function () {
         infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                arrows: false
+            }
+        }]
     });
 
     // about reviews
     $('.about-review').slick({
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         arrows: false,
         dots: true,
         infinite: true,
-        autoplay: true,
-        autoplaySpeed: 5000
+        // autoplay: true,
+        // autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 1080,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     });
 
     // about news
@@ -162,11 +187,20 @@ $(function () {
         dots: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 1080,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+        ]
     });
 
     // service slider
-    $('.service-village__slider').slick({
+    /*$('.service-village__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -174,7 +208,7 @@ $(function () {
         infinite: true,
         // autoplay: true,
         // autoplaySpeed: 5000
-    });
+    });*/
 
     // about house sliders
     $('.about-house__facade, .about-house__layout').slick({
@@ -183,6 +217,24 @@ $(function () {
         infinite: true,
         arrows: true,
         dots: true,
+    });
+
+    // rest slider
+    $('.rest-tabs__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        infinite: true,
+    });
+
+    // park slider
+    $('.park__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: true,
     });
 
     $(window).on('load resize', function () {
@@ -238,7 +290,7 @@ $(function () {
     let mainTabs = $('#tabs');
     mainTabs.tabs({
         hide: {effect: "fadeOut", duration: 500},
-        show: {effect: "fadeIn", duration: 500}
+        show: {effect: "fadeIn", duration: 500},
     });
     $('.tab-switch').on('click', function (e) {
         e.preventDefault();
@@ -246,15 +298,28 @@ $(function () {
         let tab = /\d+/.exec(val);
         let tabIndex = Number(tab[0]) - 1;
 
-        console.log(tabIndex);
         mainTabs.tabs("option", "active", tabIndex);
     });
     // tabs vertical
-    $('.vertical-tabs').tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-    $('.vertical-tabs').removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+    $('.vertical-tabs').tabs({
+        hide: {effect: "fadeOut", duration: 500},
+        show: {effect: "fadeIn", duration: 500},
+    })
+        .addClass("ui-tabs-vertical ui-helper-clearfix ui-corner-left")
+        .removeClass("ui-corner-top");
+
+    $('.rest-tabs').tabs({
+        hide: {effect: "fadeOut", duration: 500},
+        show: {effect: "fadeIn", duration: 500},
+        activate: function (e, ui) {
+            $(ui.newPanel).find('.rest-tabs__slider').slick('slickGoTo', 0)
+        }
+    });
 
     // Accordion
-    $('.tabs-accordion').accordion();
+    $('.tabs-accordion').accordion({
+        heightStyle: "content"
+    });
 
     // Slider price
     let rangeSlider = document.querySelectorAll('.calculate__range');
@@ -362,11 +427,15 @@ $(function () {
     $("input[type='radio']").checkboxradio();
 
     // Input date
-    $('input.datepicker').datepicker({
+    let datepicker = $('input.datepicker')
+    datepicker.datepicker({
         showOtherMonths: true,
         selectOtherMonths: true,
         minDate: new Date(),
         showAnim: 'slideDown'
+    });
+    datepicker.on('keydown keypress paste', function (e) {
+        e.preventDefault();
     });
 
     // Input select
@@ -399,7 +468,7 @@ $(function () {
         let sliders = $('.about-house-sliders .slick-slider');
 
         if (!$(this).hasClass('active')) {
-            $('.about-house__switch-button.active').removeClass('active');
+            $('.about-house__switch-button').eq(indexOff).removeClass('active');
             $(this).addClass('active');
             sliders.eq(indexOff).addClass('position-absolute').fadeOut();
             sliders.eq(indexCurrent).removeClass('position-absolute').fadeIn().slick('slickGoTo', 0);
@@ -409,34 +478,169 @@ $(function () {
     });
 
     $('.about-house__switch-button').each(function (i, e) {
-        if ($(e).hasClass('active')) $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').hide();
+        if (!$(e).hasClass('active')) {
+            $('.about-house-sliders .slick-slider').eq(i).addClass('position-absolute').fadeOut();
+        }
+    });
+
+    // Plans switch
+    $('.plans__btn-wrap').on('mouseenter mouseleave', '.plans__button', function () {
+        let index = Number($(this).data('index'));
+        $('.plans__images-wrap picture').eq(index).toggleClass('hide');
+    });
+
+    // Lightgallery
+    $('#gallery').lightGallery({
+        download: false,
+        thumbnail: true,
+        showThumbByDefault: true
     });
 });
 
+const center = [45.100975, 39.056494];
+const groups = [
+    {
+        name: 'Магазины и ТЦ',
+        opt: {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-03.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        },
+        items: [
+            {
+                coordinates: [45.031720, 39.046046],
+                name: 'ТЦ Галактика'
+            },
+            {
+                coordinates: [45.093500, 39.002989],
+                name: 'ТЦ Стрелка'
+            },
+            {
+                coordinates: [45.109938, 39.018127],
+                name: 'ТЦ Максимус'
+            }
+        ]
+    },
+    {
+        name: 'Школы и десткие сады',
+        opt: {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-06.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        },
+        items: [
+            {
+                coordinates: [45.095106, 39.109580],
+                name: 'Детский сад № 43'
+            },
+            {
+                coordinates: [45.108424, 39.015004],
+                name: 'Детский сад № 85 Березка'
+            },
+            {
+                coordinates: [45.083345, 39.096233],
+                name: 'Детский сад Дивный'
+            }
+        ]
+    },
+    {
+        name: 'Медицинские учреждения',
+        opt: {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-04.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        },
+        items: [
+            {
+                coordinates: [45.088725, 39.121138],
+                name: 'Медцентр'
+            },
+            {
+                coordinates: [45.093932, 39.011621],
+                name: 'Медсонар'
+            }
+        ]
+    },
+    {
+        name: 'Спорт и отдых',
+        opt: {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-02.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        },
+        items: [
+            {
+                coordinates: [45.050640, 39.124498],
+                name: 'Знаменский'
+            },
+            {
+                coordinates: [45.102356, 38.989356],
+                name: 'TopKart'
+            },
+            {
+                coordinates: [45.116345, 38.978253],
+                name: 'Город спорта'
+            }
+        ]
+    },
+    {
+        name: 'Рестораны и кафе',
+        opt: {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-07.svg',
+            iconImageSize: [46, 46],
+            iconImageOffset: [-23, -23]
+        },
+        items: [
+            {
+                coordinates: [45.114528, 39.043257],
+                name: 'Вода&Еда'
+            },
+            {
+                coordinates: [45.072459, 39.039300],
+                name: 'Додо Пицца'
+            },
+            {
+                coordinates: [45.094003, 39.005165],
+                name: 'KFC'
+            }
+        ]
+    }
+];
+//************* maps **************
 if ($('#map').length) {
     $('#map').children('picture').remove();
     ymaps.load().then(maps => {
-        const map = new maps.Map('map', {
-            center: [45.101284, 39.056416],
+        const myMap = new maps.Map('map', {
+            center: center,
             zoom: 11
         }, {
             searchControlProvider: 'yandex#search'
         });
 
-        map.behaviors.disable('scrollZoom');
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) map.behaviors.disable('drag');
+        myMap.behaviors.disable('scrollZoom');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            myMap.behaviors.disable('drag');
+        }
 
-        const myPlacemark = new ymaps.Placemark(map.getCenter(), {
-            hintContent: 'Николино Парк — экопоселок в Краснодаре',
-            balloonContent: 'Николино Парк'
+        // Контейнер для меню.
+        const menu = $('.map-switcher');
+
+        // Обязательные элементы
+        const myPlacemark = new ymaps.Placemark(center, {
+            hintContent: 'Николино Парк',
+            balloonContent: 'Николино Парк — экопоселок в Краснодаре'
         }, {
             iconLayout: 'default#image',
             iconImageHref: './../img/map-logo.svg',
             iconImageSize: [86, 69],
             iconImageOffset: [-43, -34]
         });
-
-        const placemarket1 = new ymaps.Placemark([45.035470, 38.975313], {
+        const city = new ymaps.Placemark([45.035470, 38.975313], {
             hintContent: 'Краснодар'
         }, {
             iconLayout: 'default#image',
@@ -444,113 +648,92 @@ if ($('#map').length) {
             iconImageSize: [92, 32],
             iconImageOffset: [-46, -16]
         });
-        const placemarket2 = new ymaps.Placemark([45.093275, 38.981266], {
-            hintContent: 'Спорт и отдых'
-        }, {
-            iconLayout: 'default#image',
-            iconImageHref: './../img/map-02.svg',
-            iconImageSize: [46, 46],
-            iconImageOffset: [-23, -23]
-        });
-        const placemarket3 = new ymaps.Placemark([45.031720, 39.046046], {
-            hintContent: 'Магазины и ТЦ'
-        }, {
-            iconLayout: 'default#image',
-            iconImageHref: './../img/map-03.svg',
-            iconImageSize: [46, 46],
-            iconImageOffset: [-23, -23]
-        });
-        const placemarket4 = new ymaps.Placemark([45.088725, 39.121138], {
-            hintContent: 'Медицинские учреждения'
-        }, {
-            iconLayout: 'default#image',
-            iconImageHref: './../img/map-04.svg',
-            iconImageSize: [46, 46],
-            iconImageOffset: [-23, -23]
-        });
-        const placemarket5 = new ymaps.Placemark([45.034333, 39.138979], {
-            hintContent: 'Аэропорт'
+        const airport = new ymaps.Placemark([45.033925, 39.139669], {
+            hintContent: 'Международный аэропорт Краснодар имени Екатерины II'
         }, {
             iconLayout: 'default#image',
             iconImageHref: './../img/map-05.svg',
             iconImageSize: [46, 46],
             iconImageOffset: [-23, -23]
         });
-        const placemarket6 = new ymaps.Placemark([45.074286, 39.193945], {
-            hintContent: 'Школы и десткие сады'
-        }, {
-            iconLayout: 'default#image',
-            iconImageHref: './../img/map-06.svg',
-            iconImageSize: [46, 46],
-            iconImageOffset: [-23, -23]
-        });
-        const placemarket7 = new ymaps.Placemark([45.052368, 39.017724], {
-            hintContent: 'Рестораны и кафе'
-        }, {
-            iconLayout: 'default#image',
-            iconImageHref: './../img/map-07.svg',
-            iconImageSize: [46, 46],
-            iconImageOffset: [-23, -23]
-        });
 
-
-        map.geoObjects
-            .add(myPlacemark)
-            .add(placemarket1)
-            .add(placemarket2)
-            .add(placemarket3)
-            .add(placemarket4)
-            .add(placemarket4)
-            .add(placemarket5)
-            .add(placemarket5)
-            .add(placemarket6)
-            .add(placemarket7);
-    }).catch(error => console.log('Failed to load Yandex Maps', error));
-}
-
-
-// ymaps.ready(init);
-/*
-function init() {
-        // Создание экземпляра карты.
-        var myMap = new ymaps.Map('map', {
-            center: [50.443705, 30.530946],
-            zoom: 12,
-            controls: []
-        });
-
-        // Загрузка YMapsML-файла.
-        ymaps.geoXml.load('data.xml').then(function (res) {
-                    res.geoObjects.each(function (item) {
-                        addMenuItem(item, myMap);
-                    });
-                },
-                // Вызывается в случае неудачной загрузки YMapsML-файла.
-                function (error) {
-                    alert("При загрузке YMapsML-файла произошла ошибка: " + error);
+        function createMenuGroup(group) {
+            // Пункт меню.
+            const menuItem = $('<li><button type="button" class="map-switcher__button">' + group.name + '</button></li>');
+            // Коллекция для геообъектов группы.
+            const collection = new ymaps.GeoObjectCollection(null, group.opt);
+            // Добавляем коллекцию на карту.
+            /*myMap.geoObjects.add(collection);*/
+            // Добавляем пункт в меню.
+            menuItem.appendTo(menu)
+            // По клику удаляем/добавляем коллекцию на карту и скрываем/отображаем подменю.
+                .find('button')
+                .bind('click', function () {
+                    $(this).toggleClass('active');
+                    if (collection.getParent()) {
+                        myMap.geoObjects.remove(collection);
+                    } else {
+                        myMap.geoObjects.add(collection);
+                    }
+                    // Выставляем масштаб карты чтобы были видны все группы.
+                    myMap.setBounds(myMap.geoObjects.getBounds());
                 });
 
-        // Добавление элемента в список.
-        function addMenuItem(group, map) {
-            // Показать/скрыть группу геообъектов на карте.
-            $("<a class=\"title\" href=\"#\">" + group.properties.get('name') + "</a>")
-                .bind("click", function () {
-                    let link = $(this);
-                    // Если пункт меню "неактивный", то добавляем группу на карту,
-                    // иначе - удаляем с карты.
-                    if (link.hasClass("active")) {
-                        map.geoObjects.remove(group);
-                    } else {
-                        map.geoObjects.add(group);
-                    }
-                    // Меняем "активность" пункта меню.
-                    link.toggleClass("active");
-                    return false;
-                })
-                // Добавление нового пункта меню в список.
-                .appendTo(
-                    $("<li></li>").appendTo($("#menu"))
-                );
+            for (let j = 0, m = group.items.length; j < m; j++) {
+                createSubMenu(group.opt, group.items[j], collection);
+            }
         }
-    }
-}*/
+
+        function createSubMenu(option, item, collection) {
+            // Создаем метку.
+            const placemark = new ymaps.Placemark(item.coordinates, {hintContent: item.name}, option);
+
+            // Добавляем метку в коллекцию.
+            collection.add(placemark);
+        }
+
+        for (let i = 0, l = groups.length; i < l; i++) {
+            createMenuGroup(groups[i]);
+        }
+
+        // Добавим обязательные элементы
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(city)
+            .add(airport);
+
+
+    }).catch(error => console.log('Failed to load Yandex Maps', error));
+}
+else if ($('#map-contact').length) {
+    $('#map-contact').children('picture').remove();
+
+    ymaps.load().then(maps => {
+        const contactMap = new maps.Map('map-contact', {
+            center: center,
+            zoom: 11
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            contactMap.behaviors.disable('drag');
+        }
+        else {
+            contactMap.behaviors.disable('scrollZoom');
+        }
+
+        const myPlacemark = new ymaps.Placemark(contactMap.getCenter(), {
+            hintContent: 'Николино Парк'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: './../img/map-logo.svg',
+            iconImageSize: [86, 69],
+            iconImageOffset: [-43, -34]
+        });
+
+        contactMap.geoObjects.add(myPlacemark);
+
+    }).catch(error => console.log('Failed to load Yandex Maps', error));
+}
+//*********************************

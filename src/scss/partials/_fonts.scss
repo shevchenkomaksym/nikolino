@@ -1,6 +1,19 @@
 $fonts-path: '../fonts/';
 
 @font-face {
+  font-family: 'Montserrat';
+  src: url('#{$fonts-path}montserrat-extralight-webfont.eot');
+  src: url('#{$fonts-path}montserrat-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+  url('#{$fonts-path}montserrat-extralight-webfont.woff2') format('woff2'),
+  url('#{$fonts-path}montserrat-extralight-webfont.woff') format('woff'),
+  url('#{$fonts-path}montserrat-extralight-webfont.ttf') format('truetype'),
+  url('#{$fonts-path}montserrat-extralight-webfont.svg#montserratextralight') format('svg');
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
   font-family:'Montserrat';
   src: url('#{$fonts-path}Montserrat Light.eot');
   src: url('#{$fonts-path}Montserrat Light.eot?#iefix') format('embedded-opentype'),
@@ -8,6 +21,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Montserrat Light.woff') format('woff'),
   url('#{$fonts-path}Montserrat Light.ttf') format('truetype'),
   url('#{$fonts-path}Montserrat Light.svg#Montserrat Light') format('svg');
+  font-display: swap;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -22,6 +36,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Montserrat Regular.woff') format('woff'),
   url('#{$fonts-path}Montserrat Regular.ttf') format('truetype'),
   url('#{$fonts-path}Montserrat Regular.svg#Montserrat Regular') format('svg');
+  font-display: swap;
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -36,6 +51,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Montserrat Medium.woff') format('woff'),
   url('#{$fonts-path}Montserrat Medium.ttf') format('truetype'),
   url('#{$fonts-path}Montserrat Medium.svg#Montserrat Medium') format('svg');
+  font-display: swap;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -50,6 +66,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Montserrat SemiBold.woff') format('woff'),
   url('#{$fonts-path}Montserrat SemiBold.ttf') format('truetype'),
   url('#{$fonts-path}Montserrat SemiBold.svg#Montserrat SemiBold') format('svg');
+  font-display: swap;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -64,6 +81,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Montserrat Bold.woff') format('woff'),
   url('#{$fonts-path}Montserrat Bold.ttf') format('truetype'),
   url('#{$fonts-path}Montserrat Bold.svg#Montserrat Bold') format('svg');
+  font-display: swap;
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -78,6 +96,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Montserrat Black.woff') format('woff'),
   url('#{$fonts-path}Montserrat Black.ttf') format('truetype'),
   url('#{$fonts-path}Montserrat Black.svg#Montserrat Black') format('svg');
+  font-display: swap;
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -92,6 +111,7 @@ $fonts-path: '../fonts/';
   url('#{$fonts-path}Playfair Display SC Regular.woff') format('woff'),
   url('#{$fonts-path}Playfair Display SC Regular.ttf') format('truetype'),
   url('#{$fonts-path}Playfair Display SC Regular.svg#Playfair Display SC Regular') format('svg');
+  font-display: swap;
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;

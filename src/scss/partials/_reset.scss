@@ -185,6 +185,10 @@ input {
     color: $input-placeholder-color;
     transition: $transition-base;
   }
+
+  &:invalid {
+    border: 3px solid #ff0000;
+  }
 }
 
 button {
@@ -222,6 +226,10 @@ textarea {
     //font-size: 1rem;
     color: $input-placeholder-color;
     transition: $transition-base;
+  }
+
+  &:invalid {
+    border: 3px solid #ff0000;
   }
 }
 

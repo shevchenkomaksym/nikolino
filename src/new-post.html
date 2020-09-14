@@ -16,9 +16,9 @@
         <div class="container">
             <div class="header-content row align-items-lg-end align-items-center py-lg-4">
                 <div class="col-2 col-lg-2 order-1 order-lg-1">
-                    <a href="index.html" class="logo">
+                    <a href="index.html" class="logo" data-src="<%= require('./img/logo.svg') %>" data-logo="<%= require('./img/logo-h.svg') %>">
                         <picture>
-                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="loader" title="loader">
+                            <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/logo.svg') %>" alt="logo" title="logo">
                         </picture>
                     </a>
                 </div>
@@ -26,10 +26,10 @@
                 <div class="col-2 col-sm-1 col-lg-7 order-3 order-lg-2">
                     <nav class="site-menu d-flex flex-wrap">
                         <a href="about-us.html" class="site-menu__link active">О поселке</a>
-                        <a href="#plan" class="site-menu__link">Генплан</a>
+                        <a href="general-plan.html" class="site-menu__link">Генплан</a>
                         <a href="houses.html" class="site-menu__link">Дома</a>
-                        <a href="#region" class="site-menu__link">Участки</a>
-                        <a href="#infrastructure" class="site-menu__link">Инфраструктура</a>
+                        <a href="lands.html" class="site-menu__link">Участки</a>
+                        <a href="infrastructure.html" class="site-menu__link">Инфраструктура</a>
                         <a href="contacts.html" class="site-menu__link">Контакты</a>
 
                         <!--<a href="contacts.html" class="site-menu__link button button-primary">Обратный звонок</a>-->
@@ -158,18 +158,18 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" pattern="^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$" required>
                                 <svg>
                                     <use xlink:href="img/spritemap.svg#sprite-date"></use>
                                 </svg>
                             </label>
 
                             <label>
-                                <input type="time" class="input mask-time required">
+                                <input type="time" class="input mask-time" pattern="^[0-9]{2}:[0-9]{2}$" required>
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone" class="input-select" required>
+                                <select name="timezone" class="input-select" required>
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -179,7 +179,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7">
+                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -263,9 +263,9 @@
                         <div class="col-lg-9 order-lg-1 order-3">
                             <nav class="footer-info pb-lg-4 border-0">
                                 <a href="about-us.html" class="footer-info__nav-link">О поселке</a>
-                                <a href="#plan" class="footer-info__nav-link">Генплан</a>
+                                <a href="general-plan.html" class="footer-info__nav-link">Генплан</a>
                                 <a href="houses.html" class="footer-info__nav-link">Дома</a>
-                                <a href="#lands" class="footer-info__nav-link">Участки</a>
+                                <a href="lands.html" class="footer-info__nav-link">Участки</a>
                                 <a href="#infra" class="footer-info__nav-link">Инфраструктура</a>
                                 <a href="feedback.html" class="footer-info__nav-link">Отзывы</a>
                                 <a href="news.html" class="footer-info__nav-link">Ход строительства</a>
@@ -366,18 +366,18 @@
 
                         <fieldset class="callback__form-hide hide">
                             <label>
-                                <input type="text" class="input datepicker" placeholder="ДД.ММ.ГГГГ" readonly>
+                                <input type="text" class="input datepicker required" placeholder="ДД.ММ.ГГГГ" pattern="^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$" required>
                                 <svg>
                                     <use xlink:href="img/spritemap.svg#sprite-date"></use>
                                 </svg>
                             </label>
 
                             <label>
-                                <input type="time" class="input mask-time">
+                                <input type="time" class="input mask-time" pattern="^[0-9]{2}:[0-9]{2}$" required>
                             </label>
 
                             <label>
-                                <select name="timezone" id="timezone-modal" class="input-select">
+                                <select name="timezone" class="input-select" required>
                                     <option value="3">(GMT+3:00) Краснодар</option>
                                     <option value="2">(GMT+2:00) Краснодар</option>
                                     <option value="4">(GMT+4:00) Краснодар</option>
@@ -387,7 +387,7 @@
 
                         <fieldset class="callback__form-visible d-inline-flex">
                             <label>
-                                <input type="text" class="callback__form-phone input mask-phone" placeholder="+7">
+                                <input type="text" class="callback__form-phone input mask-phone required" placeholder="+7(123)123-45-67" pattern="^\+[0-9]{1}\([0-9]{3}\)[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$" required>
                             </label>
 
                             <label>
@@ -405,7 +405,30 @@
     </div>
 </div>
 
-<div class="icon-load"></div>
+<div class="icon-load">
+    <picture><img src="<%= require('./img/loader.svg') %>" alt="preloader"></picture>
+</div>
+<div id="svg">
+    <svg>
+        <defs>
+            <linearGradient id="gradient1" x1="1" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#32C5FF"/>
+                <stop offset="50%" stop-color="#B620E0"/>
+                <stop offset="100%" stop-color="#F7B500"/>
+            </linearGradient>
+
+            <linearGradient id="gradient2" x1="1" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#98EA6F"/>
+                <stop offset="100%" stop-color="#79DE74"/>
+            </linearGradient>
+
+            <linearGradient id="gradient3" x1="1" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#F6C837"/>
+                <stop offset="100%" stop-color="#EFB51F"/>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
 <button class="scroll-top">Вверх
     <span class="scroll-top__background"></span>
 </button>
