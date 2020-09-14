@@ -47,7 +47,7 @@
 // max-width
 @include media-breakpoint-down(lg) {
   input.input {
-    padding: 17px 20px!important;
+    padding: 17px 20px !important;
   }
 
   .ui-selectmenu-button {
@@ -152,6 +152,20 @@
     }
   }
 
+  .offers {
+    &__link {
+      padding: 22px 40px;
+    }
+  }
+
+  .calculate {
+    &__radio-box {
+      .ui-checkboxradio-radio-label {
+        font-size: 20px;
+      }
+    }
+  }
+
   //footer
   .footer-callback__number {
     font-size: 24px;
@@ -215,6 +229,10 @@
     &.ui-button {
       max-width: none;
     }
+  }
+
+  .head-block img {
+    height: 430px;
   }
 
   .breadcrumb {
@@ -658,6 +676,9 @@
       .ui-tabs-nav {
         li {
           &.main-tabs__tab {
+            border-radius: 20px 0;
+            padding: 10px 20px;
+
             &_first.ui-tabs-active {
               .ui-tabs-anchor {
                 border-width: 0;
@@ -667,14 +688,24 @@
             .ui-tabs-anchor {
               border-color: #000;
               color: #000;
-              font-size: 2em;
+              font-size: 30px;
             }
           }
 
           &:nth-child(2) {
-            margin: 0 25px;
+            margin: 0 15px;
             font-size: 1.25em;
           }
+        }
+      }
+
+      .tab-switch {
+        font-size: 26px;
+
+        svg {
+          right: calc(100% + 10px);
+          width: 20px;
+          height: 20px;
         }
       }
     }
@@ -772,6 +803,53 @@
     }
   }
 
+  .offers-section {
+    .container {
+      padding: 0 15px;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .offers {
+    &__box {
+      border-color: $main-first-color;
+      padding-bottom: 0;
+    }
+
+    &__title {
+      position: relative;
+      margin-bottom: 13px;
+      padding-left: 40px;
+      &:before {
+        content: counter(section)'.';
+        right: auto;
+        left: 0;
+        font-size: 2em;
+      }
+    }
+
+    &__link {
+      display: block;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+  }
+
+  .calculate {
+    &__radio-box {
+      .ui-checkboxradio-radio-label {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .plans {
+    &__btn-wrap {
+      justify-content: center;
+    }
+  }
+
   //footer
   footer.footer {
     padding-top: 43px;
@@ -832,6 +910,7 @@
   }
 
   .background-site {
+    display: none;
     .elem {
       &.elem-1 {
         top: 470px;
@@ -899,6 +978,7 @@
   }
 
   .house-section {
+    margin: 0;
     .title {
 
     }
@@ -1135,6 +1215,188 @@
     }
   }
 
+  .main-tabs {
+    &.ui-tabs {
+      .ui-tabs-nav {
+        margin-bottom: 35px;
+      }
+
+      .ui-tabs-panel {
+        padding: 0;
+      }
+
+      .tab-switch {
+        margin: 40px auto;
+      }
+    }
+  }
+
+  .house {
+    padding: 8px 0 4px;
+    background: #fff;
+
+    &__cart {
+      margin-bottom: 30px;
+      padding: 0;
+      &:hover {
+        background: none;
+        box-shadow: none;
+      }
+
+      picture img {
+        height: 250px;
+      }
+    }
+
+    &__cart-text {
+      &_large {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .offers-section {
+    margin-bottom: 47px;
+    .title {
+      color: #000000;
+    }
+  }
+
+  .calculate-section {
+    .container {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      &> .row {
+        padding: 14px 30px 12px;
+        background: #E2DFDD;
+      }
+    }
+    .title {
+      margin: 0;
+      text-align: left;
+
+      span {
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  .calculate {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &__form {
+      fieldset {
+        width: 100%;
+        justify-content: center;
+        &:last-child {
+          background: linear-gradient(135deg, #b6f173 15%, #84d078 85%);
+        }
+      }
+    }
+
+    &__radio-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: #F8F8F8;
+    }
+
+    &__radio-box {
+      width: 420px;
+
+      .ui-checkboxradio-radio-label {
+        margin-bottom: 18px;
+        &:hover {
+          .ui-icon {
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            box-shadow: inset 0 0 0 3px #ffffff !important;
+          }
+        }
+
+        &.ui-checkboxradio-checked {
+          color: #292929;
+          font-weight: 500;
+          text-shadow: none;
+          background: none !important;
+          box-shadow: none;
+
+          .ui-icon {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 0 3px #ffffff;
+          }
+        }
+
+        .ui-icon {
+          width: 25px;
+          height: 25px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &:last-child .ui-checkboxradio-label {
+        margin: 0;
+      }
+    }
+
+    &__range-wrapper {
+      position: relative;
+      padding: 16px 20px 37px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        border-top: 26px solid #ffffff;
+        border-right: 26px solid transparent;
+        border-left: 26px solid transparent;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__range-box {
+      margin-bottom: 33px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &__value-wrapper {
+      padding: 15px 20px 10px;
+    }
+
+    &__value-name {
+      font-weight: 500;
+    }
+
+    &__value-text {
+      color: #fff;
+    }
+  }
+
+  .plans {
+    &__title-text {
+      text-align: center;
+    }
+
+    &__button {
+      font-size: 36px;
+      &:hover {
+        padding: 10px 20px;
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1195,6 +1457,16 @@
   .main-title {
     &.smaller-main-title {
       font-size: 25px;
+    }
+  }
+
+  .head-block img {
+    height: 340px;
+  }
+
+  .main-tabs.ui-tabs {
+    .tab-switch {
+      font-size: 18px;
     }
   }
 
@@ -1374,6 +1646,31 @@
     }
   }
 
+  .house {
+    &__cart {
+      margin-bottom: 11px;
+
+      picture {
+        margin-bottom: 9px;
+      }
+    }
+
+    &__cart-name {
+      font-size: 12px;
+    }
+
+    &__cart-text {
+      padding: 0;
+      font-size: 12px;
+    }
+  }
+
+  .offers {
+    &__link {
+      max-width: 340px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1407,6 +1704,10 @@
     &__subtitle {
       font-size: 18px;
     }
+
+    img {
+      height: 240px;
+    }
   }
 
   .modal {
@@ -1437,6 +1738,7 @@
       padding: 0;
       font-size: 16px;
       font-weight: 600;
+      line-height: 1;
       &:not(:last-child) {
         margin-bottom: 16px;
       }
@@ -1449,9 +1751,9 @@
 
   .decoration-list {
     li {
-      line-height: 2.2;
       font-size: 12px;
       font-weight: 600;
+      line-height: 1;
       &:before {
         display: none;
       }
@@ -1548,8 +1850,6 @@
     }
   }
 
-
-
   .service-village {
     &__indicators {
       &-value {
@@ -1581,6 +1881,138 @@
           font-size: 12px;
           line-height: 15px;
         }
+      }
+    }
+  }
+
+  .main-tabs.ui-tabs {
+    .ui-tabs-nav {
+      li {
+        &.main-tabs__tab {
+          padding: 10px;
+
+          .ui-tabs-anchor {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  .house {
+    &__cart {
+      picture img {
+        height: 180px;
+      }
+    }
+  }
+
+  .calculate-section {
+    .container > .row {
+      padding: 14px 15px 12px;
+    }
+
+    .title {
+      font-size: 14px;
+      letter-spacing: 2px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .calculate {
+    &__radio-box {
+      width: 300px;
+
+      .ui-checkboxradio-radio-label {
+        padding: 0;
+        font-size: 14px;
+
+        &:hover .ui-icon {
+          margin-right: 9px;
+        }
+
+        .ui-icon {
+          margin-right: 9px;
+        }
+      }
+    }
+
+    &__range-box-name {
+      color: #292929;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &__range-box-info {
+      display: none;
+    }
+
+    &__value {
+      &:not(:first-child):not(:last-child) {
+        width: 45%;
+      }
+
+      &:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &__value-name {
+      width: 80%;
+      font-size: 14px;
+    }
+
+    &__value-text {
+      font-size: 29px;
+    }
+
+    &__link-calculation {
+      max-width: 190px;
+      margin: 0 0 20px 0;
+      font-size: 15px;
+
+      &-ico {
+        width: 32px;
+        height: 32px;
+        padding: 9px;
+
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      &+ .calculate__value-name {
+        padding: 0;
+      }
+    }
+  }
+
+  .plans {
+    &__btn-wrap {
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      font-size: 18px;
+      font-weight: bold;
+
+      &:hover {
+        border-radius: 20px 0;
+      }
+    }
+
+    &__images-wrap {
+      picture {
+        border-radius: 12px;
       }
     }
   }
@@ -1630,6 +2062,14 @@
 
     .slick-dots {
       right: 5px;
+    }
+  }
+
+  .head-block {
+    img {
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -1719,6 +2159,48 @@
     }
   }
 
+  .house {
+    &> .col-6 {
+      padding: 0 3px;
+    }
+
+    &__cart {
+      picture img {
+        height: 100px;
+      }
+    }
+
+    &__cart-name {
+      letter-spacing: 1px;
+    }
+  }
+
+  .main-tabs.ui-tabs {
+    .tab-switch {
+      font-size: 12px;
+    }
+  }
+
+  .offers {
+    &__box:last-child {
+      display: none;
+    }
+
+    &__title {
+      padding-left: 20px;
+      font-size: 18px;
+      &:before {
+        top: 50%;
+        font-size: 18px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__list li {
+      font-size: 12px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1741,7 +2223,23 @@
     }
   }
 
-    //footer
+  .main-tabs.ui-tabs {
+    .ui-tabs-nav {
+      li {
+        &:nth-child(2) {
+          font-size: 12px;
+        }
+
+        &.main-tabs__tab {
+          .ui-tabs-anchor {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  //footer
   .footer-info {
     text-align: left;
     &__text {

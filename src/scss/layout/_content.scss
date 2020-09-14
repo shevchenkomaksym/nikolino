@@ -253,7 +253,11 @@
   li {
     font-size: 1.444rem;
     font-weight: 500;
-    line-height: 55px;
+    //line-height: 55px;
+
+    &:not(:last-child) {
+      margin-bottom: 23px;
+    }
 
     &:before {
       content: '— ';
@@ -1934,6 +1938,7 @@ a.text-link-1 {
 }
 
 .house-section {
+  margin-bottom: 140px;
 }
 
 .house {
@@ -2341,6 +2346,8 @@ a.text-link-1 {
 
 // Offers
 .offers-section {
+  margin-bottom: 93px;
+
   .container {
     padding: 80px 55px 0;
     background: #ffffff;
@@ -2387,11 +2394,15 @@ a.text-link-1 {
   }
 
   &__list {
-    padding: 0;
+    padding: 0 0 0 26px;
 
     li {
+      position: relative;
+
       &:before {
         content: '— ';
+        position: absolute;
+        right: calc(100% + 5px);
       }
     }
   }
@@ -2403,8 +2414,9 @@ a.text-link-1 {
 
 // Calculate
 .calculate-section {
-
   .title {
+    margin-bottom: 47px;
+
     span {
       display: block;
       font-size: 1rem;
@@ -2462,6 +2474,7 @@ a.text-link-1 {
       width: 50%;
 
       .ui-checkboxradio-radio-label {
+        margin-bottom: 37px;
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
         border-radius: 50px;
@@ -2538,7 +2551,7 @@ a.text-link-1 {
     }
 
     &-box {
-      margin-bottom: 30px;
+      margin-bottom: 60px;
 
       &-heading {
         display: -ms-flexbox;
@@ -2713,7 +2726,7 @@ a.text-link-1 {
 
 // Partners
 .partners {
-  padding: 95px 0 15px;
+  padding-bottom: 15px;
   .title {
     margin-bottom: 78px;
   }

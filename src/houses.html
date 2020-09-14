@@ -194,7 +194,7 @@
                             </div>
                         </div>
 
-                        <a href="#tabs-2" class="tab-switch">Показать проекты серии «Классика»</a>
+                        <a href="#tabs-2" class="tab-switch"><svg><use xlink:href="img/spritemap.svg#sprite-house"></use></svg>Показать проекты серии «Классика»</a>
                     </div>
 
                     <div id="tabs-2">
@@ -314,7 +314,7 @@
                             </div>
                         </div>
 
-                        <a href="#tabs-1" class="tab-switch">Показать проекты серии «Премьер»</a>
+                        <a href="#tabs-1" class="tab-switch"><svg><use xlink:href="img/spritemap.svg#sprite-house"></use></svg>Показать проекты серии «Премьер»</a>
                     </div>
                 </div>
             </div>
@@ -383,7 +383,7 @@
                     </div>
 
                     <div class="col-lg-6 offers__box">
-                        <a href="#doc" class="offers__link button button-secondary">ПОЛНЫЙ ПЕРЕЧЕНЬ ДОКУМЕНТОВ</a>
+                        <a href="#documentation" class="offers__link button button-secondary" data-target="#documentation" data-toggle="modal">ПОЛНЫЙ ПЕРЕЧЕНЬ ДОКУМЕНТОВ</a>
                     </div>
                 </div>
             </div>
@@ -815,6 +815,39 @@
 
                         <button type="submit" class="callback__form-submit button button-primary">Перезвоните мне</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="documentation" tabindex="-1" role="dialog" aria-labelledby="doc" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 id="doc" class="modal-title">Документация</h3>
+                    </div>
+                </div>
+
+                <ul class="document__list">
+                    <li class="document__list-item">Документ может <a href="#doc" class="document__list-link">называться длинно как вы думаете</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Второй документ</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Третий пусть тоже будет подлинее</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Четвертый может быть таким же</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Пятый пусть будет покороче</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Шестой совсем прост</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Седьмой день для отдыха</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Восьмой тяжело генерить текст</a></li>
+                    <li class="document__list-item"><a href="#doc" class="document__list-link">Девятый как название мультика</a></li>
+                </ul>
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a href="img/default.svg" download class="button button-primary modal-button">скачать все файлы</a>
+                    </div>
                 </div>
             </div>
         </div>
