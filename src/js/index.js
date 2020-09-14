@@ -38,6 +38,14 @@ $(window).on('load', function () {
 
     let h = $('header.header');
     $('.main-wrapper').css('padding-top', h.outerHeight());
+
+    $('.plan-svg-map svg path').each(function(){
+        $(this).on('click', function(){
+            console.log('active path');
+            $(this).addClass('active');
+            $(this).parent().siblings().find('path').removeClass('active');
+        })
+    })
 });
 
 $(function () {
