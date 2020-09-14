@@ -38,15 +38,12 @@
 }
 
 .search-plan-section {
-    
 }
 
-.relevant {       
-    margin-top: 30px;
+.relevant {
+	margin-top: 30px;
 	&__table {
-
 		tr {
-
 			&:hover {
 				background: #efeeed;
 
@@ -84,8 +81,8 @@
 				}
 			}
 			&:last-child {
-                width: 285px;
-                position: relative;
+				width: 285px;
+				position: relative;
 
 				&::after {
 					content: '';
@@ -105,9 +102,9 @@
 	&__link {
 		color: #fff;
 		padding: 22px 40px;
-        display: block;
-        position: relative;
-        z-index: 2;
+		display: block;
+		position: relative;
+		z-index: 2;
 	}
 }
 
@@ -121,4 +118,130 @@
 	padding: 56px 0 0;
 	background: transparentize($color: #f5f4f3, $amount: 0.11);
 	box-shadow: 0px 0px 92px rgba(0, 0, 0, 0.24);
+}
+
+.plan-svg-map {
+	svg {
+		g {
+			fill: #e69685;
+			cursor: pointer;
+
+			&:hover {
+				.st0 {
+					fill: transparentize($color: #e69685, $amount: 0.3);
+				}
+			}
+		}
+	}
+}
+
+.search-plan-section {
+	padding-top: 20px;
+
+	&__header {
+		background: #fff;
+		padding: 40px 30px;
+		display: flex;
+		align-items: center;
+		justify-self: start;
+	}
+
+	&__switch {
+		position: relative;
+		top: 0;
+		left: 0;
+
+		.about-house__switch-button {
+			background: #e3e3e3;
+
+			&.active {
+				background: linear-gradient(136.67deg, #b6f173 5.53%, #84d078 135.78%);
+			}
+		}
+	}
+
+	&__switch-title {
+		margin-right: 32px;
+		font-size: 26px;
+	}
+
+	&__filter {
+		padding: 40px 0;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+
+		.calculate__range-box {
+			width: 33.33%;
+			margin-right: 58px;
+			text-align: left;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&:first-child {
+				.calculate__range-box-name {
+					margin-right: 10px;
+				}
+			}
+			&:nth-child(2) {
+				.calculate__range-box-info {
+					font-size: 26px;
+					line-height: 44px;
+				}
+			}
+
+			&-heading {
+				align-items: flex-start;
+				justify-content: flex-start;
+				margin-bottom: 28px;
+				text-align: left;
+			}
+			&-name {
+				font-size: 26px;
+			}
+			&-name,
+			&-info {
+				line-height: 44px;
+				font-size: 18px;
+				width: auto;
+			}
+		}
+	}
+}
+
+.plan-sectors {
+	&__marks {
+		background: #fff;
+		padding: 16px 5px 16px 30px;
+		max-width: 232px;
+	}
+
+	&__title {
+		font-size: 10px;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		margin-top: 12px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		font-size: 14px;
+
+		+ .plan-sectors__item {
+			margin-top: 17px;
+		}
+	}
+
+	&__color {
+		width: 17px;
+		height: 23px;
+		display: inline-block;
+		margin-right: 12px;
+	}
 }
