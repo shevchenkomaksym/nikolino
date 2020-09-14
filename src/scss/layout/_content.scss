@@ -1109,6 +1109,10 @@
 // Utilities
 .communic-section {
   padding: 74px 0 160px;
+
+  .title {
+    margin-bottom: 100px;
+  }
 }
 
 .utilities {
@@ -1282,6 +1286,10 @@
     object-position: center;
   }
 
+  &__text-block {
+
+  }
+
   &__date {
     margin-bottom: 5px;
     font-size: 0.611em;
@@ -1321,6 +1329,8 @@
 
 // About news
 .about-news-section {
+  margin-bottom: 55px;
+
   .title {
     //margin-bottom: -50px;
     padding: 0 50px 20px;
@@ -1414,9 +1424,68 @@
   }
 }
 
+.document {
+  padding: 50px 0 0;
+  background: #F5F4F3;
+  border-radius: 12px;
+  box-shadow: 0px 63px 92px #252525, inset 0px -6px 0px rgba(179, 179, 179, 0.15);
+
+  .modal-title {
+    margin: 0 0 53px;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .modal-button {
+    margin-bottom: -32px;
+  }
+
+  &__list {
+    counter-reset: section;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    max-height: 250px;
+    margin: 0 0 40px;
+    padding: 0;
+  }
+
+  &__list-item {
+    position: relative;
+    max-width: 350px;
+    margin-bottom: 22px;
+
+    &:before {
+      counter-increment: section;
+      content: counter(section);
+      position: absolute;
+      left: -16px;
+      color: #565656;
+      font-weight: bold;
+    }
+  }
+
+  &__list-link {
+    border-bottom: 1px dashed $main-first-color;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
+
 // Service
 .service-section {
+  .title {
+    margin: 0 0 33px;
+  }
 
+  .button {
+    margin: 26px auto 0;
+    color: #ffffff;
+  }
 }
 
 .service-village {
@@ -1425,23 +1494,36 @@
   &__indicators {
     position: absolute;
     right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 90%;
-    text-align: right;
+    bottom: -50px;
+    display: flex;
+    flex-direction: column;
+    width: 36%;
+    height: 100%;
+    padding: 120px 0 90px 96px;
     background: #ffffff;
     z-index: -1;
 
     &-item {
+      margin-bottom: 40px;
+      color: #c9b399;
 
+      &:last-child {
+        margin: 0;
+      }
     }
 
     &-value {
-
+      margin: 0 0 17px;
+      font-size: 105px;
+      font-weight: 200;
+      line-height: 86px;
     }
 
     &-signature {
-
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 17px;
+      text-transform: uppercase;
     }
   }
 
@@ -1472,14 +1554,26 @@
 
   &__goal {
     &-title {
-
+      margin-bottom: 21px;
+      color: #C9B399;
+      font-size: 26px;
+      font-weight: 500;
     }
 
     &-list {
-      margin: 0;
+      margin: 0 0 50px;
+      padding: 0 0 0 45px;
 
       li {
-
+        position: relative;
+        font-size: 16px;
+        line-height: 27px;
+        &:before {
+          content: '⸺';
+          position: absolute;
+          right: calc(100% + 12px);
+          color: #C9B399;
+        }
       }
     }
   }
@@ -1490,7 +1584,10 @@
     margin-left: -15px;
 
     img {
-
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 63px 92px rgba(201, 189, 171, 0.7);
     }
 
     &-signature {

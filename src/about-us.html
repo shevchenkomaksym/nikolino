@@ -76,7 +76,7 @@
         <div class="section about-section">
             <div class="container about">
                 <div class="row about__block">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 d-none d-lg-block">
                         <p class="about__video-text pt-lg-4 px-lg-3">
                             <svg>
                                 <use xlink:href="img/spritemap.svg#sprite-youtube"></use>
@@ -86,7 +86,7 @@
                         </p>
                     </div>
 
-                    <div class="col-lg-9">
+                    <div class="col-12 col-lg-9">
                         <div class="about__video">
                             <iframe width="100%" height="391" src="https://www.youtube.com/embed/rnVxkktkzAI" frameborder="0"
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -109,7 +109,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12 d-none d-md-block">
                         <div class="about__signature">
                             <p class="about__signature-text">Наши жители просыпаются под пение птиц, дружат семьями, а дети играют на улице вместе. </p>
 
@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-10 offset-2">
+                    <div class="col-lg-10 offset-lg-2">
                         <h2 class="title">Эко-стиль <span>Была идея добавить кнопку для выбора времени, но 2 кнопки на одной форме как то не очень смотрятся. Можно поставить радиобаттон и если человек ставит галочку и нажимает</span>
                         </h2>
                     </div>
@@ -146,10 +146,14 @@
                         </picture>
                     </div>
                 </div>
+
+                <div class="row text-center d-block d-md-none mt-3">
+                    <button class="button button-primary" data-toggle="modal" data-target="#callback">Перезвоните мне</button>
+                </div>
             </div>
         </div>
 
-        <div class="section callback-section">
+        <div class="section callback-section d-none d-md-block">
             <div class="container">
                 <div class="callback d-flex flex-wrap">
                     <picture>
@@ -209,7 +213,7 @@
         <div class="section communic-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-10 offset-2">
+                    <div class="col-lg-10 offset-lg-2">
                         <h2 class="title">Коммуникации</h2>
                     </div>
                 </div>
@@ -301,10 +305,10 @@
         <div class="section about-review-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 offset-lg-2">
+                    <div class="col-md-6 col-lg-6 offset-lg-2">
                         <h2 class="title">Отзывы</h2>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4 d-none d-md-block pt-2 text-right">
                         <a href="feedback.html" class="button button-violet">все отзывы</a>
                     </div>
                 </div>
@@ -315,14 +319,17 @@
                             <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-01.png') %>" class="about-review__img" alt="">
                         </picture>
 
-                        <p class="about-review__date">24 апреля 2020</p>
+                        <div class="about-review__text-block">
+                            <p class="about-review__date">24 апреля 2020</p>
 
-                        <p class="about-review__author">Слава <span class="about-review__author-age">32 года</span></p>
+                            <p class="about-review__author">Слава <span class="about-review__author-age">32 года</span></p>
 
-                        <p class="about-review__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в
-                            ближайшие минуты.</p>
+                            <p class="about-review__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам
+                                в
+                                ближайшие минуты.</p>
 
-                        <a href="#reviews" class="about-review__link">Далее</a>
+                            <a href="#reviews" class="about-review__link">Далее</a>
+                        </div>
                     </div>
 
                     <div class="about-review__item">
@@ -330,14 +337,16 @@
                             <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-02.png') %>" class="about-review__img" alt="">
                         </picture>
 
-                        <p class="about-review__date">24 апреля 2020</p>
+                        <div class="about-review__text-block">
+                            <p class="about-review__date">24 апреля 2020</p>
 
-                        <p class="about-review__author">Людвиг <span class="about-review__author-age">32 года</span></p>
+                            <p class="about-review__author">Людвиг <span class="about-review__author-age">32 года</span></p>
 
-                        <p class="about-review__text">Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет
-                            удо...</p>
+                            <p class="about-review__text">Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет
+                                удо...</p>
 
-                        <a href="#reviews" class="about-review__link">Далее</a>
+                            <a href="#reviews" class="about-review__link">Далее</a>
+                        </div>
                     </div>
 
                     <div class="about-review__item">
@@ -345,13 +354,16 @@
                             <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-01.png') %>" class="about-review__img" alt="">
                         </picture>
 
-                        <p class="about-review__date">24 апреля 2020</p>
+                        <div class="about-review__text-block">
+                            <p class="about-review__date">24 апреля 2020</p>
 
-                        <p class="about-review__author">Сергей <span class="about-review__author-age">32 года</span></p>
+                            <p class="about-review__author">Сергей <span class="about-review__author-age">32 года</span></p>
 
-                        <p class="about-review__text">Наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое.</p>
+                            <p class="about-review__text">Наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в
+                                которое.</p>
 
-                        <a href="#reviews" class="about-review__link">Далее</a>
+                            <a href="#reviews" class="about-review__link">Далее</a>
+                        </div>
                     </div>
 
                     <div class="about-review__item">
@@ -359,14 +371,17 @@
                             <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-01.png') %>" class="about-review__img" alt="">
                         </picture>
 
-                        <p class="about-review__date">24 апреля 2020</p>
+                        <div class="about-review__text-block">
+                            <p class="about-review__date">24 апреля 2020</p>
 
-                        <p class="about-review__author">Слава <span class="about-review__author-age">32 года</span></p>
+                            <p class="about-review__author">Слава <span class="about-review__author-age">32 года</span></p>
 
-                        <p class="about-review__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам в
-                            ближайшие минуты.</p>
+                            <p class="about-review__text">Укажите дату и время в которое вам будет удобно принять наш звонок. Или оставьте это поле пустым и менеджер перезвонит вам
+                                в
+                                ближайшие минуты.</p>
 
-                        <a href="#reviews" class="about-review__link">Далее</a>
+                            <a href="#reviews" class="about-review__link">Далее</a>
+                        </div>
                     </div>
 
                     <div class="about-review__item">
@@ -374,14 +389,16 @@
                             <img src="<%= require('./img/default.svg') %>" data-src="<%= require('./img/review-02.png') %>" class="about-review__img" alt="">
                         </picture>
 
-                        <p class="about-review__date">24 апреля 2020</p>
+                        <div class="about-review__text-block">
+                            <p class="about-review__date">24 апреля 2020</p>
 
-                        <p class="about-review__author">Людвиг <span class="about-review__author-age">32 года</span></p>
+                            <p class="about-review__author">Людвиг <span class="about-review__author-age">32 года</span></p>
 
-                        <p class="about-review__text">Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет
-                            удо...</p>
+                            <p class="about-review__text">Или оставьте это поле пустым и менеджер перезвонит вам в ближайшие минуты. Укажите дату и время в которое вам будет
+                                удо...</p>
 
-                        <a href="#reviews" class="about-review__link">Далее</a>
+                            <a href="#reviews" class="about-review__link">Далее</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -390,11 +407,11 @@
         <div class="section about-news-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
+                    <div class="col-12 col-lg-8 offset-lg-1 offset-xl-2">
                         <h2 class="title">Новости
                             <span>и ход строительства</span></h2>
                     </div>
-                    <div class="col-lg-2 align-self-lg-center">
+                    <div class="col-lg-3 col-xl-2 align-self-end d-none d-lg-block pb-4">
                         <a href="news.html" class="button button-violet news-link">все новости</a>
                     </div>
                 </div>
@@ -477,7 +494,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row d-none d-md-block">
                     <div class="col text-right">
                         <button class="button button-primary" data-toggle="modal" data-target="#documentation">документация</button>
                     </div>
@@ -538,6 +555,10 @@
                             <p class="service-village__house-text">Николино Парк, 2015 год</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="row d-bloc d-md-none">
+                    <button class="button button-secondary" data-toggle="modal" data-target="#documentation">документация</button>
                 </div>
             </div>
         </div>
@@ -806,10 +827,11 @@
 <div class="modal fade" id="documentation" tabindex="-1" role="dialog" aria-labelledby="doc" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="modal-title">Документация</h3>
+                        <h3 id="doc" class="modal-title">Документация</h3>
                     </div>
                 </div>
 
@@ -826,20 +848,10 @@
                 </ul>
 
                 <div class="row">
-                    <div class="col-12">
-                        <a href="img/default.svg" download class="button button-primary">скачать все файлы</a>
+                    <div class="col-12 text-center">
+                        <a href="img/default.svg" download class="button button-primary modal-button">скачать все файлы</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-header">
-                <h5 class="modal-title" id="doc">Документация</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
             </div>
         </div>
     </div>
@@ -855,6 +867,16 @@
                 <stop offset="0%" stop-color="#32C5FF"/>
                 <stop offset="50%" stop-color="#B620E0"/>
                 <stop offset="100%" stop-color="#F7B500"/>
+            </linearGradient>
+
+            <linearGradient id="gradient2" x1="1" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#98EA6F"/>
+                <stop offset="100%" stop-color="#79DE74"/>
+            </linearGradient>
+
+            <linearGradient id="gradient3" x1="1" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#F6C837"/>
+                <stop offset="100%" stop-color="#EFB51F"/>
             </linearGradient>
         </defs>
     </svg>

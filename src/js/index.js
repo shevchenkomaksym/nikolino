@@ -144,17 +144,39 @@ $(function () {
         infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
+        responsive: [{
+            breakpoint: 991,
+            settings: {
+                arrows: false
+            }
+        }]
     });
 
     // about reviews
     $('.about-review').slick({
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         arrows: false,
         dots: true,
         infinite: true,
-        autoplay: true,
-        autoplaySpeed: 5000
+        // autoplay: true,
+        // autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 1080,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     });
 
     // about news
@@ -165,7 +187,16 @@ $(function () {
         dots: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 1080,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+        ]
     });
 
     // service slider

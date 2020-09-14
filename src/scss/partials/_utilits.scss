@@ -135,10 +135,10 @@
   &:disabled {
     box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12);
     background: #d6d6d6;
-    background: -moz-radial-gradient(center, ellipse cover,  #d6d6d6 0%, #c6c6c6 100%);
-    background: -webkit-radial-gradient(center, ellipse cover,  #d6d6d6 0%,#c6c6c6 100%);
-    background: radial-gradient(ellipse at center,  #d6d6d6 0%,#c6c6c6 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#c6c6c6',GradientType=1 );
+    background: -moz-radial-gradient(center, ellipse cover, #d6d6d6 0%, #c6c6c6 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #d6d6d6 0%, #c6c6c6 100%);
+    background: radial-gradient(ellipse at center, #d6d6d6 0%, #c6c6c6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d6d6d6', endColorstr='#c6c6c6', GradientType=1);
   }
 
   &-primary {
@@ -626,6 +626,45 @@ input.input {
 .modal {
   padding: 0 !important;
   z-index: 105;
+
+  .modal-content {
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      opacity: 0.3;
+      font-size: 0;
+      transition: all .3s ease 0s;
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: $text-color;
+        transform: translate(-50%, -50%);
+        @include transition($transition-base);
+      }
+
+      &:before {
+        content: '';
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:after {
+        content: '';
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &:hover {
+        opacity: 1;
+        transform: rotate(180deg);
+      }
+    }
+  }
 
   &-backdrop {
     z-index: 104;

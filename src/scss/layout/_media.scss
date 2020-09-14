@@ -3,9 +3,15 @@
 *************************************************/
 // min-width
 @media screen and (min-width: 320px) {
+  .about-news__item {
+    padding: 0 3px;
+  }
 }
 
 @include media-breakpoint-up(sm) {
+  .about-news__item {
+    padding: 0;
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -110,6 +116,42 @@
     }
   }
 
+  .about {
+    .title {
+      span {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .utilities {
+    &__item {
+      padding: 0 260px;
+    }
+  }
+
+  .about-news-section {
+    .title {
+      padding: 0;
+    }
+  }
+
+  .service-village {
+    &__indicators {
+      bottom: 0;
+      height: auto;
+      padding: 60px 20px 60px 75px;
+    }
+
+    &__text-block {
+      max-width: 670px;
+    }
+
+    &__house {
+      max-width: 720px;
+    }
+  }
+
   //footer
   .footer-callback__number {
     font-size: 24px;
@@ -150,6 +192,16 @@
           margin: 0;
         }
       }
+    }
+  }
+
+  .document {
+    .modal-title {
+      margin: 0 0 25px;
+    }
+
+    &__list {
+      max-height: none;
     }
   }
 
@@ -523,6 +575,20 @@
     }
   }
 
+  .about-section {
+    margin-top: 24px;
+  }
+
+  .about {
+    &__video {
+      margin: 15px 0 40px;
+    }
+
+    &__gallery {
+      text-align: center;
+    }
+  }
+
   /*contacts page*/
   .contacts {
     &__title {
@@ -631,6 +697,78 @@
 
     &__cart-info {
       order: 3;
+    }
+  }
+
+  .utilities {
+    &__item {
+      padding: 0 200px;
+
+      img {
+        width: 175px;
+        height: 175px;
+      }
+    }
+  }
+
+  .service-village {
+    border-radius: 12px;
+    padding: 20px 20px 30px;
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgba(156, 143, 124, 0.36);
+
+    &__indicators {
+      position: static;
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      height: auto;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #F0B520;
+      padding: 0;
+      background: none;
+
+      &-item {
+        max-width: 30%;
+        margin-bottom: 28px;
+        &:last-child {
+          margin-bottom: 28px;
+        }
+      }
+
+      &-value {
+        margin-bottom: 6px;
+        font-size: 76px;
+      }
+
+      &-signature {
+        max-width: none;
+        margin: 0;
+      }
+    }
+
+    &__signature {
+      max-width: 80%;
+      margin: 0 0 40px;
+      border: none;
+      padding: 0;
+    }
+
+    &__text-block {
+      max-width: none;
+      background: none;
+      &:after {
+        display: none;
+      }
+    }
+
+    &__house {
+      max-width: none;
+      margin-left: -20px;
+
+      img {
+        box-shadow: none;
+      }
     }
   }
 
@@ -744,6 +882,10 @@
     }
   }
 
+  .callback-section {
+    padding: 50px 0;
+  }
+
   .decoration-icon-list {
     li {
       font-size: 18px;
@@ -840,6 +982,156 @@
 
     &__text {
       font-size: 14px;
+    }
+  }
+
+  .about {
+    .title span {
+      display: none;
+    }
+
+    &__block {
+      margin-bottom: 35px;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .about-slider {
+    &__item {
+      img {
+        height: 320px;
+      }
+    }
+  }
+
+  .communic-section {
+    padding: 24px 0 26px;
+  }
+
+  .utilities {
+    &__item-wrap:not(:last-child) {
+      margin: 0 0 34px;
+    }
+
+    &__item {
+      height: auto;
+      padding: 0;
+    }
+
+    &__img {
+      position: static;
+      top: 0;
+      transform: translateY(0);
+
+      img {
+        width: 125px;
+        height: 125px;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    &__description {
+      flex-direction: column;
+      padding-left: 30px;
+    }
+
+    &__name {
+      width: auto;
+    }
+
+    &__text {
+      width: auto;
+    }
+  }
+
+  .about-review {
+    &__item {
+      display: flex !important;
+      flex-direction: row;
+      max-width: none;
+      padding: 25px;
+    }
+
+    &__img {
+      display: inline-block !important;
+      margin: 0 16px 0 0;
+    }
+
+    &__text {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .about-news-section {
+    * {
+      box-shadow: none;
+    }
+
+    .container {
+      padding-top: 17px;
+      padding-bottom: 20px;
+      background: #fff;
+    }
+
+    .title span:after {
+      background: none;
+    }
+  }
+
+  .about-news {
+    &__background {
+      display: none;
+    }
+
+    &__description {
+      padding: 14px 4px 0;
+    }
+
+    &__slider.slick-slider .slick-dots {
+      position: absolute;
+      top: 108%;
+      left: 50%;
+      padding: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  .service-village {
+    &__indicators {
+      &-item {
+        color: #000000;
+      }
+
+      &-value {
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 1;
+      }
+    }
+
+    &__signature {
+      max-width: none;
+      font-weight: 400;
+    }
+
+    &__goal-title {
+      color: #000;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    &__goal-list {
+      margin: 0;
+    }
+
+    &__house {
+      display: none;
     }
   }
 
@@ -1052,6 +1344,36 @@
     box-shadow: 0px 14px 34px rgba(156, 143, 124, 0.36);
   }
 
+  .about {
+    &__video {
+      margin: 0;
+    }
+
+    &__gallery {
+      display: none;
+    }
+  }
+
+  .utilities {
+    &:after {
+      display: none;
+    }
+  }
+
+  .about-news {
+    &__item {
+      max-width: 300px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1078,6 +1400,12 @@
 
     .subtitle-2 {
       font-size: 16px;
+    }
+  }
+
+  .head-block {
+    &__subtitle {
+      font-size: 18px;
     }
   }
 
@@ -1132,6 +1460,10 @@
 
   .house-list {
     &__box {
+      img {
+        height: 150px;
+      }
+
       &-name {
         margin-bottom: 7px;
         padding: 0;
@@ -1189,6 +1521,68 @@
 
   .news-subtitle {
     font-size: 16px;
+  }
+
+  .about {
+    &__video {
+      max-height: 280px;
+      iframe {
+        height: 280px;
+      }
+    }
+  }
+
+  .about-news {
+    &__img {
+      height: 100px;
+    }
+
+    &__date {
+      margin-bottom: 3px;
+      color: #666666;
+      font-size: 9px;
+    }
+
+    &__title {
+      font-size: 12px;
+    }
+  }
+
+
+
+  .service-village {
+    &__indicators {
+      &-value {
+        font-size: 27px;
+      }
+      &-signature {
+        font-size: 9px;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+
+    &__signature {
+      margin-bottom: 13px;
+      font-size: 12px;
+    }
+
+    &__goal {
+      &-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      &-list {
+        padding: 0 0 0 35px;
+
+        li {
+          margin-bottom: 15px;
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+    }
   }
 
   //footer
@@ -1265,6 +1659,66 @@
     }
   }
 
+  .about-slider {
+    &__item {
+      img {
+        height: 180px;
+      }
+    }
+  }
+
+  .utilities {
+    &__img img {
+      width: 90px;
+      height: 90px;
+    }
+
+    &__name {
+      margin: 0 0 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+
+  .about-review {
+    &__img {
+      width: 70px;
+      height: 70px;
+    }
+
+    &__author {
+      margin-bottom: 9px;
+      font-size: 18px;
+    }
+
+    &__author-age {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+  }
+
+  .document {
+    .modal-title {
+      font-size: 20px;
+    }
+
+    &__list {
+      padding-left: 25px;
+    }
+
+    &__list-item {
+      font-size: 14px;
+    }
+  }
+
   //footer
   .footer-info {
     &__nav-link {
@@ -1281,7 +1735,13 @@
     }
   }
 
-  //footer
+  .house-list__box {
+    img {
+      height: 100px;
+    }
+  }
+
+    //footer
   .footer-info {
     text-align: left;
     &__text {
